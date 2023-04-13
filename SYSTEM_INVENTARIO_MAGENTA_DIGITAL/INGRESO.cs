@@ -14,7 +14,7 @@ namespace SYSTEM_INVENTARIO_MAGENTA_DIGITAL
 {
     public partial class INGRESO : Form
     {
-
+        private string mensaje = "prueba";
         public INGRESO()
         {
             InitializeComponent();
