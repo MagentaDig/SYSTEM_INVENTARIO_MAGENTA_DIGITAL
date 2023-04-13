@@ -58,8 +58,6 @@ namespace SYSTEM_INVENTARIO_MAGENTA_DIGITAL
                 
             }
             return categ;
-
-
         }
 
         private void btn_ingresar_Click(object sender, EventArgs e)
