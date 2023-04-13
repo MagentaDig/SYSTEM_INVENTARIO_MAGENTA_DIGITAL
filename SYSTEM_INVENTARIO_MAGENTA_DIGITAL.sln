@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33403.182
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SYSTEM_INVENTARIO_MAGENTA_DIGITAL", "SYSTEM_INVENTARIO_MAGENTA_DIGITAL\SYSTEM_INVENTARIO_MAGENTA_DIGITAL.csproj", "{888EC8CA-0F7F-4141-8591-8A61EFA925F9}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{888EC8CA-0F7F-4141-8591-8A61EFA925F9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{888EC8CA-0F7F-4141-8591-8A61EFA925F9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{888EC8CA-0F7F-4141-8591-8A61EFA925F9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{888EC8CA-0F7F-4141-8591-8A61EFA925F9}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {BAFFC594-6E26-4387-B8A7-D1987E7B9B5A}
+	EndGlobalSection
+EndGlobal
