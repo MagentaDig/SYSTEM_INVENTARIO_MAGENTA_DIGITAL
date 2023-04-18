@@ -70,5 +70,6 @@ namespace SYSTEM_INVENTARIO_MAGENTA_DIGITAL
             FormInicio.Show();
             
         }
+
     }
 }
