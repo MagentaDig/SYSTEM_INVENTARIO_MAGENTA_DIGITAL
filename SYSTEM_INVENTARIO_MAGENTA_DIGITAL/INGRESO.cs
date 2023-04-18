@@ -40,6 +40,7 @@ namespace SYSTEM_INVENTARIO_MAGENTA_DIGITAL
 
         public MCategoria categoriaSeleccionada()
         {
+
             Categoria eventoCateg = new Categoria();
             List<MCategoria> lstcategorias = eventoCateg.DatosCategoria();
 
@@ -70,5 +71,6 @@ namespace SYSTEM_INVENTARIO_MAGENTA_DIGITAL
             FormInicio.Show();
             
         }
+
     }
 }
