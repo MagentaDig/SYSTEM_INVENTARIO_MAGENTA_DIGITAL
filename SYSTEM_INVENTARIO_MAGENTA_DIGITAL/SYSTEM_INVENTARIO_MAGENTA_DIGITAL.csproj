@@ -49,6 +49,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ACCESO\Login.cs" />
     <Compile Include="DATOS\DatosCategoria.cs" />
     <Compile Include="DB_CONEXION\Conexion_DB.cs" />
     <Compile Include="INGRESO.cs">
