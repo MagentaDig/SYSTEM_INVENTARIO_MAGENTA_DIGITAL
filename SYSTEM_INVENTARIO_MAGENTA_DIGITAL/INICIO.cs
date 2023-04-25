@@ -70,7 +70,7 @@ namespace SYSTEM_INVENTARIO_MAGENTA_DIGITAL
             ReleaseCapture();
             SendMessage(this.Handle, 0x112, 0xf012, 0);
 
-            /*prueba*/
+            
         }
     }
 }
