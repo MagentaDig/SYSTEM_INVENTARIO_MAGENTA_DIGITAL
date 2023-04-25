@@ -53,6 +53,9 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.id_material = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nom_material = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel_barratitulo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconoregresarmenu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconominimizar2)).BeginInit();
@@ -62,6 +65,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -104,7 +108,7 @@
             this.lbl_categoriaSelect.AutoSize = true;
             this.lbl_categoriaSelect.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_categoriaSelect.ForeColor = System.Drawing.Color.Black;
-            this.lbl_categoriaSelect.Location = new System.Drawing.Point(67, 238);
+            this.lbl_categoriaSelect.Location = new System.Drawing.Point(67, 182);
             this.lbl_categoriaSelect.Name = "lbl_categoriaSelect";
             this.lbl_categoriaSelect.Size = new System.Drawing.Size(117, 30);
             this.lbl_categoriaSelect.TabIndex = 8;
@@ -115,7 +119,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.Black;
-            this.label4.Location = new System.Drawing.Point(364, 238);
+            this.label4.Location = new System.Drawing.Point(60, 271);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(118, 30);
             this.label4.TabIndex = 12;
@@ -126,7 +130,7 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.Black;
-            this.label5.Location = new System.Drawing.Point(579, 238);
+            this.label5.Location = new System.Drawing.Point(234, 271);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(100, 30);
             this.label5.TabIndex = 13;
@@ -137,7 +141,7 @@
             this.txt_tamaño.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(166)))), ((int)(((byte)(166)))));
             this.txt_tamaño.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txt_tamaño.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_tamaño.Location = new System.Drawing.Point(382, 281);
+            this.txt_tamaño.Location = new System.Drawing.Point(78, 314);
             this.txt_tamaño.Name = "txt_tamaño";
             this.txt_tamaño.Size = new System.Drawing.Size(100, 15);
             this.txt_tamaño.TabIndex = 15;
@@ -147,7 +151,7 @@
             this.txt_metros.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(166)))), ((int)(((byte)(166)))));
             this.txt_metros.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txt_metros.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_metros.Location = new System.Drawing.Point(594, 281);
+            this.txt_metros.Location = new System.Drawing.Point(249, 314);
             this.txt_metros.Name = "txt_metros";
             this.txt_metros.Size = new System.Drawing.Size(100, 15);
             this.txt_metros.TabIndex = 16;
@@ -168,7 +172,7 @@
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.Black;
-            this.label7.Location = new System.Drawing.Point(758, 238);
+            this.label7.Location = new System.Drawing.Point(405, 271);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(133, 30);
             this.label7.TabIndex = 19;
@@ -179,18 +183,18 @@
             this.txt_cantidad.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(166)))), ((int)(((byte)(166)))));
             this.txt_cantidad.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txt_cantidad.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_cantidad.Location = new System.Drawing.Point(774, 281);
+            this.txt_cantidad.Location = new System.Drawing.Point(421, 314);
             this.txt_cantidad.Name = "txt_cantidad";
-            this.txt_cantidad.Size = new System.Drawing.Size(100, 15);
+            this.txt_cantidad.Size = new System.Drawing.Size(117, 15);
             this.txt_cantidad.TabIndex = 22;
             // 
             // rich_Desc
             // 
             this.rich_Desc.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(166)))), ((int)(((byte)(166)))));
             this.rich_Desc.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.rich_Desc.Location = new System.Drawing.Point(95, 442);
+            this.rich_Desc.Location = new System.Drawing.Point(82, 419);
             this.rich_Desc.Name = "rich_Desc";
-            this.rich_Desc.Size = new System.Drawing.Size(448, 86);
+            this.rich_Desc.Size = new System.Drawing.Size(448, 100);
             this.rich_Desc.TabIndex = 23;
             this.rich_Desc.Text = "";
             // 
@@ -199,7 +203,7 @@
             this.txt_nombre.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(166)))), ((int)(((byte)(166)))));
             this.txt_nombre.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txt_nombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_nombre.Location = new System.Drawing.Point(82, 285);
+            this.txt_nombre.Location = new System.Drawing.Point(82, 229);
             this.txt_nombre.Name = "txt_nombre";
             this.txt_nombre.Size = new System.Drawing.Size(210, 15);
             this.txt_nombre.TabIndex = 24;
@@ -256,8 +260,9 @@
             // 
             this.btn_guardarmat.BackgroundImage = global::SYSTEM_INVENTARIO_MAGENTA_DIGITAL.Properties.Resources.Captura_de_pantalla_2023_04_25_021242;
             this.btn_guardarmat.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btn_guardarmat.FlatAppearance.BorderSize = 0;
             this.btn_guardarmat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_guardarmat.Location = new System.Drawing.Point(594, 508);
+            this.btn_guardarmat.Location = new System.Drawing.Point(65, 565);
             this.btn_guardarmat.Name = "btn_guardarmat";
             this.btn_guardarmat.Size = new System.Drawing.Size(122, 51);
             this.btn_guardarmat.TabIndex = 21;
@@ -267,10 +272,10 @@
             // pictureBox5
             // 
             this.pictureBox5.Image = global::SYSTEM_INVENTARIO_MAGENTA_DIGITAL.Properties.Resources.Captura_de_pantalla_2023_04_25_020420;
-            this.pictureBox5.Location = new System.Drawing.Point(758, 270);
+            this.pictureBox5.Location = new System.Drawing.Point(405, 303);
             this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(133, 44);
-            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox5.Size = new System.Drawing.Size(154, 44);
+            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox5.TabIndex = 20;
             this.pictureBox5.TabStop = false;
             // 
@@ -279,38 +284,38 @@
             this.pictureBox4.Image = global::SYSTEM_INVENTARIO_MAGENTA_DIGITAL.Properties.Resources.Captura_de_pantalla_2023_04_25_021052;
             this.pictureBox4.Location = new System.Drawing.Point(59, 393);
             this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(505, 166);
-            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox4.Size = new System.Drawing.Size(500, 154);
+            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox4.TabIndex = 18;
             this.pictureBox4.TabStop = false;
             // 
             // pictureBox3
             // 
             this.pictureBox3.Image = global::SYSTEM_INVENTARIO_MAGENTA_DIGITAL.Properties.Resources.Captura_de_pantalla_2023_04_25_020420;
-            this.pictureBox3.Location = new System.Drawing.Point(578, 269);
+            this.pictureBox3.Location = new System.Drawing.Point(233, 302);
             this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(133, 44);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox3.Size = new System.Drawing.Size(154, 44);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox3.TabIndex = 14;
             this.pictureBox3.TabStop = false;
             // 
             // pictureBox2
             // 
             this.pictureBox2.Image = global::SYSTEM_INVENTARIO_MAGENTA_DIGITAL.Properties.Resources.Captura_de_pantalla_2023_04_25_020420;
-            this.pictureBox2.Location = new System.Drawing.Point(365, 269);
+            this.pictureBox2.Location = new System.Drawing.Point(61, 302);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(133, 44);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.Size = new System.Drawing.Size(154, 44);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox2.TabIndex = 11;
             this.pictureBox2.TabStop = false;
             // 
             // pictureBox1
             // 
             this.pictureBox1.Image = global::SYSTEM_INVENTARIO_MAGENTA_DIGITAL.Properties.Resources.Captura_de_pantalla_2023_04_25_020316;
-            this.pictureBox1.Location = new System.Drawing.Point(59, 271);
+            this.pictureBox1.Location = new System.Drawing.Point(59, 215);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(262, 44);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 10;
             this.pictureBox1.TabStop = false;
             // 
@@ -319,11 +324,34 @@
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
             // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.id_material,
+            this.nom_material});
+            this.dataGridView1.Location = new System.Drawing.Point(621, 229);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(386, 318);
+            this.dataGridView1.TabIndex = 26;
+            // 
+            // id_material
+            // 
+            this.id_material.HeaderText = "ID";
+            this.id_material.Name = "id_material";
+            // 
+            // nom_material
+            // 
+            this.nom_material.HeaderText = "MATERIAL";
+            this.nom_material.Name = "nom_material";
+            this.nom_material.Width = 300;
+            // 
             // REGISTRARMATERIAL
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1050, 650);
+            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.panel_barratitulo);
             this.Controls.Add(this.txt_nombre);
             this.Controls.Add(this.rich_Desc);
@@ -356,6 +384,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -387,5 +416,8 @@
         private System.Windows.Forms.PictureBox iconominimizar2;
         private System.Windows.Forms.PictureBox iconocerrar2;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn id_material;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nom_material;
     }
 }
