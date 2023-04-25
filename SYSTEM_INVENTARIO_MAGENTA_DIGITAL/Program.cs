@@ -16,7 +16,7 @@ namespace SYSTEM_INVENTARIO_MAGENTA_DIGITAL
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new INGRESO());
+            Application.Run(new INGRESOUSUARIO());
         }
     }
 }
