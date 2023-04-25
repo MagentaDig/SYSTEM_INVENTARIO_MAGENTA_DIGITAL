@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Runtime.InteropServices;
 
 namespace SYSTEM_INVENTARIO_MAGENTA_DIGITAL
 {
@@ -18,6 +19,82 @@ namespace SYSTEM_INVENTARIO_MAGENTA_DIGITAL
         {
             InitializeComponent();
             this.idCateg = id;
+        }
+
+        [DllImport("User32.DLL", EntryPoint = "ReleaseCapture")]
+        private extern static void ReleaseCapture();
+        [DllImport("User32.DLL", EntryPoint = "SendMessage")]
+        private extern static void SendMessage(System.IntPtr hwnd, int wmsg, int wparam, int lparam);
+
+        private void btnslide_Click(object sender, EventArgs e)
+        {
+            if (panelmenuvertical.Width == 250)
+            {
+                panelmenuvertical.Width = 70;
+            }
+            else
+                panelmenuvertical.Width = 250;
+        }
+
+        private void iconocerrar_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void iconomaximizar_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Maximized;
+            iconorestaurar.Visible = true;
+            iconomaximizar.Visible = false;
+        }
+
+        private void iconorestaurar_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Normal;
+            iconorestaurar.Visible = false;
+            iconominimizar.Visible = true;
+        }
+
+        private void iconominimizar_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void panel_barratitulo_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void panel_barratitulo_MouseDown(object sender, MouseEventArgs e)
+        {
+            ReleaseCapture();
+            SendMessage(this.Handle, 0x112, 0xf012, 0);
+
+            
+        }
+
+        //private void AbrirFormInPanel(object FormHijo) 
+        //{
+           // if (this.panelContenedor.Controls.Count > 0)
+             //   this.panelContenedor.Controls.RemoveAt(0);
+            //Form fh = FormHijo as Form;
+            //fh.TopLevel = false;
+            //fh.Dock = DockStyle.Fill;
+            //this.panelContenedor.Controls.Add(fh);
+            //this.panelContenedor.Tag = fh;
+            //fh.Show();
+        //}
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            REGISTRARMATERIAL regMaterial = new REGISTRARMATERIAL(this.idCateg);
+            regMaterial.Show();
+        }
+
+        private void btn_buscar_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }

@@ -32,7 +32,9 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(INGRESOUSUARIO));
             this.lbl_categoria = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.btn_ingresar = new System.Windows.Forms.Button();
+            this.txt_usuario = new System.Windows.Forms.TextBox();
+            this.txt_contraseña = new System.Windows.Forms.TextBox();
+            this.btn_ingresa = new System.Windows.Forms.Button();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
@@ -65,6 +67,28 @@
             this.label1.TabIndex = 7;
             this.label1.Text = "CLAVE DE ACCESO:";
             // 
+            // txt_usuario
+            // 
+            this.txt_usuario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(72)))), ((int)(((byte)(170)))));
+            this.txt_usuario.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txt_usuario.ForeColor = System.Drawing.SystemColors.Window;
+            this.txt_usuario.Location = new System.Drawing.Point(354, 107);
+            this.txt_usuario.Name = "txt_usuario";
+            this.txt_usuario.Size = new System.Drawing.Size(214, 13);
+            this.txt_usuario.TabIndex = 12;
+            this.txt_usuario.TextChanged += new System.EventHandler(this.txt_usuario_TextChanged);
+            // 
+            // txt_contraseña
+            // 
+            this.txt_contraseña.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(72)))), ((int)(((byte)(170)))));
+            this.txt_contraseña.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txt_contraseña.ForeColor = System.Drawing.SystemColors.Window;
+            this.txt_contraseña.Location = new System.Drawing.Point(354, 236);
+            this.txt_contraseña.Name = "txt_contraseña";
+            this.txt_contraseña.Size = new System.Drawing.Size(214, 13);
+            this.txt_contraseña.TabIndex = 13;
+            this.txt_contraseña.TextChanged += new System.EventHandler(this.txt_contraseña_TextChanged);
+            // 
             // btn_cerrar
             // 
             btn_cerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -76,16 +100,17 @@
             btn_cerrar.UseVisualStyleBackColor = true;
             btn_cerrar.Click += new System.EventHandler(this.btn_cerrar_Click);
             // 
-            // btn_ingresar
+            // btn_ingresa
             // 
-            this.btn_ingresar.FlatAppearance.BorderSize = 0;
-            this.btn_ingresar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_ingresar.Image = global::SYSTEM_INVENTARIO_MAGENTA_DIGITAL.Properties.Resources.Captura_de_pantalla_2023_04_18_142657;
-            this.btn_ingresar.Location = new System.Drawing.Point(405, 284);
-            this.btn_ingresar.Name = "btn_ingresar";
-            this.btn_ingresar.Size = new System.Drawing.Size(114, 47);
-            this.btn_ingresar.TabIndex = 10;
-            this.btn_ingresar.UseVisualStyleBackColor = true;
+            this.btn_ingresa.FlatAppearance.BorderSize = 0;
+            this.btn_ingresa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_ingresa.Image = global::SYSTEM_INVENTARIO_MAGENTA_DIGITAL.Properties.Resources.Captura_de_pantalla_2023_04_18_142657;
+            this.btn_ingresa.Location = new System.Drawing.Point(405, 284);
+            this.btn_ingresa.Name = "btn_ingresa";
+            this.btn_ingresa.Size = new System.Drawing.Size(114, 47);
+            this.btn_ingresa.TabIndex = 10;
+            this.btn_ingresa.UseVisualStyleBackColor = true;
+            this.btn_ingresa.Click += new System.EventHandler(this.btn_ingresar_Click);
             // 
             // pictureBox3
             // 
@@ -123,8 +148,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.ClientSize = new System.Drawing.Size(714, 343);
+            this.Controls.Add(this.txt_contraseña);
+            this.Controls.Add(this.txt_usuario);
             this.Controls.Add(btn_cerrar);
-            this.Controls.Add(this.btn_ingresar);
+            this.Controls.Add(this.btn_ingresa);
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label1);
@@ -147,6 +174,8 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox3;
-        private System.Windows.Forms.Button btn_ingresar;
+        private System.Windows.Forms.Button btn_ingresa;
+        private System.Windows.Forms.TextBox txt_usuario;
+        private System.Windows.Forms.TextBox txt_contraseña;
     }
 }
