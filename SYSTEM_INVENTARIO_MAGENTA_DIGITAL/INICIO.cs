@@ -72,5 +72,29 @@ namespace SYSTEM_INVENTARIO_MAGENTA_DIGITAL
 
             
         }
+
+        //private void AbrirFormInPanel(object FormHijo) 
+        //{
+           // if (this.panelContenedor.Controls.Count > 0)
+             //   this.panelContenedor.Controls.RemoveAt(0);
+            //Form fh = FormHijo as Form;
+            //fh.TopLevel = false;
+            //fh.Dock = DockStyle.Fill;
+            //this.panelContenedor.Controls.Add(fh);
+            //this.panelContenedor.Tag = fh;
+            //fh.Show();
+        //}
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            REGISTRARMATERIAL regMaterial = new REGISTRARMATERIAL(this.idCateg);
+            regMaterial.Show();
+        }
+
+        private void btn_buscar_Click(object sender, EventArgs e)
+        {
+            
+        }
     }
 }

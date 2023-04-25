@@ -75,6 +75,12 @@
     <Compile Include="MODELOS\Modelo_Categoria.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="REGISTRARMATERIAL.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="REGISTRARMATERIAL.Designer.cs">
+      <DependentUpon>REGISTRARMATERIAL.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="INGRESO.resx">
       <DependentUpon>INGRESO.cs</DependentUpon>
     </EmbeddedResource>
@@ -94,6 +100,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="REGISTRARMATERIAL.resx">
+      <DependentUpon>REGISTRARMATERIAL.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -170,6 +179,21 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\eliminar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Captura de pantalla 2023-04-25 020316.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Captura de pantalla 2023-04-25 020420.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Captura de pantalla 2023-04-25 021052.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Captura de pantalla 2023-04-25 021242.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Captura de pantalla 2023-04-25 030653.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
