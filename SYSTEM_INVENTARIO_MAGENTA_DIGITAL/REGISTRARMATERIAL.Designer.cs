@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -39,7 +40,7 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.txt_cantidad = new System.Windows.Forms.TextBox();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.rich_Desc = new System.Windows.Forms.RichTextBox();
             this.txt_nombre = new System.Windows.Forms.TextBox();
             this.panel_barratitulo = new System.Windows.Forms.Panel();
             this.iconoregresarmenu = new System.Windows.Forms.PictureBox();
@@ -51,6 +52,7 @@
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.panel_barratitulo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconoregresarmenu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconominimizar2)).BeginInit();
@@ -113,7 +115,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.Black;
-            this.label4.Location = new System.Drawing.Point(443, 238);
+            this.label4.Location = new System.Drawing.Point(364, 238);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(118, 30);
             this.label4.TabIndex = 12;
@@ -124,7 +126,7 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.Black;
-            this.label5.Location = new System.Drawing.Point(709, 238);
+            this.label5.Location = new System.Drawing.Point(579, 238);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(100, 30);
             this.label5.TabIndex = 13;
@@ -135,7 +137,7 @@
             this.txt_tamaño.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(166)))), ((int)(((byte)(166)))));
             this.txt_tamaño.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txt_tamaño.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_tamaño.Location = new System.Drawing.Point(477, 293);
+            this.txt_tamaño.Location = new System.Drawing.Point(382, 281);
             this.txt_tamaño.Name = "txt_tamaño";
             this.txt_tamaño.Size = new System.Drawing.Size(100, 15);
             this.txt_tamaño.TabIndex = 15;
@@ -145,7 +147,7 @@
             this.txt_metros.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(166)))), ((int)(((byte)(166)))));
             this.txt_metros.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txt_metros.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_metros.Location = new System.Drawing.Point(742, 293);
+            this.txt_metros.Location = new System.Drawing.Point(594, 281);
             this.txt_metros.Name = "txt_metros";
             this.txt_metros.Size = new System.Drawing.Size(100, 15);
             this.txt_metros.TabIndex = 16;
@@ -155,7 +157,7 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.Black;
-            this.label6.Location = new System.Drawing.Point(67, 369);
+            this.label6.Location = new System.Drawing.Point(67, 360);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(162, 30);
             this.label6.TabIndex = 17;
@@ -166,7 +168,7 @@
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.Black;
-            this.label7.Location = new System.Drawing.Point(709, 369);
+            this.label7.Location = new System.Drawing.Point(758, 238);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(133, 30);
             this.label7.TabIndex = 19;
@@ -177,27 +179,27 @@
             this.txt_cantidad.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(166)))), ((int)(((byte)(166)))));
             this.txt_cantidad.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txt_cantidad.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_cantidad.Location = new System.Drawing.Point(742, 431);
+            this.txt_cantidad.Location = new System.Drawing.Point(774, 281);
             this.txt_cantidad.Name = "txt_cantidad";
             this.txt_cantidad.Size = new System.Drawing.Size(100, 15);
             this.txt_cantidad.TabIndex = 22;
             // 
-            // richTextBox1
+            // rich_Desc
             // 
-            this.richTextBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(166)))), ((int)(((byte)(166)))));
-            this.richTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.richTextBox1.Location = new System.Drawing.Point(95, 442);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(448, 86);
-            this.richTextBox1.TabIndex = 23;
-            this.richTextBox1.Text = "";
+            this.rich_Desc.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(166)))), ((int)(((byte)(166)))));
+            this.rich_Desc.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.rich_Desc.Location = new System.Drawing.Point(95, 442);
+            this.rich_Desc.Name = "rich_Desc";
+            this.rich_Desc.Size = new System.Drawing.Size(448, 86);
+            this.rich_Desc.TabIndex = 23;
+            this.rich_Desc.Text = "";
             // 
             // txt_nombre
             // 
             this.txt_nombre.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(166)))), ((int)(((byte)(166)))));
             this.txt_nombre.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txt_nombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_nombre.Location = new System.Drawing.Point(95, 293);
+            this.txt_nombre.Location = new System.Drawing.Point(82, 285);
             this.txt_nombre.Name = "txt_nombre";
             this.txt_nombre.Size = new System.Drawing.Size(210, 15);
             this.txt_nombre.TabIndex = 24;
@@ -255,16 +257,17 @@
             this.btn_guardarmat.BackgroundImage = global::SYSTEM_INVENTARIO_MAGENTA_DIGITAL.Properties.Resources.Captura_de_pantalla_2023_04_25_021242;
             this.btn_guardarmat.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btn_guardarmat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_guardarmat.Location = new System.Drawing.Point(774, 569);
+            this.btn_guardarmat.Location = new System.Drawing.Point(594, 508);
             this.btn_guardarmat.Name = "btn_guardarmat";
             this.btn_guardarmat.Size = new System.Drawing.Size(122, 51);
             this.btn_guardarmat.TabIndex = 21;
             this.btn_guardarmat.UseVisualStyleBackColor = true;
+            this.btn_guardarmat.Click += new System.EventHandler(this.btn_guardarmat_Click);
             // 
             // pictureBox5
             // 
             this.pictureBox5.Image = global::SYSTEM_INVENTARIO_MAGENTA_DIGITAL.Properties.Resources.Captura_de_pantalla_2023_04_25_020420;
-            this.pictureBox5.Location = new System.Drawing.Point(726, 420);
+            this.pictureBox5.Location = new System.Drawing.Point(758, 270);
             this.pictureBox5.Name = "pictureBox5";
             this.pictureBox5.Size = new System.Drawing.Size(133, 44);
             this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -274,7 +277,7 @@
             // pictureBox4
             // 
             this.pictureBox4.Image = global::SYSTEM_INVENTARIO_MAGENTA_DIGITAL.Properties.Resources.Captura_de_pantalla_2023_04_25_021052;
-            this.pictureBox4.Location = new System.Drawing.Point(72, 402);
+            this.pictureBox4.Location = new System.Drawing.Point(59, 393);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(505, 166);
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -284,7 +287,7 @@
             // pictureBox3
             // 
             this.pictureBox3.Image = global::SYSTEM_INVENTARIO_MAGENTA_DIGITAL.Properties.Resources.Captura_de_pantalla_2023_04_25_020420;
-            this.pictureBox3.Location = new System.Drawing.Point(726, 281);
+            this.pictureBox3.Location = new System.Drawing.Point(578, 269);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(133, 44);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -294,7 +297,7 @@
             // pictureBox2
             // 
             this.pictureBox2.Image = global::SYSTEM_INVENTARIO_MAGENTA_DIGITAL.Properties.Resources.Captura_de_pantalla_2023_04_25_020420;
-            this.pictureBox2.Location = new System.Drawing.Point(460, 281);
+            this.pictureBox2.Location = new System.Drawing.Point(365, 269);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(133, 44);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -304,12 +307,17 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = global::SYSTEM_INVENTARIO_MAGENTA_DIGITAL.Properties.Resources.Captura_de_pantalla_2023_04_25_020316;
-            this.pictureBox1.Location = new System.Drawing.Point(72, 281);
+            this.pictureBox1.Location = new System.Drawing.Point(59, 271);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(262, 44);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 10;
             this.pictureBox1.TabStop = false;
+            // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
             // 
             // REGISTRARMATERIAL
             // 
@@ -318,7 +326,7 @@
             this.ClientSize = new System.Drawing.Size(1050, 650);
             this.Controls.Add(this.panel_barratitulo);
             this.Controls.Add(this.txt_nombre);
-            this.Controls.Add(this.richTextBox1);
+            this.Controls.Add(this.rich_Desc);
             this.Controls.Add(this.txt_cantidad);
             this.Controls.Add(this.btn_guardarmat);
             this.Controls.Add(this.pictureBox5);
@@ -372,11 +380,12 @@
         private System.Windows.Forms.PictureBox pictureBox5;
         private System.Windows.Forms.Button btn_guardarmat;
         private System.Windows.Forms.TextBox txt_cantidad;
-        private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.RichTextBox rich_Desc;
         private System.Windows.Forms.TextBox txt_nombre;
         private System.Windows.Forms.Panel panel_barratitulo;
         private System.Windows.Forms.PictureBox iconoregresarmenu;
         private System.Windows.Forms.PictureBox iconominimizar2;
         private System.Windows.Forms.PictureBox iconocerrar2;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
     }
 }
