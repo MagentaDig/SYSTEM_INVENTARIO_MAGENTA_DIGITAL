@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using System.Runtime.InteropServices;
 using SYSTEM_INVENTARIO_MAGENTA_DIGITAL.DATOS;
 using SYSTEM_INVENTARIO_MAGENTA_DIGITAL.MODELOS;
+using System.Data.SqlClient;
 
 namespace SYSTEM_INVENTARIO_MAGENTA_DIGITAL
 {
@@ -20,6 +21,8 @@ namespace SYSTEM_INVENTARIO_MAGENTA_DIGITAL
         {
             InitializeComponent();
             this.idCateg = idCateg;
+
+            MostrarDataGrid();
         }
 
         [DllImport("User32.DLL", EntryPoint = "ReleaseCapture")]
@@ -60,6 +63,22 @@ namespace SYSTEM_INVENTARIO_MAGENTA_DIGITAL
 
             MessageBox.Show("El registro se ah agregado correctamente");
 
+        }
+
+
+        public void MostrarDataGrid()
+        {
+            DatosMateriales datosMateriales = new DatosMateriales();
+            SqlDataReader Materiales = datosMateriales.MostrarMateriales(this.idCateg);
+
+
+            int index;
+            while (Materiales.Read())
+            {
+                index = dataGrid_AgrMaterial.Rows.Add();
+                dataGrid_AgrMaterial.Rows[index].Cells[0].Value = Materiales["Id_Materia"];
+                dataGrid_AgrMaterial.Rows[index].Cells[0].Value = Materiales["Nombre"];
+            }
         }
     }
 }
