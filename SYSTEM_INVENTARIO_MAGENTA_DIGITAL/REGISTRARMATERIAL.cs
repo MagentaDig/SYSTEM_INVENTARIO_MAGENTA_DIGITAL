@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
+using SYSTEM_INVENTARIO_MAGENTA_DIGITAL.DATOS;
+using SYSTEM_INVENTARIO_MAGENTA_DIGITAL.MODELOS;
 
 namespace SYSTEM_INVENTARIO_MAGENTA_DIGITAL
 {
@@ -25,7 +27,7 @@ namespace SYSTEM_INVENTARIO_MAGENTA_DIGITAL
         [DllImport("User32.DLL", EntryPoint = "SendMessage")]
         private extern static void SendMessage(System.IntPtr hwnd, int wmsg, int wparam, int lparam);
 
-        /
+        
         private void iconoregresarmenu_Click(object sender, EventArgs e)
         {
             this.Hide();
@@ -41,6 +43,23 @@ namespace SYSTEM_INVENTARIO_MAGENTA_DIGITAL
         private void iconominimizar2_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void btn_guardarmat_Click(object sender, EventArgs e)
+        {
+            MMateriales Material = new MMateriales();
+            Material.Nombre = txt_nombre.Text;
+            Material.Tamaño = txt_tamaño.Text;
+            Material.Metros = decimal.Parse( txt_metros.Text);
+            Material.Cantidad = int.Parse(txt_cantidad.Text);
+            Material.Descripcion = rich_Desc.Text;
+            Material.Categoria = this.idCateg;
+
+            DatosMateriales funcionAgr = new DatosMateriales();
+            funcionAgr.AgregarMaterial(Material);
+
+            MessageBox.Show("El registro se ah agregado correctamente");
+
         }
     }
 }
