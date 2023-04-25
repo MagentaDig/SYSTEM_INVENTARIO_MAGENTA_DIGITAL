@@ -49,6 +49,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ACCESO\Login.cs" />
     <Compile Include="DATOS\DatosCategoria.cs" />
     <Compile Include="DB_CONEXION\Conexion_DB.cs" />
     <Compile Include="INGRESO.cs">
@@ -122,6 +123,51 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Captura de pantalla 2023-04-18 143816.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\barratitulo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logopequeño.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Captura de pantalla 2023-04-24 003343.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Captura de pantalla 2023-04-24 003800.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Captura de pantalla 2023-04-24 003703.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\nuevologo_op1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\nuevologo_op2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tacha.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\minimizar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\restaurar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\maximizar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\buscar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\registrar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\modificar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\eliminar.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
