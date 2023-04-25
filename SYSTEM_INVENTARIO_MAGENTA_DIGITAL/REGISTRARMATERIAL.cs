@@ -25,7 +25,7 @@ namespace SYSTEM_INVENTARIO_MAGENTA_DIGITAL
         [DllImport("User32.DLL", EntryPoint = "SendMessage")]
         private extern static void SendMessage(System.IntPtr hwnd, int wmsg, int wparam, int lparam);
 
-
+        /
         private void iconoregresarmenu_Click(object sender, EventArgs e)
         {
             this.Hide();
