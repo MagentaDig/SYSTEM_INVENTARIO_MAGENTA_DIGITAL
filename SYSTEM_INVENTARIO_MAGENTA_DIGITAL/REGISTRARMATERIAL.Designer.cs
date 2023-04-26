@@ -219,6 +219,7 @@
             this.panel_barratitulo.Name = "panel_barratitulo";
             this.panel_barratitulo.Size = new System.Drawing.Size(1050, 50);
             this.panel_barratitulo.TabIndex = 25;
+            this.panel_barratitulo.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel_barratitulo_MouseDown);
             // 
             // iconoregresarmenu
             // 

@@ -80,5 +80,11 @@ namespace SYSTEM_INVENTARIO_MAGENTA_DIGITAL
                 dataGrid_AgrMaterial.Rows[index].Cells[0].Value = Materiales["Nombre"];
             }
         }
+
+        private void panel_barratitulo_MouseDown(object sender, MouseEventArgs e)
+        {
+            ReleaseCapture();
+            SendMessage(this.Handle, 0x112, 0xf012, 0);
+        }
     }
 }
