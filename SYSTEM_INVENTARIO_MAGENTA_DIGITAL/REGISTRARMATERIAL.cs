@@ -61,5 +61,11 @@ namespace SYSTEM_INVENTARIO_MAGENTA_DIGITAL
             MessageBox.Show("El registro se ah agregado correctamente");
 
         }
+
+        private void panel_barratitulo_MouseDown(object sender, MouseEventArgs e)
+        {
+            ReleaseCapture();
+            SendMessage(this.Handle, 0x112, 0xf012, 0);
+        }
     }
 }
