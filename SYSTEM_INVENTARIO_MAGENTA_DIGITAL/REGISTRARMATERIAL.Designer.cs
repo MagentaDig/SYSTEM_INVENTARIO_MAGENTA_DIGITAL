@@ -53,7 +53,7 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dataGrid_AgrMaterial = new System.Windows.Forms.DataGridView();
             this.id_material = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nom_material = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel_barratitulo.SuspendLayout();
@@ -65,7 +65,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGrid_AgrMaterial)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -325,16 +325,16 @@
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
             // 
-            // dataGridView1
+            // dataGrid_AgrMaterial
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGrid_AgrMaterial.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGrid_AgrMaterial.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.id_material,
             this.nom_material});
-            this.dataGridView1.Location = new System.Drawing.Point(621, 229);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(386, 318);
-            this.dataGridView1.TabIndex = 26;
+            this.dataGrid_AgrMaterial.Location = new System.Drawing.Point(621, 229);
+            this.dataGrid_AgrMaterial.Name = "dataGrid_AgrMaterial";
+            this.dataGrid_AgrMaterial.Size = new System.Drawing.Size(386, 318);
+            this.dataGrid_AgrMaterial.TabIndex = 26;
             // 
             // id_material
             // 
@@ -352,7 +352,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1050, 650);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dataGrid_AgrMaterial);
             this.Controls.Add(this.panel_barratitulo);
             this.Controls.Add(this.txt_nombre);
             this.Controls.Add(this.rich_Desc);
@@ -385,7 +385,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGrid_AgrMaterial)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -417,7 +417,7 @@
         private System.Windows.Forms.PictureBox iconominimizar2;
         private System.Windows.Forms.PictureBox iconocerrar2;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dataGrid_AgrMaterial;
         private System.Windows.Forms.DataGridViewTextBoxColumn id_material;
         private System.Windows.Forms.DataGridViewTextBoxColumn nom_material;
     }
