@@ -33,20 +33,21 @@
             this.panelmenuvertical = new System.Windows.Forms.Panel();
             this.panel_barratitulo = new System.Windows.Forms.Panel();
             this.panelContenedor = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.label1 = new System.Windows.Forms.Label();
             this.iconomaximizar = new System.Windows.Forms.PictureBox();
             this.iconorestaurar = new System.Windows.Forms.PictureBox();
             this.iconominimizar = new System.Windows.Forms.PictureBox();
             this.iconocerrar = new System.Windows.Forms.PictureBox();
             this.btnslide = new System.Windows.Forms.PictureBox();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btn_Eliminar = new System.Windows.Forms.Button();
+            this.btm_Modificar = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.btn_buscar = new System.Windows.Forms.Button();
             this.img_logochico = new System.Windows.Forms.PictureBox();
+            this.btn_Pedido = new System.Windows.Forms.Button();
             this.panelmenuvertical.SuspendLayout();
             this.panel_barratitulo.SuspendLayout();
             this.panelContenedor.SuspendLayout();
@@ -84,8 +85,9 @@
             // panelmenuvertical
             // 
             this.panelmenuvertical.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(122)))), ((int)(((byte)(204)))));
-            this.panelmenuvertical.Controls.Add(this.button3);
-            this.panelmenuvertical.Controls.Add(this.button2);
+            this.panelmenuvertical.Controls.Add(this.btn_Pedido);
+            this.panelmenuvertical.Controls.Add(this.btn_Eliminar);
+            this.panelmenuvertical.Controls.Add(this.btm_Modificar);
             this.panelmenuvertical.Controls.Add(this.button1);
             this.panelmenuvertical.Controls.Add(this.btn_buscar);
             this.panelmenuvertical.Controls.Add(this.img_logochico);
@@ -127,24 +129,17 @@
             this.panelContenedor.Size = new System.Drawing.Size(1050, 650);
             this.panelContenedor.TabIndex = 0;
             // 
-            // label1
+            // label3
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(46, 81);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(410, 77);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "BIENVENIDO";
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(140, 266);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(760, 372);
-            this.dataGridView1.TabIndex = 4;
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.Transparent;
+            this.label3.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.label3.Location = new System.Drawing.Point(519, 132);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(56, 18);
+            this.label3.TabIndex = 6;
+            this.label3.Text = "Digital";
             // 
             // label2
             // 
@@ -157,17 +152,24 @@
             this.label2.TabIndex = 5;
             this.label2.Text = "Magenta";
             // 
-            // label3
+            // dataGridView1
             // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label3.Location = new System.Drawing.Point(519, 132);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(56, 18);
-            this.label3.TabIndex = 6;
-            this.label3.Text = "Digital";
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(140, 266);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(760, 372);
+            this.dataGridView1.TabIndex = 4;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.Black;
+            this.label1.Location = new System.Drawing.Point(46, 81);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(410, 77);
+            this.label1.TabIndex = 3;
+            this.label1.Text = "BIENVENIDO";
             // 
             // iconomaximizar
             // 
@@ -229,37 +231,37 @@
             this.btnslide.TabStop = false;
             this.btnslide.Click += new System.EventHandler(this.btnslide_Click);
             // 
-            // button3
+            // btn_Eliminar
             // 
-            this.button3.FlatAppearance.BorderSize = 0;
-            this.button3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.ForeColor = System.Drawing.Color.White;
-            this.button3.Image = global::SYSTEM_INVENTARIO_MAGENTA_DIGITAL.Properties.Resources.eliminar;
-            this.button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button3.Location = new System.Drawing.Point(0, 349);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(250, 40);
-            this.button3.TabIndex = 7;
-            this.button3.Text = "Eliminar";
-            this.button3.UseVisualStyleBackColor = true;
+            this.btn_Eliminar.FlatAppearance.BorderSize = 0;
+            this.btn_Eliminar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
+            this.btn_Eliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Eliminar.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Eliminar.ForeColor = System.Drawing.Color.White;
+            this.btn_Eliminar.Image = global::SYSTEM_INVENTARIO_MAGENTA_DIGITAL.Properties.Resources.eliminar;
+            this.btn_Eliminar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_Eliminar.Location = new System.Drawing.Point(0, 349);
+            this.btn_Eliminar.Name = "btn_Eliminar";
+            this.btn_Eliminar.Size = new System.Drawing.Size(250, 40);
+            this.btn_Eliminar.TabIndex = 7;
+            this.btn_Eliminar.Text = "Eliminar";
+            this.btn_Eliminar.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // btm_Modificar
             // 
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Image = global::SYSTEM_INVENTARIO_MAGENTA_DIGITAL.Properties.Resources.modificar;
-            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.Location = new System.Drawing.Point(0, 293);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(250, 40);
-            this.button2.TabIndex = 6;
-            this.button2.Text = "Modificar";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btm_Modificar.FlatAppearance.BorderSize = 0;
+            this.btm_Modificar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
+            this.btm_Modificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btm_Modificar.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btm_Modificar.ForeColor = System.Drawing.Color.White;
+            this.btm_Modificar.Image = global::SYSTEM_INVENTARIO_MAGENTA_DIGITAL.Properties.Resources.modificar;
+            this.btm_Modificar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btm_Modificar.Location = new System.Drawing.Point(0, 293);
+            this.btm_Modificar.Name = "btm_Modificar";
+            this.btm_Modificar.Size = new System.Drawing.Size(250, 40);
+            this.btm_Modificar.TabIndex = 6;
+            this.btm_Modificar.Text = "Modificar";
+            this.btm_Modificar.UseVisualStyleBackColor = true;
             // 
             // button1
             // 
@@ -298,12 +300,28 @@
             // img_logochico
             // 
             this.img_logochico.Image = global::SYSTEM_INVENTARIO_MAGENTA_DIGITAL.Properties.Resources.nuevologo_op2;
-            this.img_logochico.Location = new System.Drawing.Point(0, 26);
+            this.img_logochico.Location = new System.Drawing.Point(12, 25);
             this.img_logochico.Name = "img_logochico";
             this.img_logochico.Size = new System.Drawing.Size(210, 52);
             this.img_logochico.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.img_logochico.TabIndex = 0;
             this.img_logochico.TabStop = false;
+            // 
+            // btn_Pedido
+            // 
+            this.btn_Pedido.FlatAppearance.BorderSize = 0;
+            this.btn_Pedido.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
+            this.btn_Pedido.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Pedido.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Pedido.ForeColor = System.Drawing.Color.White;
+            this.btn_Pedido.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_Pedido.Location = new System.Drawing.Point(0, 404);
+            this.btn_Pedido.Name = "btn_Pedido";
+            this.btn_Pedido.Size = new System.Drawing.Size(250, 40);
+            this.btn_Pedido.TabIndex = 8;
+            this.btn_Pedido.Text = "Pedido";
+            this.btn_Pedido.UseVisualStyleBackColor = true;
+            this.btn_Pedido.Click += new System.EventHandler(this.btn_Pedido_Click);
             // 
             // INICIO
             // 
@@ -348,11 +366,12 @@
         private System.Windows.Forms.PictureBox iconorestaurar;
         private System.Windows.Forms.PictureBox iconomaximizar;
         private System.Windows.Forms.Button btn_buscar;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btn_Eliminar;
+        private System.Windows.Forms.Button btm_Modificar;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Button btn_Pedido;
     }
 }

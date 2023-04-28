@@ -77,7 +77,7 @@ namespace SYSTEM_INVENTARIO_MAGENTA_DIGITAL
             {
                 index = dataGrid_AgrMaterial.Rows.Add();
                 dataGrid_AgrMaterial.Rows[index].Cells[0].Value = Materiales["Id_Materia"];
-                dataGrid_AgrMaterial.Rows[index].Cells[0].Value = Materiales["Nombre"];
+                dataGrid_AgrMaterial.Rows[index].Cells[1].Value = Materiales["Nombre"];
             }
         }
 
