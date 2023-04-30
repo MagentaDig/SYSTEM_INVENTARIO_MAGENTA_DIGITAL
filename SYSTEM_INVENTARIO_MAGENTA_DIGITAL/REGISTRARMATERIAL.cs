@@ -51,18 +51,38 @@ namespace SYSTEM_INVENTARIO_MAGENTA_DIGITAL
         private void btn_guardarmat_Click(object sender, EventArgs e)
         {
             MMateriales Material = new MMateriales();
+            MStock Stock = new MStock();
+            DatosMateriales funcionAgr = new DatosMateriales();
+            DatosStock funcionStock = new DatosStock();
+
             Material.Nombre = txt_nombre.Text;
             Material.Tamaño = txt_tamaño.Text;
             Material.Metros = decimal.Parse( txt_metros.Text);
-            Material.Cantidad = int.Parse(txt_cantidad.Text);
             Material.Descripcion = rich_Desc.Text;
             Material.Categoria = this.idCateg;
 
-            DatosMateriales funcionAgr = new DatosMateriales();
-            funcionAgr.AgregarMaterial(Material);
+            SqlDataReader MatAgr = funcionAgr.AgregarMaterial(Material);
+            int idMateial = getIdMaterial(MatAgr);
 
+
+            Stock.Cantidad = int.Parse(txt_cantidad.Text);
+            Stock.FechaEntrada = DateTime.Now;
+            Stock.Material = idMateial;
+
+            funcionStock.AgregarStock(Stock);
+            
             MessageBox.Show("El registro se ah agregado correctamente");
 
+        }
+
+        public int getIdMaterial(SqlDataReader Material)
+        {
+            int idMaterial = 0;
+            if (Material.Read())
+            {
+                idMaterial = int.Parse(Material[0].ToString());
+            }
+            return idMaterial;
         }
 
 

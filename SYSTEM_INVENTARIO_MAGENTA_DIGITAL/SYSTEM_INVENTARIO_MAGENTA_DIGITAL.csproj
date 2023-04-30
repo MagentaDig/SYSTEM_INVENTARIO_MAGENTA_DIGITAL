@@ -53,6 +53,7 @@
     <Compile Include="ACCESO\Login.cs" />
     <Compile Include="DATOS\DatosCategoria.cs" />
     <Compile Include="DATOS\DatosMateriales.cs" />
+    <Compile Include="DATOS\DatosStock.cs" />
     <Compile Include="DB_CONEXION\Conexion_DB.cs" />
     <Compile Include="INGRESO.cs">
       <SubType>Form</SubType>
@@ -74,6 +75,7 @@
     </Compile>
     <Compile Include="MODELOS\MMaterial.cs" />
     <Compile Include="MODELOS\Modelo_Categoria.cs" />
+    <Compile Include="MODELOS\MStock.cs" />
     <Compile Include="PEDIDOS.cs">
       <SubType>Form</SubType>
     </Compile>

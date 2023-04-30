@@ -112,6 +112,7 @@
             this.btnAgrPedido.TabIndex = 8;
             this.btnAgrPedido.Text = "Agregar Pedido";
             this.btnAgrPedido.UseVisualStyleBackColor = true;
+            this.btnAgrPedido.Click += new System.EventHandler(this.btnAgrPedido_Click);
             // 
             // dataGrid_MaterialPed
             // 

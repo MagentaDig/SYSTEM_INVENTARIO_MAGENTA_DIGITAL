@@ -15,7 +15,7 @@ namespace SYSTEM_INVENTARIO_MAGENTA_DIGITAL.DATOS
         Conexion conn = new Conexion();
         SqlCommand cmd = new SqlCommand();
 
-        public void AgregarMaterial (MMateriales Material)
+        public SqlDataReader AgregarMaterial (MMateriales Material)
         {
             cmd.Connection = conn.AbrirConexion();
             cmd.CommandText = "SP_AGREGAR_MATERIAL";
@@ -26,9 +26,10 @@ namespace SYSTEM_INVENTARIO_MAGENTA_DIGITAL.DATOS
             cmd.Parameters.AddWithValue("@Nombre", Material.Nombre);
             cmd.Parameters.AddWithValue("@Tamaño", Material.Tamaño);
             cmd.Parameters.AddWithValue("@Metros", Material.Metros);
-            cmd.Parameters.AddWithValue("@Cantidad", Material.Cantidad);
 
-            cmd.ExecuteNonQuery();
+            SqlDataReader idMaterial = cmd.ExecuteReader();
+
+            return idMaterial;
         }
 
         public SqlDataReader MostrarMateriales (int Categoria)

@@ -15,8 +15,8 @@ namespace SYSTEM_INVENTARIO_MAGENTA_DIGITAL
 {
     public partial class PEDIDOS : Form
     {
-        
 
+        List<MMateriales> materialesAgr = new List<MMateriales>();
         public int idCateg;
         public PEDIDOS(int idCateg)
         {
@@ -63,6 +63,7 @@ namespace SYSTEM_INVENTARIO_MAGENTA_DIGITAL
             objMaterial.Nombre = cb_Materiales.Items[index].ToString();
             objMaterial.Cantidad = int.Parse(txt_Cantidad.Text);
             lstMateriales.Add(objMaterial);
+            materialesAgr.Add(objMaterial);
 
             foreach (MMateriales datoM in lstMateriales)
             {
@@ -71,6 +72,34 @@ namespace SYSTEM_INVENTARIO_MAGENTA_DIGITAL
                 dataGrid_MaterialPed.Rows[indexDt].Cells[1].Value = datoM.Cantidad;
             }
 
+        }
+
+        private List<MMateriales> idetificarMaterial()
+        {
+            DatosMateriales funcoinMateriales = new DatosMateriales();
+            SqlDataReader datosMat = funcoinMateriales.MostrarMateriales(this.idCateg);
+
+            MMateriales Material = new MMateriales();
+            List<MMateriales> idMaterial = new List<MMateriales>();
+
+            foreach (MMateriales mat in materialesAgr) 
+            {
+                foreach(dynamic dato in datosMat)
+                {
+                    if(mat.Nombre == datosMat["Nombre"])
+                    {
+                        Material.IdMaterial = int.Parse(datosMat["Id_Materia"].ToString());
+                        idMaterial.Add(Material);
+                    }
+                }
+                
+            }
+            return idMaterial;
+        }
+
+        private void btnAgrPedido_Click(object sender, EventArgs e)
+        {
+            idetificarMaterial();
         }
     }
 }
