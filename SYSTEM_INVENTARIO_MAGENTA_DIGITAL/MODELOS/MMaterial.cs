@@ -12,7 +12,6 @@ namespace SYSTEM_INVENTARIO_MAGENTA_DIGITAL.MODELOS
         public dynamic Nombre { get; set; }
         public dynamic Tamaño { get; set; }
         public decimal Metros { get; set; }
-        public int Cantidad { get; set; }
         public dynamic Descripcion { get; set; }
         public dynamic Categoria { get; set; }
     }

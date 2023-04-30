@@ -89,15 +89,15 @@ namespace SYSTEM_INVENTARIO_MAGENTA_DIGITAL
         public void MostrarDataGrid()
         {
             DatosMateriales datosMateriales = new DatosMateriales();
-            SqlDataReader Materiales = datosMateriales.MostrarMateriales(this.idCateg);
+            List<MMateriales> Materiales = datosMateriales.MostrarMateriales(this.idCateg);
 
 
             int index;
-            while (Materiales.Read())
+            foreach (MMateriales mat in Materiales)
             {
                 index = dataGrid_AgrMaterial.Rows.Add();
-                dataGrid_AgrMaterial.Rows[index].Cells[0].Value = Materiales["Id_Materia"];
-                dataGrid_AgrMaterial.Rows[index].Cells[1].Value = Materiales["Nombre"];
+                dataGrid_AgrMaterial.Rows[index].Cells[0].Value = mat.IdMaterial;
+                dataGrid_AgrMaterial.Rows[index].Cells[1].Value = mat.Nombre;
             }
         }
 

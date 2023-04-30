@@ -32,7 +32,7 @@ namespace SYSTEM_INVENTARIO_MAGENTA_DIGITAL.DATOS
             return idMaterial;
         }
 
-        public SqlDataReader MostrarMateriales (int Categoria)
+        public List<MMateriales> MostrarMateriales (int Categoria)
         {
             cmd.Connection = conn.AbrirConexion();
             cmd.CommandText = "SP_MOSTRAR_MATERIALES";
@@ -42,7 +42,24 @@ namespace SYSTEM_INVENTARIO_MAGENTA_DIGITAL.DATOS
 
             SqlDataReader datosMateriales = cmd.ExecuteReader();
 
-            return datosMateriales;
+            List<MMateriales> Materiales = new List<MMateriales>();
+
+            while (datosMateriales.Read())
+            {
+                MMateriales Material = new MMateriales();
+                Material.IdMaterial = (int)datosMateriales["Id_Materia"];
+                Material.Descripcion = (dynamic)datosMateriales["Descripcion"];
+                Material.Categoria = (int)datosMateriales["Id_Categ"];
+                Material.Nombre = (dynamic)datosMateriales["Nombre"];
+                Material.Tamaño = (dynamic)datosMateriales["Tamaño"];
+                Material.Metros = (dynamic)datosMateriales["Metros"];
+                Materiales.Add(Material);
+
+            }
+
+            return Materiales;
         }
+
+
     }
 }

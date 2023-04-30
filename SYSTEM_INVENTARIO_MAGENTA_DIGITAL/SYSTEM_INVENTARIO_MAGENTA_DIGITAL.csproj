@@ -74,7 +74,10 @@
       <DependentUpon>INICIO.cs</DependentUpon>
     </Compile>
     <Compile Include="MODELOS\MMaterial.cs" />
+    <Compile Include="MODELOS\MMaterialSelect.cs" />
     <Compile Include="MODELOS\Modelo_Categoria.cs" />
+    <Compile Include="MODELOS\MPedidos.cs" />
+    <Compile Include="MODELOS\MSalidas.cs" />
     <Compile Include="MODELOS\MStock.cs" />
     <Compile Include="PEDIDOS.cs">
       <SubType>Form</SubType>

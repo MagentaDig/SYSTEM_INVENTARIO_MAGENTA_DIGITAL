@@ -37,11 +37,11 @@ namespace SYSTEM_INVENTARIO_MAGENTA_DIGITAL
 
             DatosMateriales Materiales = new DatosMateriales();
 
-            SqlDataReader datosMat = Materiales.MostrarMateriales(this.idCateg);
+            List<MMateriales> datosMat = Materiales.MostrarMateriales(this.idCateg);
 
-            while (datosMat.Read())
+            foreach (MMateriales Mat in datosMat)
             {
-                cb_Materiales.Items.Add(datosMat["Nombre"]);
+                cb_Materiales.Items.Add(Mat.Nombre);
             }
         }
 
@@ -56,12 +56,13 @@ namespace SYSTEM_INVENTARIO_MAGENTA_DIGITAL
         {
             List<MMateriales> lstMateriales = new List<MMateriales>();
             MMateriales objMaterial = new MMateriales();
+            MSalidas objSalida = new MSalidas();
 
             int index = cb_Materiales.SelectedIndex, indexDt;
             
 
             objMaterial.Nombre = cb_Materiales.Items[index].ToString();
-            objMaterial.Cantidad = int.Parse(txt_Cantidad.Text);
+            objSalida.Cantidad = int.Parse(txt_Cantidad.Text);
             lstMateriales.Add(objMaterial);
             materialesAgr.Add(objMaterial);
 
@@ -69,7 +70,7 @@ namespace SYSTEM_INVENTARIO_MAGENTA_DIGITAL
             {
                 indexDt = dataGrid_MaterialPed.Rows.Add();
                 dataGrid_MaterialPed.Rows[indexDt].Cells[0].Value = datoM.Nombre;
-                dataGrid_MaterialPed.Rows[indexDt].Cells[1].Value = datoM.Cantidad;
+                dataGrid_MaterialPed.Rows[indexDt].Cells[1].Value = objSalida.Cantidad;
             }
 
         }
@@ -77,20 +78,22 @@ namespace SYSTEM_INVENTARIO_MAGENTA_DIGITAL
         private List<MMateriales> idetificarMaterial()
         {
             DatosMateriales funcoinMateriales = new DatosMateriales();
-            SqlDataReader datosMat = funcoinMateriales.MostrarMateriales(this.idCateg);
+            List<MMateriales> datosMat = funcoinMateriales.MostrarMateriales(this.idCateg);
 
-            MMateriales Material = new MMateriales();
+            
             List<MMateriales> idMaterial = new List<MMateriales>();
 
             foreach (MMateriales mat in materialesAgr) 
             {
-                foreach(dynamic dato in datosMat)
+                foreach(MMateriales dato in datosMat)
                 {
-                    if(mat.Nombre == datosMat["Nombre"])
+                    if(mat.Nombre == dato.Nombre)
                     {
-                        Material.IdMaterial = int.Parse(datosMat["Id_Materia"].ToString());
+                        MMateriales Material = new MMateriales();
+                        Material.IdMaterial = dato.IdMaterial;
                         idMaterial.Add(Material);
                     }
+                    
                 }
                 
             }

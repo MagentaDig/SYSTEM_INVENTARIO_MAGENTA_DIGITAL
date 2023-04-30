@@ -149,7 +149,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1025, 472);
+            this.ClientSize = new System.Drawing.Size(1025, 530);
             this.Controls.Add(this.btnReegresar);
             this.Controls.Add(this.dataGrid_MaterialPed);
             this.Controls.Add(this.btnAgrPedido);
