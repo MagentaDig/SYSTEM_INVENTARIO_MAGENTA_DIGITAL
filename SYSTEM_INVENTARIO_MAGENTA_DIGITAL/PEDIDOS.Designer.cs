@@ -42,13 +42,15 @@
             this.btnReegresar = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.txt_NomPedido = new System.Windows.Forms.TextBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dataGrid_Pedidos = new System.Windows.Forms.DataGridView();
+            this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.verPedido = new System.Windows.Forms.DataGridViewImageColumn();
             this.id_pedido = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nomPedido = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.detalle_Ped = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fec_Pedido = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGrid_MaterialPed)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGrid_Pedidos)).BeginInit();
             this.SuspendLayout();
             // 
             // lbl_detalle
@@ -169,18 +171,36 @@
             this.txt_NomPedido.Size = new System.Drawing.Size(282, 20);
             this.txt_NomPedido.TabIndex = 12;
             // 
-            // dataGridView1
+            // dataGrid_Pedidos
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGrid_Pedidos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGrid_Pedidos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.verPedido,
             this.id_pedido,
             this.nomPedido,
             this.detalle_Ped,
             this.fec_Pedido});
-            this.dataGridView1.Location = new System.Drawing.Point(62, 285);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(935, 243);
-            this.dataGridView1.TabIndex = 14;
+            this.dataGrid_Pedidos.Location = new System.Drawing.Point(62, 285);
+            this.dataGrid_Pedidos.Name = "dataGrid_Pedidos";
+            this.dataGrid_Pedidos.Size = new System.Drawing.Size(935, 243);
+            this.dataGrid_Pedidos.TabIndex = 14;
+            // 
+            // dataGridViewImageColumn1
+            // 
+            this.dataGridViewImageColumn1.Frozen = true;
+            this.dataGridViewImageColumn1.HeaderText = "";
+            this.dataGridViewImageColumn1.Image = global::SYSTEM_INVENTARIO_MAGENTA_DIGITAL.Properties.Resources.mas;
+            this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
+            this.dataGridViewImageColumn1.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            // 
+            // verPedido
+            // 
+            this.verPedido.Frozen = true;
+            this.verPedido.HeaderText = "";
+            this.verPedido.Image = global::SYSTEM_INVENTARIO_MAGENTA_DIGITAL.Properties.Resources.icon_4bd3092cfdf353a4b19434341ccb7d5d1;
+            this.verPedido.Name = "verPedido";
+            this.verPedido.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.verPedido.Width = 50;
             // 
             // id_pedido
             // 
@@ -210,7 +230,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1025, 546);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dataGrid_Pedidos);
             this.Controls.Add(this.txt_NomPedido);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.btnReegresar);
@@ -226,7 +246,7 @@
             this.Name = "PEDIDOS";
             this.Text = "PEDIDOS";
             ((System.ComponentModel.ISupportInitialize)(this.dataGrid_MaterialPed)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGrid_Pedidos)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -248,7 +268,9 @@
         private System.Windows.Forms.Button btnReegresar;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txt_NomPedido;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dataGrid_Pedidos;
+        private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn1;
+        private System.Windows.Forms.DataGridViewImageColumn verPedido;
         private System.Windows.Forms.DataGridViewTextBoxColumn id_pedido;
         private System.Windows.Forms.DataGridViewTextBoxColumn nomPedido;
         private System.Windows.Forms.DataGridViewTextBoxColumn detalle_Ped;

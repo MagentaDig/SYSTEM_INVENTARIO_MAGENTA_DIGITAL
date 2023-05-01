@@ -15,13 +15,17 @@ namespace SYSTEM_INVENTARIO_MAGENTA_DIGITAL.RDN
         public int IdPedido(MPedidos Pedido)
         {
             DatosPedidos funcionPedidos = new DatosPedidos();
-            SqlDataReader datos = funcionPedidos.regPedido(Pedido);
+            List<MPedidos> datos = funcionPedidos.regPedido(Pedido);
 
             int IdPedido = 0;
-            if (datos.Read())
+            foreach (MPedidos Ped in datos)
             {
-                IdPedido = int.Parse(datos[0].ToString());
+                IdPedido = Ped.IdPedido;
             }
+            //if (datos.Read())
+            //{
+            //    IdPedido = int.Parse(datos[0].ToString());
+            //}
             return IdPedido;
         }
     }

@@ -15,7 +15,7 @@ namespace SYSTEM_INVENTARIO_MAGENTA_DIGITAL.DATOS
         Conexion conn = new Conexion();
         SqlCommand cmd = new SqlCommand();
 
-        public SqlDataReader regPedido (MPedidos Pedido)
+        public List<MPedidos> regPedido (MPedidos Pedido)
         {
             cmd.Connection = conn.AbrirConexion();
             cmd.CommandText = "SP_REG_PEDIDO";
@@ -27,8 +27,44 @@ namespace SYSTEM_INVENTARIO_MAGENTA_DIGITAL.DATOS
             cmd.Parameters.AddWithValue("@FechaPedido", Pedido.FechaPedido);
 
             SqlDataReader insertPedido = cmd.ExecuteReader();
+
+            List<MPedidos> lstPedido = new List<MPedidos>();
+
+           
+            if (insertPedido.Read())
+            {
+                MPedidos IdPedido = new MPedidos();
+                IdPedido.IdPedido = int.Parse(insertPedido[0].ToString());
+                lstPedido.Add(IdPedido);
+            }
             cmd.Parameters.Clear();
-            return insertPedido;
+            conn.CerrarConexion();
+            return lstPedido;
+        }
+
+        public List<MPedidos> MostrarPedido(int Categ)
+        {
+            cmd.Connection = conn.AbrirConexion();
+            cmd.CommandText = "SP_MOSTRAR_PEDIDOS";
+            cmd.CommandType = CommandType.StoredProcedure;
+
+            cmd.Parameters.AddWithValue("@IdCateg", Categ);
+
+            SqlDataReader DatosPedidos = cmd.ExecuteReader();
+            List<MPedidos> lstpedidos = new List<MPedidos>();
+
+            while (DatosPedidos.Read())
+            {
+                MPedidos Pedido = new MPedidos();
+                Pedido.IdPedido = (int)DatosPedidos["IdPedido"];
+                Pedido.NomPedido = (dynamic)DatosPedidos["NomPedido"];
+                Pedido.DetallePedido = (dynamic)DatosPedidos["DetallePedido"];
+                Pedido.FechaPedido = (DateTime)DatosPedidos["FechaPedido"];
+                lstpedidos.Add(Pedido);
+            }
+            cmd.Parameters.Clear();
+            conn.CerrarConexion();
+            return lstpedidos;
         }
     }
 }

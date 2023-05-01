@@ -217,5 +217,14 @@
   <ItemGroup>
     <None Include="Resources\Captura de pantalla 2023-04-25 030653.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mas.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon_4bd3092cfdf353a4b19434341ccb7d5d.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon_4bd3092cfdf353a4b19434341ccb7d5d.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

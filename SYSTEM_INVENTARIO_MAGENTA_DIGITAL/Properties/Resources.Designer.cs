@@ -203,6 +203,26 @@ namespace SYSTEM_INVENTARIO_MAGENTA_DIGITAL.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icon_4bd3092cfdf353a4b19434341ccb7d5d {
+            get {
+                object obj = ResourceManager.GetObject("icon_4bd3092cfdf353a4b19434341ccb7d5d", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icon_4bd3092cfdf353a4b19434341ccb7d5d1 {
+            get {
+                object obj = ResourceManager.GetObject("icon_4bd3092cfdf353a4b19434341ccb7d5d1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap ingresar {
             get {
                 object obj = ResourceManager.GetObject("ingresar", resourceCulture);
@@ -216,6 +236,16 @@ namespace SYSTEM_INVENTARIO_MAGENTA_DIGITAL.Properties {
         internal static System.Drawing.Bitmap logopequeño {
             get {
                 object obj = ResourceManager.GetObject("logopequeño", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap mas {
+            get {
+                object obj = ResourceManager.GetObject("mas", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

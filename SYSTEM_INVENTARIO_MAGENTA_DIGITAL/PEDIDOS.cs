@@ -35,6 +35,7 @@ namespace SYSTEM_INVENTARIO_MAGENTA_DIGITAL
             this.idCateg = idCateg;
 
             mostrarMaterialesCB();
+            mostrarPedido();
         }
 
         private void txt_Cantidad_TextChanged(object sender, EventArgs e)
@@ -124,6 +125,32 @@ namespace SYSTEM_INVENTARIO_MAGENTA_DIGITAL
                 int idMatSelect = reglaMatSelec.IdMaterial(mat, IdPedido, this.idCateg);
                 reglaSalidas.capSalidas(idMatSelect);
             }
+
+            recargarPantalla();
+        }
+
+        public void mostrarPedido()
+        {
+            DatosPedidos funcionPedidos = new DatosPedidos();
+            List<MPedidos> Pedidos = funcionPedidos.MostrarPedido(this.idCateg); ;
+
+            int index;
+
+            foreach (MPedidos datos in Pedidos)
+            {
+                index = dataGrid_Pedidos.Rows.Add();
+                dataGrid_Pedidos.Rows[index].Cells[1].Value = datos.IdPedido;
+                dataGrid_Pedidos.Rows[index].Cells[2].Value = datos.NomPedido;
+                dataGrid_Pedidos.Rows[index].Cells[3].Value = datos.DetallePedido;
+                dataGrid_Pedidos.Rows[index].Cells[4].Value = datos.FechaPedido;
+            }
+        }
+
+        public void recargarPantalla()
+        {
+            this.Hide();
+            PEDIDOS formPedido = new PEDIDOS(this.idCateg);
+            formPedido.Show();
         }
     }
 }
