@@ -10,7 +10,7 @@ namespace SYSTEM_INVENTARIO_MAGENTA_DIGITAL.MODELOS
     {
         public int id_MS { get; set; }
         public int Material { get; set; }
-        public int Peiddo { get; set; }
+        public int Pedido { get; set; }
         public int Salida { get; set; }
     }
 }

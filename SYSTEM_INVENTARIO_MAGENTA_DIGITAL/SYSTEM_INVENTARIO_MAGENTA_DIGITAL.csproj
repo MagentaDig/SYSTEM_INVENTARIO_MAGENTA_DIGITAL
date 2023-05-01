@@ -53,6 +53,9 @@
     <Compile Include="ACCESO\Login.cs" />
     <Compile Include="DATOS\DatosCategoria.cs" />
     <Compile Include="DATOS\DatosMateriales.cs" />
+    <Compile Include="DATOS\DatosMatSelect.cs" />
+    <Compile Include="DATOS\DatosPedidos.cs" />
+    <Compile Include="DATOS\DatosSalidas.cs" />
     <Compile Include="DATOS\DatosStock.cs" />
     <Compile Include="DB_CONEXION\Conexion_DB.cs" />
     <Compile Include="INGRESO.cs">
@@ -87,6 +90,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RDN\RDN_MaterialSelect.cs" />
+    <Compile Include="RDN\RDN_Pedidos.cs" />
+    <Compile Include="RDN\RDN_Salidas.cs" />
     <Compile Include="REGISTRARMATERIAL.cs">
       <SubType>Form</SubType>
     </Compile>
