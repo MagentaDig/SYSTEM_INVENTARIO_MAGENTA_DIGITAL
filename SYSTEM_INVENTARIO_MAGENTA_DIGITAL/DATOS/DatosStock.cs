@@ -26,6 +26,7 @@ namespace SYSTEM_INVENTARIO_MAGENTA_DIGITAL.DATOS
             cmd.Parameters.AddWithValue("@Id_Materia", Stock.Material);
 
             cmd.ExecuteNonQuery();
+            cmd.Parameters.Clear();
         }
 
         public List<MConsultaStock> ConsultarStock(int Categoria)
@@ -51,6 +52,7 @@ namespace SYSTEM_INVENTARIO_MAGENTA_DIGITAL.DATOS
                 lstStock.Add(Stock);
             }
             conn.CerrarConexion();
+            cmd.Parameters.Clear();
             return lstStock;
 
         }
@@ -77,6 +79,7 @@ namespace SYSTEM_INVENTARIO_MAGENTA_DIGITAL.DATOS
                 Stock.Cantidad = (int)stock["Cantidad"];
                 Stock.FechaEntrada = (DateTime)stock["FechaEntrada"];
             }
+            cmd.Parameters.Clear();
             conn.CerrarConexion();
 
             return lstStock;
@@ -92,6 +95,7 @@ namespace SYSTEM_INVENTARIO_MAGENTA_DIGITAL.DATOS
             cmd.Parameters.AddWithValue("@IdMaterial", IdMaterial);
 
             cmd.ExecuteNonQuery();
+            cmd.Parameters.Clear();
             conn.CerrarConexion();
         }
     }

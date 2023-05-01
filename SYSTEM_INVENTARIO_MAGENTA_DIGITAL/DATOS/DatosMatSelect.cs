@@ -26,8 +26,7 @@ namespace SYSTEM_INVENTARIO_MAGENTA_DIGITAL.DATOS
             cmd.Parameters.AddWithValue("@Cantidad", MaterialSelec.Cantidad);
 
             SqlDataReader insertMat = cmd.ExecuteReader();
-            conn.CerrarConexion();
-
+            cmd.Parameters.Clear();
             return insertMat;
         }
     }

@@ -28,7 +28,7 @@ namespace SYSTEM_INVENTARIO_MAGENTA_DIGITAL.DATOS
             cmd.Parameters.AddWithValue("@Metros", Material.Metros);
 
             SqlDataReader idMaterial = cmd.ExecuteReader();
-
+            cmd.Parameters.Clear();
             return idMaterial;
         }
 
@@ -56,7 +56,7 @@ namespace SYSTEM_INVENTARIO_MAGENTA_DIGITAL.DATOS
                 Materiales.Add(Material);
 
             }
-
+            cmd.Parameters.Clear();
             return Materiales;
         }
 

@@ -10,13 +10,15 @@ namespace SYSTEM_INVENTARIO_MAGENTA_DIGITAL.RDN
 {
     class RDN_Salidas
     {
-        //DatosSalidas funcionSalidas = new DatosSalidas();
-        //public void capSalidas(List<int> IdMatSelect)
-        //{
-        //    foreach(int dato in IdMatSelect)
-        //    {
-        //        funcionSalidas.RegSalida(dato);
-        //    }
-        //}
+        DatosSalidas funcionSalidas = new DatosSalidas();
+        public void capSalidas(int IdMatSelec)
+        {
+            DatosSalidas funcionSalidas = new DatosSalidas();
+
+            MSalidas Salidas = new MSalidas();
+            Salidas.MaterialSelec = IdMatSelec;
+            Salidas.FechaSalida = DateTime.Now;
+            funcionSalidas.RegSalida(Salidas);
+        }
     }
 }

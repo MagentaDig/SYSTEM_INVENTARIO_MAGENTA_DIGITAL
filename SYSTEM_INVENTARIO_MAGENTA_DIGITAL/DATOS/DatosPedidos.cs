@@ -23,9 +23,11 @@ namespace SYSTEM_INVENTARIO_MAGENTA_DIGITAL.DATOS
 
             cmd.Parameters.AddWithValue("@Detalle", Pedido.DetallePedido);
             cmd.Parameters.AddWithValue("@IdCateg", Pedido.Categoria);
+            cmd.Parameters.AddWithValue("@NomPedido", Pedido.NomPedido);
+            cmd.Parameters.AddWithValue("@FechaPedido", Pedido.FechaPedido);
 
             SqlDataReader insertPedido = cmd.ExecuteReader();
-
+            cmd.Parameters.Clear();
             return insertPedido;
         }
     }

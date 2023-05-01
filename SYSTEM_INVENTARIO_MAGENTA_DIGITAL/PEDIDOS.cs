@@ -45,9 +45,7 @@ namespace SYSTEM_INVENTARIO_MAGENTA_DIGITAL
 
         public void mostrarMaterialesCB()
         {
-
             DatosMateriales Materiales = new DatosMateriales();
-
             List<MMateriales> datosMat = Materiales.MostrarMateriales(this.idCateg);
 
             foreach (MMateriales Mat in datosMat)
@@ -66,12 +64,7 @@ namespace SYSTEM_INVENTARIO_MAGENTA_DIGITAL
         private void btn_AgrMat_Click(object sender, EventArgs e)
         {
             MMaterialSelect Material = new MMaterialSelect();
-            //RDN_Salidas reglsSalida = new RDN_Salidas();
-
-            //lstSalidas = reglsSalida.capSalidas(int.Parse(txt_Cantidad.Text));
-
             List<MMaterialSelect> lstMateriales = new List<MMaterialSelect>();
-            //MMateriales objMaterial = new MMateriales();
 
             int index = cb_Materiales.SelectedIndex, indexDt;
             Material.NomMaterial = cb_Materiales.Items[index].ToString();
@@ -85,22 +78,6 @@ namespace SYSTEM_INVENTARIO_MAGENTA_DIGITAL
                 dataGrid_MaterialPed.Rows[indexDt].Cells[0].Value = datoM.NomMaterial;
                 dataGrid_MaterialPed.Rows[indexDt].Cells[1].Value = datoM.Cantidad;
             }
-
-            //foreach (MMateriales datoM in lstMateriales)
-            //{
-            //    indexDt = dataGrid_MaterialPed.Rows.Add();
-            //    dataGrid_MaterialPed.Rows[indexDt].Cells[0].Value = datoM.Nombre;
-            //    foreach (MSalidas sal in lstSalidas)
-            //    {
-            //        MSalidas capSalida = new MSalidas();
-
-            //        dataGrid_MaterialPed.Rows[indexDt].Cells[1].Value = sal.Cantidad;
-
-            //        capSalida.Cantidad = sal.Cantidad;
-            //        capSalida.FechaSalida = sal.FechaSalida;
-            //        copia_lstSalidas.Add(capSalida);
-            //    }
-            //}
         }
 
         private List<MMaterialSelect> idetificarMaterial()
@@ -118,24 +95,12 @@ namespace SYSTEM_INVENTARIO_MAGENTA_DIGITAL
                     if(mat.NomMaterial == dato.Nombre)
                     {
                         mat.idMaterial = dato.IdMaterial;
-                        //MMateriales Material = new MMateriales();
-                        //Material.IdMaterial = dato.IdMaterial;
                         MatSelect.Add(mat);
                     }
                 } 
             }
             return MatSelect;
         }
-
-        //private List<MSalidas> capSalidas()
-        //{
-        //    MSalidas Salidas = new MSalidas();
-        //    Salidas.Cantidad = int.Parse(txt_Cantidad.Text);
-        //    Salidas.FechaSalida = DateTime.Now;
-        //    SalidasMaterial.Add(Salidas);
-
-        //    return SalidasMaterial;
-        //}
 
         private void btnAgrPedido_Click(object sender, EventArgs e)
         {
@@ -149,18 +114,16 @@ namespace SYSTEM_INVENTARIO_MAGENTA_DIGITAL
 
             Pedido.DetallePedido = richTextBox_Detalle.Text;
             Pedido.Categoria = this.idCateg;
+            Pedido.NomPedido = txt_NomPedido.Text;
+            Pedido.FechaPedido = DateTime.Now;
 
             int IdPedido = reglaPedido.IdPedido(Pedido);
 
             foreach (MMaterialSelect mat in MaterialSelect)
             {
                 int idMatSelect = reglaMatSelec.IdMaterial(mat, IdPedido, this.idCateg);
-                lstIdMatSelect.Add(idMatSelect);
-
-
+                reglaSalidas.capSalidas(idMatSelect);
             }
-
-            dtosSal.RegSalida(lstIdMatSelect);
         }
     }
 }
