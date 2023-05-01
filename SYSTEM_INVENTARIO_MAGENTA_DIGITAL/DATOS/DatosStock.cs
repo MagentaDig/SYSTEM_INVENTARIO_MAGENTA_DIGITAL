@@ -27,5 +27,72 @@ namespace SYSTEM_INVENTARIO_MAGENTA_DIGITAL.DATOS
 
             cmd.ExecuteNonQuery();
         }
+
+        public List<MConsultaStock> ConsultarStock(int Categoria)
+        {
+            cmd.Connection = conn.AbrirConexion();
+            cmd.CommandText = "SP_COSULTAR_STOCK";
+            cmd.CommandType = CommandType.StoredProcedure;
+
+            cmd.Parameters.AddWithValue("@IdCateg", Categoria);
+
+            List<MConsultaStock> lstStock = new List<MConsultaStock>();
+
+            SqlDataReader stock = cmd.ExecuteReader();
+            while (stock.Read())
+            {
+                MConsultaStock Stock = new MConsultaStock();
+                Stock.IdMaterial = (int)stock["Id_Materia"];
+                Stock.Nombre = (string)stock["Nombre"];
+                Stock.Metros = (decimal)stock["Metros"];
+                Stock.Tamaño = (dynamic)stock["Tamaño"];
+                Stock.Cantidad = (int)stock["Cantidad"];
+                Stock.FechaEntrada = (DateTime)stock["FechaEntrada"];
+                lstStock.Add(Stock);
+            }
+            conn.CerrarConexion();
+            return lstStock;
+
+        }
+
+        public List<MConsultaStock> StockMaterial(int Categoria)
+        {
+            cmd.Connection = conn.AbrirConexion();
+            cmd.CommandText = "SP_COSULTAR_STOCK";
+            cmd.CommandType = CommandType.StoredProcedure;
+
+            cmd.Parameters.AddWithValue("@IdCateg", Categoria);
+            cmd.Parameters.AddWithValue("@IdMaterial", Categoria);
+
+            List<MConsultaStock> lstStock = new List<MConsultaStock>();
+
+            SqlDataReader stock = cmd.ExecuteReader();
+            if (stock.Read())
+            {
+                MConsultaStock Stock = new MConsultaStock();
+                Stock.IdMaterial = (int)stock["Id_Materia"];
+                Stock.Nombre = (string)stock["Nombre"];
+                Stock.Metros = (int)stock["Metros"];
+                Stock.Tamaño = (dynamic)stock["Tamaño"];
+                Stock.Cantidad = (int)stock["Cantidad"];
+                Stock.FechaEntrada = (DateTime)stock["FechaEntrada"];
+            }
+            conn.CerrarConexion();
+
+            return lstStock;
+        }
+
+        public void ActulizarStock(int nuevoStock, int IdMaterial)
+        {
+            cmd.Connection = conn.AbrirConexion();
+            cmd.CommandText = "SP_ACTUALIZAR_STOCK";
+            cmd.CommandType = CommandType.StoredProcedure;
+
+            cmd.Parameters.AddWithValue("@Stock", nuevoStock);
+            cmd.Parameters.AddWithValue("@IdMaterial", IdMaterial);
+
+            cmd.ExecuteNonQuery();
+            conn.CerrarConexion();
+        }
     }
 }

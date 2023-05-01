@@ -15,17 +15,20 @@ namespace SYSTEM_INVENTARIO_MAGENTA_DIGITAL.DATOS
         Conexion conn = new Conexion();
         SqlCommand cmd = new SqlCommand();
 
-        public void RegSalida(MSalidas Salidas)
+        public void RegSalida(List<int> IdMatSelec)
         {
             cmd.Connection = conn.AbrirConexion();
             cmd.CommandText = "SP_REG_SALIDAS";
             cmd.CommandType = CommandType.StoredProcedure;
 
-            cmd.Parameters.AddWithValue("@Cantidad", Salidas.Cantidad);
-            cmd.Parameters.AddWithValue("@FechaSaida", Salidas.FechaSalida);
-            cmd.Parameters.AddWithValue("@Id_MS", Salidas.MaterialSelec);
+            foreach (int dato in IdMatSelec)
+            {
+                cmd.Parameters.AddWithValue("@FechaSaida", DateTime.Now);
+                cmd.Parameters.AddWithValue("@Id_MS", dato);
 
-            cmd.ExecuteNonQuery();
+                cmd.ExecuteNonQuery();
+            }
+            conn.CerrarConexion();
         }
     }
 }

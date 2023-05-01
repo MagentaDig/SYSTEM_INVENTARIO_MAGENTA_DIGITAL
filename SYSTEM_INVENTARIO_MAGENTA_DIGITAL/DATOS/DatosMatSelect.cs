@@ -15,16 +15,18 @@ namespace SYSTEM_INVENTARIO_MAGENTA_DIGITAL.DATOS
         Conexion conn = new Conexion();
         SqlCommand cmd = new SqlCommand();
 
-        public SqlDataReader agreMateSelect(MMaterialSelect MaterialSelec)
+        public SqlDataReader agreMateSelect(MMaterialSelect MaterialSelec, int IdPedido)
         {
             cmd.Connection = conn.AbrirConexion();
             cmd.CommandText = "SP_AGR_MAT_SELEC";
             cmd.CommandType = CommandType.StoredProcedure;
 
-            cmd.Parameters.AddWithValue("@IdMaterial", MaterialSelec.Material);
-            cmd.Parameters.AddWithValue("@IdPedido", MaterialSelec.Pedido);
+            cmd.Parameters.AddWithValue("@IdMaterial", MaterialSelec.idMaterial);
+            cmd.Parameters.AddWithValue("@IdPedido", IdPedido);
+            cmd.Parameters.AddWithValue("@Cantidad", MaterialSelec.Cantidad);
 
             SqlDataReader insertMat = cmd.ExecuteReader();
+            conn.CerrarConexion();
 
             return insertMat;
         }

@@ -11,11 +11,12 @@ namespace SYSTEM_INVENTARIO_MAGENTA_DIGITAL.RDN
 {
     class RDN_MaterialSelect
     {
-        public int IdMaterial(MMaterialSelect Material)
+        RDN_Stock Stock = new RDN_Stock();
+        public int IdMaterial(MMaterialSelect Material, int Pedido, int Categ)
         {
             DatosMatSelect MatSelect = new DatosMatSelect();
-
-            SqlDataReader datosMateSelect = MatSelect.agreMateSelect(Material);
+            SqlDataReader datosMateSelect = MatSelect.agreMateSelect(Material, Pedido);
+            Stock.ModificarStock(Material, Categ);
 
             int IdMatSeelct = 0;
 
@@ -23,9 +24,7 @@ namespace SYSTEM_INVENTARIO_MAGENTA_DIGITAL.RDN
             {
                 IdMatSeelct = int.Parse(datosMateSelect[0].ToString());
             }
-
             return IdMatSeelct;
         }
-
     }
 }

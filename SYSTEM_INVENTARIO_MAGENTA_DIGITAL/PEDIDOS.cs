@@ -16,10 +16,17 @@ namespace SYSTEM_INVENTARIO_MAGENTA_DIGITAL
 {
     public partial class PEDIDOS : Form
     {
+        /* Listas globales */
+        List<MMaterialSelect> lst_MatSelec = new List<MMaterialSelect>();
         List<MSalidas> lstSalidas = new List<MSalidas>();
-        MSalidas Salidas = new MSalidas();
-        List<MMateriales> copia_lstMateriales = new List<MMateriales>();
+        List<MSalidas> copia_lstSalidas = new List<MSalidas>();
+        List<MMaterialSelect> copia_lstMateriales = new List<MMaterialSelect>();
 
+        /* Istancias de objetos */
+        MSalidas Salidas = new MSalidas();
+       
+
+        /* Variables globales */
         public int idCateg;
         public int IdPedido;
         public PEDIDOS(int idCateg)
@@ -58,51 +65,66 @@ namespace SYSTEM_INVENTARIO_MAGENTA_DIGITAL
 
         private void btn_AgrMat_Click(object sender, EventArgs e)
         {
-            RDN_Salidas reglsSalida = new RDN_Salidas();
-            /*Ya captura la cantidad que saldra del material */
-            lstSalidas = reglsSalida.capSalidas(int.Parse(txt_Cantidad.Text));
+            MMaterialSelect Material = new MMaterialSelect();
+            //RDN_Salidas reglsSalida = new RDN_Salidas();
 
-            List<MMateriales> lstMateriales = new List<MMateriales>();
-            MMateriales objMaterial = new MMateriales();
+            //lstSalidas = reglsSalida.capSalidas(int.Parse(txt_Cantidad.Text));
+
+            List<MMaterialSelect> lstMateriales = new List<MMaterialSelect>();
+            //MMateriales objMaterial = new MMateriales();
 
             int index = cb_Materiales.SelectedIndex, indexDt;
-            objMaterial.Nombre = cb_Materiales.Items[index].ToString();
-            lstMateriales.Add(objMaterial);
-            copia_lstMateriales.Add(objMaterial);
+            Material.NomMaterial = cb_Materiales.Items[index].ToString();
+            Material.Cantidad = int.Parse(txt_Cantidad.Text.ToString());
+            lstMateriales.Add(Material);
+            copia_lstMateriales.Add(Material);
 
-
-            foreach (MMateriales datoM in lstMateriales)
+            foreach (MMaterialSelect datoM in lstMateriales)
             {
                 indexDt = dataGrid_MaterialPed.Rows.Add();
-                dataGrid_MaterialPed.Rows[indexDt].Cells[0].Value = datoM.Nombre;
-                foreach (MSalidas sal in lstSalidas)
-                {
-                    dataGrid_MaterialPed.Rows[indexDt].Cells[1].Value = sal.Cantidad;
-                }
+                dataGrid_MaterialPed.Rows[indexDt].Cells[0].Value = datoM.NomMaterial;
+                dataGrid_MaterialPed.Rows[indexDt].Cells[1].Value = datoM.Cantidad;
             }
+
+            //foreach (MMateriales datoM in lstMateriales)
+            //{
+            //    indexDt = dataGrid_MaterialPed.Rows.Add();
+            //    dataGrid_MaterialPed.Rows[indexDt].Cells[0].Value = datoM.Nombre;
+            //    foreach (MSalidas sal in lstSalidas)
+            //    {
+            //        MSalidas capSalida = new MSalidas();
+
+            //        dataGrid_MaterialPed.Rows[indexDt].Cells[1].Value = sal.Cantidad;
+
+            //        capSalida.Cantidad = sal.Cantidad;
+            //        capSalida.FechaSalida = sal.FechaSalida;
+            //        copia_lstSalidas.Add(capSalida);
+            //    }
+            //}
         }
 
-        private List<MMateriales> idetificarMaterial()
+        private List<MMaterialSelect> idetificarMaterial()
         {
             DatosMateriales funcoinMateriales = new DatosMateriales();
             List<MMateriales> datosMat = funcoinMateriales.MostrarMateriales(this.idCateg);
 
             
-            List<MMateriales> idMaterial = new List<MMateriales>();
+            List<MMaterialSelect> MatSelect = new List<MMaterialSelect>();
 
-            foreach (MMateriales mat in copia_lstMateriales) 
+            foreach (MMaterialSelect mat in copia_lstMateriales) 
             {
                 foreach(MMateriales dato in datosMat)
                 {
-                    if(mat.Nombre == dato.Nombre)
+                    if(mat.NomMaterial == dato.Nombre)
                     {
-                        MMateriales Material = new MMateriales();
-                        Material.IdMaterial = dato.IdMaterial;
-                        idMaterial.Add(Material);
+                        mat.idMaterial = dato.IdMaterial;
+                        //MMateriales Material = new MMateriales();
+                        //Material.IdMaterial = dato.IdMaterial;
+                        MatSelect.Add(mat);
                     }
                 } 
             }
-            return idMaterial;
+            return MatSelect;
         }
 
         //private List<MSalidas> capSalidas()
@@ -117,35 +139,28 @@ namespace SYSTEM_INVENTARIO_MAGENTA_DIGITAL
 
         private void btnAgrPedido_Click(object sender, EventArgs e)
         {
-            List<MMaterialSelect> idMaterialSelect = new List<MMaterialSelect>();
+            List<int> lstIdMatSelect = new List<int>();
+            List<MMaterialSelect> MaterialSelect = idetificarMaterial();
             RDN_Pedidos reglaPedido = new RDN_Pedidos();
             RDN_MaterialSelect reglaMatSelec = new RDN_MaterialSelect();
-            DatosSalidas funcionSalidas = new DatosSalidas();
-
+            RDN_Salidas reglaSalidas = new RDN_Salidas();
             MPedidos Pedido = new MPedidos();
+            DatosSalidas dtosSal = new DatosSalidas();
+
             Pedido.DetallePedido = richTextBox_Detalle.Text;
             Pedido.Categoria = this.idCateg;
 
             int IdPedido = reglaPedido.IdPedido(Pedido);
 
-            foreach (MMateriales mat in copia_lstMateriales)
+            foreach (MMaterialSelect mat in MaterialSelect)
             {
-                MMaterialSelect MatSelec = new MMaterialSelect();
-                MatSelec.Material = mat.IdMaterial;
-                MatSelec.Pedido = IdPedido;
+                int idMatSelect = reglaMatSelec.IdMaterial(mat, IdPedido, this.idCateg);
+                lstIdMatSelect.Add(idMatSelect);
 
-                int idMatSelec = reglaMatSelec.IdMaterial(MatSelec);
-                
-                foreach (MSalidas sal in lstSalidas)
-                {
-                    MSalidas Salidas = new MSalidas();
-                    Salidas.Cantidad = sal.Cantidad;
-                    Salidas.FechaSalida = sal.FechaSalida;
-                    Salidas.MaterialSelec = idMatSelec;
 
-                    funcionSalidas.RegSalida(Salidas);
-                }
             }
+
+            dtosSal.RegSalida(lstIdMatSelect);
         }
     }
 }

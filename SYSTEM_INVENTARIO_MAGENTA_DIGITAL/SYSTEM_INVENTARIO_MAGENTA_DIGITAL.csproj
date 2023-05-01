@@ -93,6 +93,7 @@
     <Compile Include="RDN\RDN_MaterialSelect.cs" />
     <Compile Include="RDN\RDN_Pedidos.cs" />
     <Compile Include="RDN\RDN_Salidas.cs" />
+    <Compile Include="RDN\RDN_Stock.cs" />
     <Compile Include="REGISTRARMATERIAL.cs">
       <SubType>Form</SubType>
     </Compile>
