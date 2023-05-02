@@ -53,6 +53,10 @@ namespace SYSTEM_INVENTARIO_MAGENTA_DIGITAL
 
             int nuevoStock = int.Parse(txt_NuevoStock.Text);
             reglaStock.ActulizarStock(nuevoStock,this.idMaterial,this.IdCateg);
+
+            this.Hide();
+            MODIFICAR formModificar = new MODIFICAR(this.IdCateg);
+            formModificar.Show();
         }
     }
 }

@@ -44,6 +44,17 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
+            // btn_cerrar
+            // 
+            btn_cerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            btn_cerrar.Image = global::SYSTEM_INVENTARIO_MAGENTA_DIGITAL.Properties.Resources.Captura_de_pantalla_2023_04_18_143816;
+            btn_cerrar.Location = new System.Drawing.Point(654, 12);
+            btn_cerrar.Name = "btn_cerrar";
+            btn_cerrar.Size = new System.Drawing.Size(48, 38);
+            btn_cerrar.TabIndex = 11;
+            btn_cerrar.UseVisualStyleBackColor = true;
+            btn_cerrar.Click += new System.EventHandler(this.btn_cerrar_Click);
+            // 
             // lbl_categoria
             // 
             this.lbl_categoria.AutoSize = true;
@@ -83,22 +94,12 @@
             this.txt_contraseña.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(72)))), ((int)(((byte)(170)))));
             this.txt_contraseña.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txt_contraseña.ForeColor = System.Drawing.SystemColors.Window;
-            this.txt_contraseña.Location = new System.Drawing.Point(354, 236);
+            this.txt_contraseña.Location = new System.Drawing.Point(354, 238);
             this.txt_contraseña.Name = "txt_contraseña";
+            this.txt_contraseña.PasswordChar = '*';
             this.txt_contraseña.Size = new System.Drawing.Size(214, 13);
             this.txt_contraseña.TabIndex = 13;
             this.txt_contraseña.TextChanged += new System.EventHandler(this.txt_contraseña_TextChanged);
-            // 
-            // btn_cerrar
-            // 
-            btn_cerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            btn_cerrar.Image = global::SYSTEM_INVENTARIO_MAGENTA_DIGITAL.Properties.Resources.Captura_de_pantalla_2023_04_18_143816;
-            btn_cerrar.Location = new System.Drawing.Point(654, 12);
-            btn_cerrar.Name = "btn_cerrar";
-            btn_cerrar.Size = new System.Drawing.Size(48, 38);
-            btn_cerrar.TabIndex = 11;
-            btn_cerrar.UseVisualStyleBackColor = true;
-            btn_cerrar.Click += new System.EventHandler(this.btn_cerrar_Click);
             // 
             // btn_ingresa
             // 

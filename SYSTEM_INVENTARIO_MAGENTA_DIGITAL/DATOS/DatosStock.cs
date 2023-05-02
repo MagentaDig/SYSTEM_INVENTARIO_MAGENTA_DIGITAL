@@ -86,14 +86,16 @@ namespace SYSTEM_INVENTARIO_MAGENTA_DIGITAL.DATOS
             return lstStock;
         }
 
-        public void ActulizarStock(int nuevoStock, int IdMaterial)
+        public void ActulizarStock(int nuevoStock, int IdMaterial, DateTime FechaActualizacion)
         {
             cmd.Connection = conn.AbrirConexion();
             cmd.CommandText = "SP_ACTUALIZAR_STOCK";
             cmd.CommandType = CommandType.StoredProcedure;
 
             cmd.Parameters.AddWithValue("@Stock", nuevoStock);
+            cmd.Parameters.AddWithValue("@FechaEntrada", FechaActualizacion);
             cmd.Parameters.AddWithValue("@IdMaterial", IdMaterial);
+
 
             cmd.ExecuteNonQuery();
             cmd.Parameters.Clear();

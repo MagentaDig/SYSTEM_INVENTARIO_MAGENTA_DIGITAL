@@ -28,14 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.txt_CantBusc = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.cb_materialesBusc = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.dataGrid_Stock = new System.Windows.Forms.DataGridView();
-            this.btnReg = new System.Windows.Forms.Button();
-            this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
-            this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
             this.Id_Materia = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nomMaterial = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.metMaterial = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -44,6 +42,9 @@
             this.fecEntrada = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ACTUALIZAR = new System.Windows.Forms.DataGridViewImageColumn();
             this.ELIMINAR = new System.Windows.Forms.DataGridViewImageColumn();
+            this.btnReg = new System.Windows.Forms.Button();
+            this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGrid_Stock)).BeginInit();
             this.SuspendLayout();
             // 
@@ -82,6 +83,17 @@
             // 
             // dataGrid_Stock
             // 
+            this.dataGrid_Stock.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dataGrid_Stock.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.dataGrid_Stock.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.InfoText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGrid_Stock.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGrid_Stock.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGrid_Stock.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Id_Materia,
@@ -94,33 +106,11 @@
             this.ELIMINAR});
             this.dataGrid_Stock.Location = new System.Drawing.Point(27, 143);
             this.dataGrid_Stock.Name = "dataGrid_Stock";
-            this.dataGrid_Stock.Size = new System.Drawing.Size(1128, 327);
+            this.dataGrid_Stock.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
+            this.dataGrid_Stock.RowTemplate.Height = 30;
+            this.dataGrid_Stock.Size = new System.Drawing.Size(1032, 327);
             this.dataGrid_Stock.TabIndex = 5;
             this.dataGrid_Stock.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGrid_Stock_CellClick);
-            // 
-            // btnReg
-            // 
-            this.btnReg.Location = new System.Drawing.Point(27, 23);
-            this.btnReg.Name = "btnReg";
-            this.btnReg.Size = new System.Drawing.Size(75, 23);
-            this.btnReg.TabIndex = 10;
-            this.btnReg.Text = "Regresar";
-            this.btnReg.UseVisualStyleBackColor = true;
-            this.btnReg.Click += new System.EventHandler(this.btnReg_Click);
-            // 
-            // dataGridViewImageColumn1
-            // 
-            this.dataGridViewImageColumn1.HeaderText = "MODIFICAR";
-            this.dataGridViewImageColumn1.Image = global::SYSTEM_INVENTARIO_MAGENTA_DIGITAL.Properties.Resources.editar__1_;
-            this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
-            this.dataGridViewImageColumn1.Width = 150;
-            // 
-            // dataGridViewImageColumn2
-            // 
-            this.dataGridViewImageColumn2.HeaderText = "ELIMINAR";
-            this.dataGridViewImageColumn2.Image = global::SYSTEM_INVENTARIO_MAGENTA_DIGITAL.Properties.Resources.eliminar__1_;
-            this.dataGridViewImageColumn2.Name = "dataGridViewImageColumn2";
-            this.dataGridViewImageColumn2.Width = 150;
             // 
             // Id_Materia
             // 
@@ -165,11 +155,35 @@
             this.ELIMINAR.Image = global::SYSTEM_INVENTARIO_MAGENTA_DIGITAL.Properties.Resources.icon_5f41a9b90a6fd03b7d17b63704ef6f971;
             this.ELIMINAR.Name = "ELIMINAR";
             // 
+            // btnReg
+            // 
+            this.btnReg.Location = new System.Drawing.Point(27, 23);
+            this.btnReg.Name = "btnReg";
+            this.btnReg.Size = new System.Drawing.Size(75, 23);
+            this.btnReg.TabIndex = 10;
+            this.btnReg.Text = "Regresar";
+            this.btnReg.UseVisualStyleBackColor = true;
+            this.btnReg.Click += new System.EventHandler(this.btnReg_Click);
+            // 
+            // dataGridViewImageColumn1
+            // 
+            this.dataGridViewImageColumn1.HeaderText = "MODIFICAR";
+            this.dataGridViewImageColumn1.Image = global::SYSTEM_INVENTARIO_MAGENTA_DIGITAL.Properties.Resources.editar__1_;
+            this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
+            this.dataGridViewImageColumn1.Width = 150;
+            // 
+            // dataGridViewImageColumn2
+            // 
+            this.dataGridViewImageColumn2.HeaderText = "ELIMINAR";
+            this.dataGridViewImageColumn2.Image = global::SYSTEM_INVENTARIO_MAGENTA_DIGITAL.Properties.Resources.eliminar__1_;
+            this.dataGridViewImageColumn2.Name = "dataGridViewImageColumn2";
+            this.dataGridViewImageColumn2.Width = 150;
+            // 
             // MODIFICAR
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1189, 517);
+            this.ClientSize = new System.Drawing.Size(1111, 517);
             this.Controls.Add(this.btnReg);
             this.Controls.Add(this.txt_CantBusc);
             this.Controls.Add(this.label2);
