@@ -51,6 +51,18 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ACCESO\Login.cs" />
+    <Compile Include="ACTUALIZAR.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ACTUALIZAR.Designer.cs">
+      <DependentUpon>ACTUALIZAR.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BUSCAR.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BUSCAR.Designer.cs">
+      <DependentUpon>BUSCAR.cs</DependentUpon>
+    </Compile>
     <Compile Include="DATOS\DatosCategoria.cs" />
     <Compile Include="DATOS\DatosMateriales.cs" />
     <Compile Include="DATOS\DatosMatSelect.cs" />
@@ -82,6 +94,12 @@
     <Compile Include="MODELOS\MPedidos.cs" />
     <Compile Include="MODELOS\MSalidas.cs" />
     <Compile Include="MODELOS\MStock.cs" />
+    <Compile Include="MODIFICAR.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MODIFICAR.Designer.cs">
+      <DependentUpon>MODIFICAR.cs</DependentUpon>
+    </Compile>
     <Compile Include="PEDIDOS.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -100,6 +118,12 @@
     <Compile Include="REGISTRARMATERIAL.Designer.cs">
       <DependentUpon>REGISTRARMATERIAL.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="ACTUALIZAR.resx">
+      <DependentUpon>ACTUALIZAR.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BUSCAR.resx">
+      <DependentUpon>BUSCAR.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="INGRESO.resx">
       <DependentUpon>INGRESO.cs</DependentUpon>
     </EmbeddedResource>
@@ -108,6 +132,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="INICIO.resx">
       <DependentUpon>INICIO.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MODIFICAR.resx">
+      <DependentUpon>MODIFICAR.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PEDIDOS.resx">
       <DependentUpon>PEDIDOS.cs</DependentUpon>
@@ -225,6 +252,21 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\icon_4bd3092cfdf353a4b19434341ccb7d5d.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\editar %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\eliminar %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon_5f41a9b90a6fd03b7d17b63704ef6f97-_1_.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon_5f41a9b90a6fd03b7d17b63704ef6f97.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon_5f41a9b90a6fd03b7d17b63704ef6f971.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -24,5 +24,23 @@ namespace SYSTEM_INVENTARIO_MAGENTA_DIGITAL.RDN
                 }
             }
         }
+
+        public void ActulizarStock (int NuevoStock, int Material, int Categ)
+        {
+            DatosStock funcionStock = new DatosStock();
+            List<MConsultaStock> lstStock = funcionStock.StockMaterial(Categ,Material);
+
+            foreach (MConsultaStock dato in lstStock)
+            {
+                MStock Stock = new MStock();
+                int CantAct = dato.Cantidad + NuevoStock;
+
+                Stock.Cantidad = CantAct;
+                Stock.FechaEntrada = DateTime.Now;
+                Stock.Material = Material;
+                funcionStock.AgregarStock(Stock);
+
+            }
+        }
     }
 }

@@ -103,5 +103,12 @@ namespace SYSTEM_INVENTARIO_MAGENTA_DIGITAL
             PEDIDOS formPedidos = new PEDIDOS(this.idCateg);
             formPedidos.Show();
         }
+
+        private void btm_Modificar_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            MODIFICAR formModificar = new MODIFICAR(this.idCateg);
+            formModificar.Show();
+        }
     }
 }

@@ -43,12 +43,12 @@
             this.label2 = new System.Windows.Forms.Label();
             this.txt_NomPedido = new System.Windows.Forms.TextBox();
             this.dataGrid_Pedidos = new System.Windows.Forms.DataGridView();
-            this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
             this.verPedido = new System.Windows.Forms.DataGridViewImageColumn();
             this.id_pedido = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nomPedido = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.detalle_Ped = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fec_Pedido = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGrid_MaterialPed)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGrid_Pedidos)).BeginInit();
             this.SuspendLayout();
@@ -185,14 +185,6 @@
             this.dataGrid_Pedidos.Size = new System.Drawing.Size(935, 243);
             this.dataGrid_Pedidos.TabIndex = 14;
             // 
-            // dataGridViewImageColumn1
-            // 
-            this.dataGridViewImageColumn1.Frozen = true;
-            this.dataGridViewImageColumn1.HeaderText = "";
-            this.dataGridViewImageColumn1.Image = global::SYSTEM_INVENTARIO_MAGENTA_DIGITAL.Properties.Resources.mas;
-            this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
-            this.dataGridViewImageColumn1.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            // 
             // verPedido
             // 
             this.verPedido.Frozen = true;
@@ -225,11 +217,19 @@
             this.fec_Pedido.Name = "fec_Pedido";
             this.fec_Pedido.Width = 200;
             // 
+            // dataGridViewImageColumn1
+            // 
+            this.dataGridViewImageColumn1.Frozen = true;
+            this.dataGridViewImageColumn1.HeaderText = "";
+            this.dataGridViewImageColumn1.Image = global::SYSTEM_INVENTARIO_MAGENTA_DIGITAL.Properties.Resources.mas;
+            this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
+            this.dataGridViewImageColumn1.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            // 
             // PEDIDOS
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1025, 546);
+            this.ClientSize = new System.Drawing.Size(1025, 552);
             this.Controls.Add(this.dataGrid_Pedidos);
             this.Controls.Add(this.txt_NomPedido);
             this.Controls.Add(this.label2);

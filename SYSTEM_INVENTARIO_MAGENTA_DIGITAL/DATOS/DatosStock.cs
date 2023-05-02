@@ -57,27 +57,28 @@ namespace SYSTEM_INVENTARIO_MAGENTA_DIGITAL.DATOS
 
         }
 
-        public List<MConsultaStock> StockMaterial(int Categoria)
+        public List<MConsultaStock> StockMaterial(int Categoria, int Material)
         {
             cmd.Connection = conn.AbrirConexion();
-            cmd.CommandText = "SP_COSULTAR_STOCK";
+            cmd.CommandText = "SP_COSULTAR_STOCK_X_MATERIAL";
             cmd.CommandType = CommandType.StoredProcedure;
 
             cmd.Parameters.AddWithValue("@IdCateg", Categoria);
-            cmd.Parameters.AddWithValue("@IdMaterial", Categoria);
+            cmd.Parameters.AddWithValue("@IdMaterial", Material);
 
             List<MConsultaStock> lstStock = new List<MConsultaStock>();
 
             SqlDataReader stock = cmd.ExecuteReader();
-            if (stock.Read())
+            while (stock.Read())
             {
                 MConsultaStock Stock = new MConsultaStock();
                 Stock.IdMaterial = (int)stock["Id_Materia"];
                 Stock.Nombre = (string)stock["Nombre"];
-                Stock.Metros = (int)stock["Metros"];
+                Stock.Metros = (decimal)stock["Metros"];
                 Stock.Tamaño = (dynamic)stock["Tamaño"];
                 Stock.Cantidad = (int)stock["Cantidad"];
                 Stock.FechaEntrada = (DateTime)stock["FechaEntrada"];
+                lstStock.Add(Stock);
             }
             cmd.Parameters.Clear();
             conn.CerrarConexion();
