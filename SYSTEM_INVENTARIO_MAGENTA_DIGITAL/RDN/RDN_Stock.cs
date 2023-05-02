@@ -38,7 +38,7 @@ namespace SYSTEM_INVENTARIO_MAGENTA_DIGITAL.RDN
                 Stock.Cantidad = CantAct;
                 Stock.FechaEntrada = DateTime.Now;
                 Stock.Material = Material;
-                funcionStock.AgregarStock(Stock);
+                funcionStock.ActulizarStock(Stock.Cantidad, Stock.Material, Stock.FechaEntrada);
 
             }
         }
