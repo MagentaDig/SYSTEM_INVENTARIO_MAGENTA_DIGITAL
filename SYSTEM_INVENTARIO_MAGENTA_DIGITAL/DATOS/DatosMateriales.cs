@@ -15,7 +15,7 @@ namespace SYSTEM_INVENTARIO_MAGENTA_DIGITAL.DATOS
         Conexion conn = new Conexion();
         SqlCommand cmd = new SqlCommand();
 
-        public SqlDataReader AgregarMaterial (MMateriales Material)
+        public void AgregarMaterial (MMateriales Material)
         {
             cmd.Connection = conn.AbrirConexion();
             cmd.CommandText = "SP_AGREGAR_MATERIAL";
@@ -26,10 +26,11 @@ namespace SYSTEM_INVENTARIO_MAGENTA_DIGITAL.DATOS
             cmd.Parameters.AddWithValue("@Nombre", Material.Nombre);
             cmd.Parameters.AddWithValue("@Tamaño", Material.Tamaño);
             cmd.Parameters.AddWithValue("@Metros", Material.Metros);
+            cmd.Parameters.AddWithValue("@NoSerie", Material.NoSerie);
 
-            SqlDataReader idMaterial = cmd.ExecuteReader();
+            cmd.ExecuteReader();
             cmd.Parameters.Clear();
-            return idMaterial;
+            conn.CerrarConexion();
         }
 
         public List<MMateriales> MostrarMateriales (int Categoria)
@@ -47,19 +48,62 @@ namespace SYSTEM_INVENTARIO_MAGENTA_DIGITAL.DATOS
             while (datosMateriales.Read())
             {
                 MMateriales Material = new MMateriales();
-                Material.IdMaterial = (int)datosMateriales["Id_Materia"];
-                Material.Descripcion = (dynamic)datosMateriales["Descripcion"];
-                Material.Categoria = (int)datosMateriales["Id_Categ"];
+                Material.NoSerie = (dynamic)datosMateriales["NoSerie"];
                 Material.Nombre = (dynamic)datosMateriales["Nombre"];
-                Material.Tamaño = (dynamic)datosMateriales["Tamaño"];
-                Material.Metros = (dynamic)datosMateriales["Metros"];
+                Material.Cantidad = (int)datosMateriales["Total Material"];
                 Materiales.Add(Material);
 
             }
             cmd.Parameters.Clear();
+            conn.CerrarConexion();
             return Materiales;
         }
 
+        public bool ValidarNoSerie(dynamic noSerie)
+        {
+            cmd.Connection = conn.AbrirConexion();
+            cmd.CommandText = "SP_VALIDAR_NOSERIE";
+            cmd.CommandType = CommandType.StoredProcedure;
+
+            cmd.Parameters.AddWithValue("@NoSerie", noSerie);
+
+            SqlDataReader datoNoSerie = cmd.ExecuteReader();
+
+            bool isDisponible = true;
+            if (datoNoSerie.Read())
+            {
+                isDisponible = false; ;
+            }
+            cmd.Parameters.Clear();
+            conn.CerrarConexion();
+            return isDisponible;
+        }
+
+
+        public List<MMateriales> TablaMateriales(int Categ)
+        {
+            cmd.Connection = conn.AbrirConexion();
+            cmd.CommandText = "SP_MOSTRAR_TABLA_MATERIALES";
+            cmd.CommandType = CommandType.StoredProcedure;
+
+            cmd.Parameters.AddWithValue("@IdCateg", Categ);
+
+            SqlDataReader materiales = cmd.ExecuteReader();
+
+            List<MMateriales> lstMateriales = new List<MMateriales>();
+            while (materiales.Read())
+            {
+                MMateriales Mat = new MMateriales();
+                Mat.IdMaterial = (int)materiales["Id_Materia"];
+                Mat.Nombre = (dynamic)materiales["Nombre"];
+                Mat.Metros = (decimal)materiales["Metros"];
+                Mat.Tamaño = (dynamic)materiales["Tamaño"];
+                Mat.NoSerie = (dynamic)materiales["NoSerie"];
+                lstMateriales.Add(Mat);
+            }
+
+            return lstMateriales;
+        }
 
     }
 }

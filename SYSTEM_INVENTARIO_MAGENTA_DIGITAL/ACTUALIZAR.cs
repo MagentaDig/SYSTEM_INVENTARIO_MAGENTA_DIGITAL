@@ -13,17 +13,18 @@ using SYSTEM_INVENTARIO_MAGENTA_DIGITAL.RDN;
 
 namespace SYSTEM_INVENTARIO_MAGENTA_DIGITAL
 {
-    
+
     public partial class ACTUALIZAR : Form
     {
         public int idMaterial;
-        public int IdCateg;
+        public int Categ;
         public ACTUALIZAR(int Material, int IdCateg)
         {
             InitializeComponent();
             this.idMaterial = Material;
-            this.IdCateg = IdCateg;
+            this.Categ = IdCateg;
             MostraDatosMaterial();
+            MostrarDatosStock();
 
             //lbl_Material.Text = Material.ToString();
         }
@@ -31,14 +32,14 @@ namespace SYSTEM_INVENTARIO_MAGENTA_DIGITAL
 
         public void MostraDatosMaterial()
         {
-            DatosStock funcionStock = new DatosStock();
-            List<MConsultaStock> lstStock = funcionStock.StockMaterial(this.IdCateg, this.idMaterial);
+            //DatosStock funcionStock = new DatosStock();
+            //List<MConsultaStock> lstStock = funcionStock.StockMaterial(this.IdCateg, this.idMaterial);
 
-            foreach (MConsultaStock dato in lstStock)
-            {
-                lbl_Material.Text = dato.Nombre;
-                lbl_StockSAct.Text = dato.Cantidad.ToString();
-            }
+            //foreach (MConsultaStock dato in lstStock)
+            //{
+            //    lbl_Material.Text = dato.Nombre;
+            //    lbl_StockSAct.Text = dato.Cantidad.ToString();
+            //}
 
         }
 
@@ -49,14 +50,54 @@ namespace SYSTEM_INVENTARIO_MAGENTA_DIGITAL
 
         private void btn_Act_Click(object sender, EventArgs e)
         {
-            RDN_Stock reglaStock = new RDN_Stock();
+            DatosStock funcionStock = new DatosStock();
 
-            int nuevoStock = int.Parse(txt_NuevoStock.Text);
-            reglaStock.ActulizarStock(nuevoStock,this.idMaterial,this.IdCateg);
+            MStock Stock = new MStock();
+            Stock.Cantidad = int.Parse(txt_NuevoStock.Text);
+            Stock.FechaEntrada = DateTime.Now;
+            Stock.Material = this.idMaterial;
 
-            this.Hide();
-            MODIFICAR formModificar = new MODIFICAR(this.IdCateg);
-            formModificar.Show();
+            funcionStock.AgregarStock(Stock);
+
+            MessageBox.Show("Los datos se actualizaron correctamente");
+            this.Close();
+        }
+
+        public void MostrarDatosStock()
+        {
+            datosLabel();
+            DatosStock funcionStock = new DatosStock();
+            List<MStock> lstStock = funcionStock.ConsultarStock(this.idMaterial);
+
+            int index;
+
+            foreach (MStock datos in lstStock)
+            {
+                index = dataGrid_Stock.Rows.Add();
+                dataGrid_Stock.Rows[index].Cells[0].Value = datos.idStock;
+                dataGrid_Stock.Rows[index].Cells[1].Value = datos.Cantidad;
+                dataGrid_Stock.Rows[index].Cells[2].Value = datos.FechaEntrada;
+            }
+        }
+
+        public void datosLabel()
+        {
+            DatosMateriales funcionMateriales = new DatosMateriales();
+
+            List<MMateriales> lstMateriales = funcionMateriales.TablaMateriales(this.Categ);
+
+            foreach (MMateriales material in lstMateriales)
+            {
+                if(material.IdMaterial == this.idMaterial)
+                {
+                    lbl_Material.Text = material.Nombre;
+                    lbl_noSerie.Text = material.NoSerie;
+                    break;
+                }
+                
+            }
         }
     }
+
+
 }

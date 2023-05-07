@@ -24,20 +24,20 @@ namespace SYSTEM_INVENTARIO_MAGENTA_DIGITAL
 
         public void MostrarStock()
         {
-            DatosStock funcionStock = new DatosStock();
-            List<MConsultaStock> lstStock = funcionStock.ConsultarStock(this.idCateg);
+            DatosMateriales funcionMateriales = new DatosMateriales();
+            List<MMateriales> lstMateriales = funcionMateriales.TablaMateriales(this.idCateg);
 
             int index;
 
-            foreach (MConsultaStock datos in lstStock)
+            foreach (MMateriales datos in lstMateriales)
             {
                 index = dataGrid_Stock.Rows.Add();
                 dataGrid_Stock.Rows[index].Cells[0].Value = datos.IdMaterial;
                 dataGrid_Stock.Rows[index].Cells[1].Value = datos.Nombre;
-                dataGrid_Stock.Rows[index].Cells[2].Value = datos.Metros;
-                dataGrid_Stock.Rows[index].Cells[3].Value = datos.Tamaño;
-                dataGrid_Stock.Rows[index].Cells[4].Value = datos.Cantidad;
-                dataGrid_Stock.Rows[index].Cells[5].Value = datos.FechaEntrada;
+                dataGrid_Stock.Rows[index].Cells[2].Value = datos.NoSerie;
+                dataGrid_Stock.Rows[index].Cells[3].Value = datos.Metros;
+                dataGrid_Stock.Rows[index].Cells[4].Value = datos.Tamaño;
+
             }
         }
 
@@ -51,12 +51,20 @@ namespace SYSTEM_INVENTARIO_MAGENTA_DIGITAL
         int idMat;
         private void dataGrid_Stock_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (dataGrid_Stock.Columns[e.ColumnIndex].Name == "ACTUALIZAR")
+            if (dataGrid_Stock.Columns[e.ColumnIndex].Name == "stock")
             {
                 idMat = Convert.ToInt32(dataGrid_Stock.CurrentRow.Cells["Id_Materia"].Value.ToString());
                 ACTUALIZAR formActu = new ACTUALIZAR(idMat, this.idCateg);
                 formActu.ShowDialog();
+                recargarPantalla();
             }
+        }
+
+        public void recargarPantalla()
+        {
+            this.Hide();
+            MODIFICAR fomModificar = new MODIFICAR(this.idCateg);
+            fomModificar.Show();
         }
     }
 }

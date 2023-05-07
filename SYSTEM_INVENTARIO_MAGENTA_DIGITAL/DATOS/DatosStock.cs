@@ -29,26 +29,24 @@ namespace SYSTEM_INVENTARIO_MAGENTA_DIGITAL.DATOS
             cmd.Parameters.Clear();
         }
 
-        public List<MConsultaStock> ConsultarStock(int Categoria)
+        public List<MStock> ConsultarStock(int IdMaterial)
         {
             cmd.Connection = conn.AbrirConexion();
             cmd.CommandText = "SP_COSULTAR_STOCK";
             cmd.CommandType = CommandType.StoredProcedure;
 
-            cmd.Parameters.AddWithValue("@IdCateg", Categoria);
+            cmd.Parameters.AddWithValue("@IdMateria", IdMaterial);
 
-            List<MConsultaStock> lstStock = new List<MConsultaStock>();
+            List<MStock> lstStock = new List<MStock>();
 
             SqlDataReader stock = cmd.ExecuteReader();
             while (stock.Read())
             {
-                MConsultaStock Stock = new MConsultaStock();
-                Stock.IdMaterial = (int)stock["Id_Materia"];
-                Stock.Nombre = (string)stock["Nombre"];
-                Stock.Metros = (decimal)stock["Metros"];
-                Stock.Tamaño = (dynamic)stock["Tamaño"];
+                MStock Stock = new MStock();
+                Stock.idStock = (int)stock["Id_Stock"];
                 Stock.Cantidad = (int)stock["Cantidad"];
                 Stock.FechaEntrada = (DateTime)stock["FechaEntrada"];
+
                 lstStock.Add(Stock);
             }
             conn.CerrarConexion();
@@ -86,14 +84,13 @@ namespace SYSTEM_INVENTARIO_MAGENTA_DIGITAL.DATOS
             return lstStock;
         }
 
-        public void ActulizarStock(int nuevoStock, int IdMaterial, DateTime FechaActualizacion)
+        public void ActulizarStock(int nuevoStock, int IdMaterial)
         {
             cmd.Connection = conn.AbrirConexion();
             cmd.CommandText = "SP_ACTUALIZAR_STOCK";
             cmd.CommandType = CommandType.StoredProcedure;
 
             cmd.Parameters.AddWithValue("@Stock", nuevoStock);
-            cmd.Parameters.AddWithValue("@FechaEntrada", FechaActualizacion);
             cmd.Parameters.AddWithValue("@IdMaterial", IdMaterial);
 
 

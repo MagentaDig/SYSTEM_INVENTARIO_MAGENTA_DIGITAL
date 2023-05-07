@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using System.Runtime.InteropServices;
 using SYSTEM_INVENTARIO_MAGENTA_DIGITAL.DATOS;
 using SYSTEM_INVENTARIO_MAGENTA_DIGITAL.MODELOS;
+using SYSTEM_INVENTARIO_MAGENTA_DIGITAL.RDN;
 using System.Data.SqlClient;
 
 namespace SYSTEM_INVENTARIO_MAGENTA_DIGITAL
@@ -52,7 +53,8 @@ namespace SYSTEM_INVENTARIO_MAGENTA_DIGITAL
         {
             MMateriales Material = new MMateriales();
             MStock Stock = new MStock();
-            DatosMateriales funcionAgr = new DatosMateriales();
+            RDN_SERIES reglaSerie = new RDN_SERIES();
+            DatosMateriales funcionMateriesles = new DatosMateriales();
             DatosStock funcionStock = new DatosStock();
 
             Material.Nombre = txt_nombre.Text;
@@ -60,18 +62,34 @@ namespace SYSTEM_INVENTARIO_MAGENTA_DIGITAL
             Material.Metros = decimal.Parse( txt_metros.Text);
             Material.Descripcion = rich_Desc.Text;
             Material.Categoria = this.idCateg;
+            dynamic NoSerie = "NSM-"+(txt_NoSerie.Text);
 
-            SqlDataReader MatAgr = funcionAgr.AgregarMaterial(Material);
-            int idMateial = getIdMaterial(MatAgr);
+            DatosMateriales funcionMateriales = new DatosMateriales();
+            bool isDisponile = funcionMateriales.ValidarNoSerie(NoSerie);
+            if (isDisponile)
+            {
+                Material.NoSerie = NoSerie;
+                funcionMateriesles.AgregarMaterial(Material);
+
+                MessageBox.Show("El registro se ah agregado correctamente");
+            }
+            else
+            {
+                MessageBox.Show("El No. de Serie " + NoSerie + " no se encuentra disponible");
+            }
 
 
-            Stock.Cantidad = int.Parse(txt_cantidad.Text);
-            Stock.FechaEntrada = DateTime.Now;
-            Stock.Material = idMateial;
-
-            funcionStock.AgregarStock(Stock);
             
-            MessageBox.Show("El registro se ah agregado correctamente");
+
+
+
+            //Stock.Cantidad = int.Parse(txt_cantidad.Text);
+            //Stock.FechaEntrada = DateTime.Now;
+            //Stock.Material = idMateial;
+
+            //funcionStock.AgregarStock(Stock);
+            
+            
 
         }
 
@@ -105,6 +123,11 @@ namespace SYSTEM_INVENTARIO_MAGENTA_DIGITAL
         {
             ReleaseCapture();
             SendMessage(this.Handle, 0x112, 0xf012, 0);
+        }
+
+        private void REGISTRARMATERIAL_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

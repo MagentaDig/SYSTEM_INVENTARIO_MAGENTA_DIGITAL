@@ -49,6 +49,8 @@
             this.detalle_Ped = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fec_Pedido = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.lbl_titleStock = new System.Windows.Forms.Label();
+            this.lbl_cantidadDisp = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGrid_MaterialPed)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGrid_Pedidos)).BeginInit();
             this.SuspendLayout();
@@ -93,14 +95,16 @@
             this.cb_Materiales.FormattingEnabled = true;
             this.cb_Materiales.Location = new System.Drawing.Point(392, 107);
             this.cb_Materiales.Name = "cb_Materiales";
-            this.cb_Materiales.Size = new System.Drawing.Size(150, 21);
+            this.cb_Materiales.Size = new System.Drawing.Size(229, 21);
             this.cb_Materiales.TabIndex = 4;
+            this.cb_Materiales.SelectedIndexChanged += new System.EventHandler(this.cb_Materiales_SelectedIndexChanged);
+            this.cb_Materiales.SelectedValueChanged += new System.EventHandler(this.cb_Materiales_SelectedValueChanged);
             // 
             // btn_AgrMat
             // 
             this.btn_AgrMat.Location = new System.Drawing.Point(392, 202);
             this.btn_AgrMat.Name = "btn_AgrMat";
-            this.btn_AgrMat.Size = new System.Drawing.Size(150, 23);
+            this.btn_AgrMat.Size = new System.Drawing.Size(229, 23);
             this.btn_AgrMat.TabIndex = 5;
             this.btn_AgrMat.Text = "Agregar";
             this.btn_AgrMat.UseVisualStyleBackColor = true;
@@ -110,13 +114,13 @@
             // 
             this.txt_Cantidad.Location = new System.Drawing.Point(392, 166);
             this.txt_Cantidad.Name = "txt_Cantidad";
-            this.txt_Cantidad.Size = new System.Drawing.Size(150, 20);
+            this.txt_Cantidad.Size = new System.Drawing.Size(229, 20);
             this.txt_Cantidad.TabIndex = 7;
             this.txt_Cantidad.TextChanged += new System.EventHandler(this.txt_Cantidad_TextChanged);
             // 
             // btnAgrPedido
             // 
-            this.btnAgrPedido.Location = new System.Drawing.Point(834, 231);
+            this.btnAgrPedido.Location = new System.Drawing.Point(906, 231);
             this.btnAgrPedido.Name = "btnAgrPedido";
             this.btnAgrPedido.Size = new System.Drawing.Size(163, 27);
             this.btnAgrPedido.TabIndex = 8;
@@ -130,7 +134,7 @@
             this.dataGrid_MaterialPed.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Material,
             this.cantidad});
-            this.dataGrid_MaterialPed.Location = new System.Drawing.Point(601, 107);
+            this.dataGrid_MaterialPed.Location = new System.Drawing.Point(673, 107);
             this.dataGrid_MaterialPed.Name = "dataGrid_MaterialPed";
             this.dataGrid_MaterialPed.Size = new System.Drawing.Size(396, 118);
             this.dataGrid_MaterialPed.TabIndex = 9;
@@ -182,7 +186,7 @@
             this.fec_Pedido});
             this.dataGrid_Pedidos.Location = new System.Drawing.Point(62, 285);
             this.dataGrid_Pedidos.Name = "dataGrid_Pedidos";
-            this.dataGrid_Pedidos.Size = new System.Drawing.Size(935, 243);
+            this.dataGrid_Pedidos.Size = new System.Drawing.Size(1007, 243);
             this.dataGrid_Pedidos.TabIndex = 14;
             // 
             // verPedido
@@ -225,11 +229,33 @@
             this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
             this.dataGridViewImageColumn1.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             // 
+            // lbl_titleStock
+            // 
+            this.lbl_titleStock.AutoSize = true;
+            this.lbl_titleStock.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_titleStock.Location = new System.Drawing.Point(458, 78);
+            this.lbl_titleStock.Name = "lbl_titleStock";
+            this.lbl_titleStock.Size = new System.Drawing.Size(107, 13);
+            this.lbl_titleStock.TabIndex = 15;
+            this.lbl_titleStock.Text = "Stock Disponible:";
+            // 
+            // lbl_cantidadDisp
+            // 
+            this.lbl_cantidadDisp.AutoSize = true;
+            this.lbl_cantidadDisp.Location = new System.Drawing.Point(566, 78);
+            this.lbl_cantidadDisp.Name = "lbl_cantidadDisp";
+            this.lbl_cantidadDisp.Size = new System.Drawing.Size(55, 13);
+            this.lbl_cantidadDisp.TabIndex = 16;
+            this.lbl_cantidadDisp.Text = "(Cantidad)";
+            this.lbl_cantidadDisp.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
             // PEDIDOS
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1025, 552);
+            this.ClientSize = new System.Drawing.Size(1141, 552);
+            this.Controls.Add(this.lbl_cantidadDisp);
+            this.Controls.Add(this.lbl_titleStock);
             this.Controls.Add(this.dataGrid_Pedidos);
             this.Controls.Add(this.txt_NomPedido);
             this.Controls.Add(this.label2);
@@ -275,5 +301,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn nomPedido;
         private System.Windows.Forms.DataGridViewTextBoxColumn detalle_Ped;
         private System.Windows.Forms.DataGridViewTextBoxColumn fec_Pedido;
+        private System.Windows.Forms.Label lbl_titleStock;
+        private System.Windows.Forms.Label lbl_cantidadDisp;
     }
 }

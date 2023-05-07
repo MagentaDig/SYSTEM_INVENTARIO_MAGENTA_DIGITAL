@@ -38,8 +38,6 @@
             this.txt_tamaño = new System.Windows.Forms.TextBox();
             this.txt_metros = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.txt_cantidad = new System.Windows.Forms.TextBox();
             this.rich_Desc = new System.Windows.Forms.RichTextBox();
             this.txt_nombre = new System.Windows.Forms.TextBox();
             this.panel_barratitulo = new System.Windows.Forms.Panel();
@@ -47,7 +45,6 @@
             this.iconominimizar2 = new System.Windows.Forms.PictureBox();
             this.iconocerrar2 = new System.Windows.Forms.PictureBox();
             this.btn_guardarmat = new System.Windows.Forms.Button();
-            this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
@@ -56,16 +53,20 @@
             this.dataGrid_AgrMaterial = new System.Windows.Forms.DataGridView();
             this.id_material = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nom_material = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.txt_NoSerie = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.pictureBox6 = new System.Windows.Forms.PictureBox();
+            this.lbl_serie = new System.Windows.Forms.Label();
             this.panel_barratitulo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconoregresarmenu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconominimizar2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconocerrar2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGrid_AgrMaterial)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -75,9 +76,9 @@
             this.label1.ForeColor = System.Drawing.Color.Black;
             this.label1.Location = new System.Drawing.Point(46, 81);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(547, 77);
+            this.label1.Size = new System.Drawing.Size(567, 77);
             this.label1.TabIndex = 4;
-            this.label1.Text = "Registar Material";
+            this.label1.Text = "Registrar Material";
             // 
             // label2
             // 
@@ -85,7 +86,7 @@
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.Magenta;
-            this.label2.Location = new System.Drawing.Point(581, 130);
+            this.label2.Location = new System.Drawing.Point(608, 130);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(77, 18);
             this.label2.TabIndex = 6;
@@ -97,7 +98,7 @@
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label3.Location = new System.Drawing.Point(653, 130);
+            this.label3.Location = new System.Drawing.Point(678, 130);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(56, 18);
             this.label3.TabIndex = 7;
@@ -108,7 +109,7 @@
             this.lbl_categoriaSelect.AutoSize = true;
             this.lbl_categoriaSelect.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_categoriaSelect.ForeColor = System.Drawing.Color.Black;
-            this.lbl_categoriaSelect.Location = new System.Drawing.Point(67, 182);
+            this.lbl_categoriaSelect.Location = new System.Drawing.Point(234, 182);
             this.lbl_categoriaSelect.Name = "lbl_categoriaSelect";
             this.lbl_categoriaSelect.Size = new System.Drawing.Size(117, 30);
             this.lbl_categoriaSelect.TabIndex = 8;
@@ -167,27 +168,6 @@
             this.label6.TabIndex = 17;
             this.label6.Text = "Descripción:";
             // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.Color.Black;
-            this.label7.Location = new System.Drawing.Point(405, 271);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(133, 30);
-            this.label7.TabIndex = 19;
-            this.label7.Text = "Cantidad:";
-            // 
-            // txt_cantidad
-            // 
-            this.txt_cantidad.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(166)))), ((int)(((byte)(166)))));
-            this.txt_cantidad.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txt_cantidad.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_cantidad.Location = new System.Drawing.Point(421, 314);
-            this.txt_cantidad.Name = "txt_cantidad";
-            this.txt_cantidad.Size = new System.Drawing.Size(117, 15);
-            this.txt_cantidad.TabIndex = 22;
-            // 
             // rich_Desc
             // 
             this.rich_Desc.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(166)))), ((int)(((byte)(166)))));
@@ -203,7 +183,7 @@
             this.txt_nombre.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(166)))), ((int)(((byte)(166)))));
             this.txt_nombre.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txt_nombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_nombre.Location = new System.Drawing.Point(82, 229);
+            this.txt_nombre.Location = new System.Drawing.Point(249, 229);
             this.txt_nombre.Name = "txt_nombre";
             this.txt_nombre.Size = new System.Drawing.Size(210, 15);
             this.txt_nombre.TabIndex = 24;
@@ -270,16 +250,6 @@
             this.btn_guardarmat.UseVisualStyleBackColor = true;
             this.btn_guardarmat.Click += new System.EventHandler(this.btn_guardarmat_Click);
             // 
-            // pictureBox5
-            // 
-            this.pictureBox5.Image = global::SYSTEM_INVENTARIO_MAGENTA_DIGITAL.Properties.Resources.Captura_de_pantalla_2023_04_25_020420;
-            this.pictureBox5.Location = new System.Drawing.Point(405, 303);
-            this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(154, 44);
-            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox5.TabIndex = 20;
-            this.pictureBox5.TabStop = false;
-            // 
             // pictureBox4
             // 
             this.pictureBox4.Image = global::SYSTEM_INVENTARIO_MAGENTA_DIGITAL.Properties.Resources.Captura_de_pantalla_2023_04_25_021052;
@@ -313,9 +283,9 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = global::SYSTEM_INVENTARIO_MAGENTA_DIGITAL.Properties.Resources.Captura_de_pantalla_2023_04_25_020316;
-            this.pictureBox1.Location = new System.Drawing.Point(59, 215);
+            this.pictureBox1.Location = new System.Drawing.Point(226, 215);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(262, 44);
+            this.pictureBox1.Size = new System.Drawing.Size(333, 44);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 10;
             this.pictureBox1.TabStop = false;
@@ -347,19 +317,62 @@
             this.nom_material.Name = "nom_material";
             this.nom_material.Width = 300;
             // 
+            // txt_NoSerie
+            // 
+            this.txt_NoSerie.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(166)))), ((int)(((byte)(166)))));
+            this.txt_NoSerie.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txt_NoSerie.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_NoSerie.Location = new System.Drawing.Point(118, 231);
+            this.txt_NoSerie.Name = "txt_NoSerie";
+            this.txt_NoSerie.Size = new System.Drawing.Size(82, 15);
+            this.txt_NoSerie.TabIndex = 29;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.Color.Black;
+            this.label8.Location = new System.Drawing.Point(60, 186);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(118, 30);
+            this.label8.TabIndex = 28;
+            this.label8.Text = "No. Serie";
+            // 
+            // pictureBox6
+            // 
+            this.pictureBox6.Image = global::SYSTEM_INVENTARIO_MAGENTA_DIGITAL.Properties.Resources.Captura_de_pantalla_2023_04_25_020420;
+            this.pictureBox6.Location = new System.Drawing.Point(61, 217);
+            this.pictureBox6.Name = "pictureBox6";
+            this.pictureBox6.Size = new System.Drawing.Size(154, 44);
+            this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox6.TabIndex = 27;
+            this.pictureBox6.TabStop = false;
+            // 
+            // lbl_serie
+            // 
+            this.lbl_serie.AutoSize = true;
+            this.lbl_serie.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(166)))), ((int)(((byte)(166)))));
+            this.lbl_serie.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_serie.Location = new System.Drawing.Point(70, 231);
+            this.lbl_serie.Name = "lbl_serie";
+            this.lbl_serie.Size = new System.Drawing.Size(45, 16);
+            this.lbl_serie.TabIndex = 30;
+            this.lbl_serie.Text = "NSM-";
+            // 
             // REGISTRARMATERIAL
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1050, 650);
+            this.Controls.Add(this.lbl_serie);
+            this.Controls.Add(this.txt_NoSerie);
+            this.Controls.Add(this.label8);
+            this.Controls.Add(this.pictureBox6);
             this.Controls.Add(this.dataGrid_AgrMaterial);
             this.Controls.Add(this.panel_barratitulo);
             this.Controls.Add(this.txt_nombre);
             this.Controls.Add(this.rich_Desc);
-            this.Controls.Add(this.txt_cantidad);
             this.Controls.Add(this.btn_guardarmat);
-            this.Controls.Add(this.pictureBox5);
-            this.Controls.Add(this.label7);
             this.Controls.Add(this.pictureBox4);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.txt_metros);
@@ -376,16 +389,17 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "REGISTRARMATERIAL";
             this.Text = "REGISTRARMATERIAL";
+            this.Load += new System.EventHandler(this.REGISTRARMATERIAL_Load);
             this.panel_barratitulo.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.iconoregresarmenu)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconominimizar2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconocerrar2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGrid_AgrMaterial)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -406,10 +420,7 @@
         private System.Windows.Forms.TextBox txt_metros;
         public System.Windows.Forms.Label label6;
         private System.Windows.Forms.PictureBox pictureBox4;
-        public System.Windows.Forms.Label label7;
-        private System.Windows.Forms.PictureBox pictureBox5;
         private System.Windows.Forms.Button btn_guardarmat;
-        private System.Windows.Forms.TextBox txt_cantidad;
         private System.Windows.Forms.RichTextBox rich_Desc;
         private System.Windows.Forms.TextBox txt_nombre;
         private System.Windows.Forms.Panel panel_barratitulo;
@@ -420,5 +431,9 @@
         private System.Windows.Forms.DataGridView dataGrid_AgrMaterial;
         private System.Windows.Forms.DataGridViewTextBoxColumn id_material;
         private System.Windows.Forms.DataGridViewTextBoxColumn nom_material;
+        private System.Windows.Forms.TextBox txt_NoSerie;
+        public System.Windows.Forms.Label label8;
+        private System.Windows.Forms.PictureBox pictureBox6;
+        private System.Windows.Forms.Label lbl_serie;
     }
 }

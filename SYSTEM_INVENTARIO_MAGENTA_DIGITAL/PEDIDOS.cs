@@ -35,7 +35,7 @@ namespace SYSTEM_INVENTARIO_MAGENTA_DIGITAL
             this.idCateg = idCateg;
 
             mostrarMaterialesCB();
-            mostrarPedido();
+            //mostrarPedido();
         }
 
         private void txt_Cantidad_TextChanged(object sender, EventArgs e)
@@ -151,6 +151,30 @@ namespace SYSTEM_INVENTARIO_MAGENTA_DIGITAL
             this.Hide();
             PEDIDOS formPedido = new PEDIDOS(this.idCateg);
             formPedido.Show();
+        }
+
+        private void cb_Materiales_SelectedValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cb_Materiales_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            DatosMateriales funcionMateriales = new DatosMateriales();
+
+            List<MMateriales> lstMateriales = funcionMateriales.MostrarMateriales(this.idCateg);
+
+            int index = cb_Materiales.SelectedIndex;
+            dynamic material = cb_Materiales.Items[index].ToString();
+
+            foreach (MMateriales Material in lstMateriales)
+            {
+                if (Material.Nombre == material)
+                {
+                    lbl_cantidadDisp.Text = Material.Cantidad.ToString();
+                    break;
+                }
+            }
         }
     }
 }

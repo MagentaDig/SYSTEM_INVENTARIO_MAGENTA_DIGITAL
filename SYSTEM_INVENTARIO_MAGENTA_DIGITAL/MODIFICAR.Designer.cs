@@ -34,17 +34,16 @@
             this.cb_materialesBusc = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.dataGrid_Stock = new System.Windows.Forms.DataGridView();
-            this.Id_Materia = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nomMaterial = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.metMaterial = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tamMaterial = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.canDisp = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fecEntrada = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ACTUALIZAR = new System.Windows.Forms.DataGridViewImageColumn();
-            this.ELIMINAR = new System.Windows.Forms.DataGridViewImageColumn();
             this.btnReg = new System.Windows.Forms.Button();
             this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
             this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.Id_Materia = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nomMaterial = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.noSerie = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.metMaterial = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tamMaterial = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.stock = new System.Windows.Forms.DataGridViewImageColumn();
+            this.ELIMINAR = new System.Windows.Forms.DataGridViewImageColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGrid_Stock)).BeginInit();
             this.SuspendLayout();
             // 
@@ -98,62 +97,18 @@
             this.dataGrid_Stock.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Id_Materia,
             this.nomMaterial,
+            this.noSerie,
             this.metMaterial,
             this.tamMaterial,
-            this.canDisp,
-            this.fecEntrada,
-            this.ACTUALIZAR,
+            this.stock,
             this.ELIMINAR});
             this.dataGrid_Stock.Location = new System.Drawing.Point(27, 143);
             this.dataGrid_Stock.Name = "dataGrid_Stock";
             this.dataGrid_Stock.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
             this.dataGrid_Stock.RowTemplate.Height = 30;
-            this.dataGrid_Stock.Size = new System.Drawing.Size(1032, 327);
+            this.dataGrid_Stock.Size = new System.Drawing.Size(791, 327);
             this.dataGrid_Stock.TabIndex = 5;
             this.dataGrid_Stock.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGrid_Stock_CellClick);
-            // 
-            // Id_Materia
-            // 
-            this.Id_Materia.HeaderText = "ID";
-            this.Id_Materia.Name = "Id_Materia";
-            // 
-            // nomMaterial
-            // 
-            this.nomMaterial.HeaderText = "MATERIAL";
-            this.nomMaterial.Name = "nomMaterial";
-            // 
-            // metMaterial
-            // 
-            this.metMaterial.HeaderText = "METROS";
-            this.metMaterial.Name = "metMaterial";
-            // 
-            // tamMaterial
-            // 
-            this.tamMaterial.HeaderText = "TAMAÑO";
-            this.tamMaterial.Name = "tamMaterial";
-            // 
-            // canDisp
-            // 
-            this.canDisp.HeaderText = "CANT. DISP";
-            this.canDisp.Name = "canDisp";
-            // 
-            // fecEntrada
-            // 
-            this.fecEntrada.HeaderText = "FECHA ENTRADA";
-            this.fecEntrada.Name = "fecEntrada";
-            this.fecEntrada.Width = 290;
-            // 
-            // ACTUALIZAR
-            // 
-            this.ACTUALIZAR.HeaderText = "ACTUALIZAR";
-            this.ACTUALIZAR.Image = global::SYSTEM_INVENTARIO_MAGENTA_DIGITAL.Properties.Resources.icon_5f41a9b90a6fd03b7d17b63704ef6f97__1_;
-            this.ACTUALIZAR.Name = "ACTUALIZAR";
-            // 
-            // ELIMINAR
-            // 
-            this.ELIMINAR.HeaderText = "ELIMINAR";
-            this.ELIMINAR.Image = global::SYSTEM_INVENTARIO_MAGENTA_DIGITAL.Properties.Resources.icon_5f41a9b90a6fd03b7d17b63704ef6f971;
-            this.ELIMINAR.Name = "ELIMINAR";
             // 
             // btnReg
             // 
@@ -179,11 +134,49 @@
             this.dataGridViewImageColumn2.Name = "dataGridViewImageColumn2";
             this.dataGridViewImageColumn2.Width = 150;
             // 
+            // Id_Materia
+            // 
+            this.Id_Materia.HeaderText = "ID";
+            this.Id_Materia.Name = "Id_Materia";
+            // 
+            // nomMaterial
+            // 
+            this.nomMaterial.HeaderText = "MATERIAL";
+            this.nomMaterial.Name = "nomMaterial";
+            // 
+            // noSerie
+            // 
+            this.noSerie.HeaderText = "NO. DE SERIE";
+            this.noSerie.Name = "noSerie";
+            this.noSerie.Width = 150;
+            // 
+            // metMaterial
+            // 
+            this.metMaterial.HeaderText = "METROS";
+            this.metMaterial.Name = "metMaterial";
+            // 
+            // tamMaterial
+            // 
+            this.tamMaterial.HeaderText = "TAMAÑO";
+            this.tamMaterial.Name = "tamMaterial";
+            // 
+            // stock
+            // 
+            this.stock.HeaderText = "STOCK";
+            this.stock.Image = global::SYSTEM_INVENTARIO_MAGENTA_DIGITAL.Properties.Resources.icon_5f41a9b90a6fd03b7d17b63704ef6f97__1_;
+            this.stock.Name = "stock";
+            // 
+            // ELIMINAR
+            // 
+            this.ELIMINAR.HeaderText = "ELIMINAR";
+            this.ELIMINAR.Image = global::SYSTEM_INVENTARIO_MAGENTA_DIGITAL.Properties.Resources.icon_5f41a9b90a6fd03b7d17b63704ef6f971;
+            this.ELIMINAR.Name = "ELIMINAR";
+            // 
             // MODIFICAR
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1111, 517);
+            this.ClientSize = new System.Drawing.Size(852, 517);
             this.Controls.Add(this.btnReg);
             this.Controls.Add(this.txt_CantBusc);
             this.Controls.Add(this.label2);
@@ -210,11 +203,10 @@
         private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Id_Materia;
         private System.Windows.Forms.DataGridViewTextBoxColumn nomMaterial;
+        private System.Windows.Forms.DataGridViewTextBoxColumn noSerie;
         private System.Windows.Forms.DataGridViewTextBoxColumn metMaterial;
         private System.Windows.Forms.DataGridViewTextBoxColumn tamMaterial;
-        private System.Windows.Forms.DataGridViewTextBoxColumn canDisp;
-        private System.Windows.Forms.DataGridViewTextBoxColumn fecEntrada;
-        private System.Windows.Forms.DataGridViewImageColumn ACTUALIZAR;
+        private System.Windows.Forms.DataGridViewImageColumn stock;
         private System.Windows.Forms.DataGridViewImageColumn ELIMINAR;
     }
 }

@@ -12,17 +12,17 @@ namespace SYSTEM_INVENTARIO_MAGENTA_DIGITAL.RDN
     {
         public void ModificarStock(MMaterialSelect MaterialAct, int Categ)
         {
-            DatosStock funcionStock = new DatosStock();
-            List<MConsultaStock> lStStock = funcionStock.ConsultarStock(Categ);
+            //DatosStock funcionStock = new DatosStock();
+            //List<MConsultaStock> lStStock = funcionStock.ConsultarStock(Categ);
 
-            foreach (MConsultaStock stock in lStStock)
-            {
-                if (stock.IdMaterial == MaterialAct.idMaterial)
-                {
-                    int calculoStock = stock.Cantidad - MaterialAct.Cantidad;
-                    funcionStock.ActulizarStock(calculoStock, MaterialAct.idMaterial);
-                }
-            }
+            //foreach (MConsultaStock stock in lStStock)
+            //{
+            //    if (stock.IdMaterial == MaterialAct.idMaterial)
+            //    {
+            //        int calculoStock = stock.Cantidad - MaterialAct.Cantidad;
+            //        funcionStock.ActulizarStock(calculoStock, MaterialAct.idMaterial);
+            //    }
+            //}
         }
 
         public void ActulizarStock (int NuevoStock, int Material, int Categ)
@@ -38,7 +38,7 @@ namespace SYSTEM_INVENTARIO_MAGENTA_DIGITAL.RDN
                 Stock.Cantidad = CantAct;
                 Stock.FechaEntrada = DateTime.Now;
                 Stock.Material = Material;
-                funcionStock.ActulizarStock(Stock.Cantidad, Stock.Material, Stock.FechaEntrada);
+                funcionStock.ActulizarStock(Stock.Cantidad, Stock.Material);
 
             }
         }
