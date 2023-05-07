@@ -18,7 +18,7 @@ namespace SYSTEM_INVENTARIO_MAGENTA_DIGITAL.DATOS
         public SqlDataReader agreMateSelect(MMaterialSelect MaterialSelec, int IdPedido)
         {
             cmd.Connection = conn.AbrirConexion();
-            cmd.CommandText = "SP_AGR_MAT_SELEC";
+            cmd.CommandText = "SP_DETALLE_PEDIDO";
             cmd.CommandType = CommandType.StoredProcedure;
 
             cmd.Parameters.AddWithValue("@IdMaterial", MaterialSelec.idMaterial);

@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using SYSTEM_INVENTARIO_MAGENTA_DIGITAL.MODELOS;
 using SYSTEM_INVENTARIO_MAGENTA_DIGITAL.DATOS;
+using System.Windows.Forms;
 
 namespace SYSTEM_INVENTARIO_MAGENTA_DIGITAL.RDN
 {
@@ -25,21 +26,26 @@ namespace SYSTEM_INVENTARIO_MAGENTA_DIGITAL.RDN
             //}
         }
 
-        public void ActulizarStock (int NuevoStock, int Material, int Categ)
+        public void ActulizarStock (int NuevoStock, int Material)
         {
+            int stockEnFila = NuevoStock;
             DatosStock funcionStock = new DatosStock();
-            List<MConsultaStock> lstStock = funcionStock.StockMaterial(Categ,Material);
-
-            foreach (MConsultaStock dato in lstStock)
+            List<MStock> lstStock = funcionStock.ConsultarStock(Material);
+            foreach (MStock stock in lstStock)
             {
-                MStock Stock = new MStock();
-                int CantAct = dato.Cantidad + NuevoStock;
-
-                Stock.Cantidad = CantAct;
-                Stock.FechaEntrada = DateTime.Now;
-                Stock.Material = Material;
-                funcionStock.ActulizarStock(Stock.Cantidad, Stock.Material);
-
+                if(stock.Cantidad >= stockEnFila)
+                {
+                    int newStock = stock.Cantidad - stockEnFila;
+                    funcionStock.ActulizarStock(newStock,stock.idStock);
+                    break;
+                }
+                else
+                {
+                    int newStock = stockEnFila - stock.Cantidad;
+                    int stockRest = stock.Cantidad - stock.Cantidad;
+                    funcionStock.ActulizarStock(stockRest, stock.idStock);
+                    stockEnFila = newStock;
+                }
             }
         }
     }

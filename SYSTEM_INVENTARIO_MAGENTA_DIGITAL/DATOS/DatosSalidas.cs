@@ -22,7 +22,7 @@ namespace SYSTEM_INVENTARIO_MAGENTA_DIGITAL.DATOS
             cmd.CommandType = CommandType.StoredProcedure;
 
             cmd.Parameters.AddWithValue("@FechaSaida", Salida.FechaSalida);
-            cmd.Parameters.AddWithValue("@Id_MS", Salida.MaterialSelec);
+            cmd.Parameters.AddWithValue("@Id_DP", Salida.MaterialSelec);
 
             cmd.ExecuteNonQuery();
             cmd.Parameters.Clear();

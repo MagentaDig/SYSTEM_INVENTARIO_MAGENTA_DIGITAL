@@ -46,6 +46,7 @@ namespace SYSTEM_INVENTARIO_MAGENTA_DIGITAL.DATOS
                 Stock.idStock = (int)stock["Id_Stock"];
                 Stock.Cantidad = (int)stock["Cantidad"];
                 Stock.FechaEntrada = (DateTime)stock["FechaEntrada"];
+                Stock.Material = (int)stock["Id_Materia"];
 
                 lstStock.Add(Stock);
             }
@@ -84,14 +85,14 @@ namespace SYSTEM_INVENTARIO_MAGENTA_DIGITAL.DATOS
             return lstStock;
         }
 
-        public void ActulizarStock(int nuevoStock, int IdMaterial)
+        public void ActulizarStock(int nuevoStock, int IdStock)
         {
             cmd.Connection = conn.AbrirConexion();
             cmd.CommandText = "SP_ACTUALIZAR_STOCK";
             cmd.CommandType = CommandType.StoredProcedure;
 
             cmd.Parameters.AddWithValue("@Stock", nuevoStock);
-            cmd.Parameters.AddWithValue("@IdMaterial", IdMaterial);
+            cmd.Parameters.AddWithValue("@IdStock", IdStock);
 
 
             cmd.ExecuteNonQuery();

@@ -84,7 +84,7 @@ namespace SYSTEM_INVENTARIO_MAGENTA_DIGITAL
         private List<MMaterialSelect> idetificarMaterial()
         {
             DatosMateriales funcoinMateriales = new DatosMateriales();
-            List<MMateriales> datosMat = funcoinMateriales.MostrarMateriales(this.idCateg);
+            List<MMateriales> datosMat = funcoinMateriales.TablaMateriales(this.idCateg);
 
             
             List<MMaterialSelect> MatSelect = new List<MMaterialSelect>();
@@ -122,7 +122,7 @@ namespace SYSTEM_INVENTARIO_MAGENTA_DIGITAL
 
             foreach (MMaterialSelect mat in MaterialSelect)
             {
-                int idMatSelect = reglaMatSelec.IdMaterial(mat, IdPedido, this.idCateg);
+                int idMatSelect = reglaMatSelec.IdMaterial(mat, IdPedido, mat.Cantidad);
                 reglaSalidas.capSalidas(idMatSelect);
             }
 
