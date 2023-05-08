@@ -66,5 +66,58 @@ namespace SYSTEM_INVENTARIO_MAGENTA_DIGITAL.DATOS
             conn.CerrarConexion();
             return lstpedidos;
         }
+
+        public List<MDetallePedido> ConsultarDetallePedido(int Categ, int IdPedido)
+        {
+            cmd.Connection = conn.AbrirConexion();
+            cmd.CommandText = "SP_CONSULTAR_DETALLE_PEDIDO";
+            cmd.CommandType = CommandType.StoredProcedure;
+
+            cmd.Parameters.AddWithValue("@IdPedido", IdPedido);
+            cmd.Parameters.AddWithValue("@IdCateg", Categ);
+
+            SqlDataReader datosDp = cmd.ExecuteReader();
+
+            List<MDetallePedido> lstDetallePed = new List<MDetallePedido>();
+
+            while (datosDp.Read())
+            {
+                MDetallePedido DP = new MDetallePedido();
+                DP.idPedido = (int)datosDp["IdPedido"];
+                DP.NomPedido = (dynamic)datosDp["NomPedido"];
+                DP.NomMaterial = (dynamic)datosDp["Nombre"];
+                DP.NoSerie = (dynamic)datosDp["NoSerie"];
+                DP.Cantidad = (int)datosDp["Cantidad"];
+                lstDetallePed.Add(DP);
+            }
+
+            return lstDetallePed;
+        }
+
+        public void EliminarDp (int id_Pedido)
+        {
+            cmd.Connection = conn.AbrirConexion();
+            cmd.CommandText = "SP_ELIMAR_DP";
+            cmd.CommandType = CommandType.StoredProcedure;
+
+            cmd.Parameters.AddWithValue("@id_Pedido", id_Pedido);
+            cmd.ExecuteNonQuery();
+
+            cmd.Parameters.Clear();
+            conn.CerrarConexion();
+        }
+
+        public void EliminarPedido(int id_Pedido)
+        {
+            cmd.Connection = conn.AbrirConexion();
+            cmd.CommandText = "SP_ELIMAR_PEDIDO";
+            cmd.CommandType = CommandType.StoredProcedure;
+
+            cmd.Parameters.AddWithValue("@id_Pedido", id_Pedido);
+            cmd.ExecuteNonQuery();
+
+            cmd.Parameters.Clear();
+            conn.CerrarConexion();
+        }
     }
 }

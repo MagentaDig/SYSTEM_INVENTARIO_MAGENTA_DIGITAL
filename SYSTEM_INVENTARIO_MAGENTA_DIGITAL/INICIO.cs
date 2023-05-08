@@ -110,5 +110,12 @@ namespace SYSTEM_INVENTARIO_MAGENTA_DIGITAL
             MODIFICAR formModificar = new MODIFICAR(this.idCateg);
             formModificar.Show();
         }
+
+        private void link_cambiarCateg_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            this.Hide();
+            INGRESO formIngreso = new INGRESO();
+            formIngreso.Show();
+        }
     }
 }

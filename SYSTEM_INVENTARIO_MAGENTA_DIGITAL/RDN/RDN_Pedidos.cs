@@ -22,11 +22,16 @@ namespace SYSTEM_INVENTARIO_MAGENTA_DIGITAL.RDN
             {
                 IdPedido = Ped.IdPedido;
             }
-            //if (datos.Read())
-            //{
-            //    IdPedido = int.Parse(datos[0].ToString());
-            //}
             return IdPedido;
+        }
+
+        public void ElimarPedido(int pedido)
+        {
+            DatosPedidos funcionPedidos = new DatosPedidos();
+             
+
+            funcionPedidos.EliminarDp(pedido);
+            funcionPedidos.EliminarPedido(pedido);
         }
     }
 }

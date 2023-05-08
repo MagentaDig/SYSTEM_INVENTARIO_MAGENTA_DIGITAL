@@ -48,6 +48,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
+            this.link_cambiarCateg = new System.Windows.Forms.LinkLabel();
             this.panelmenuvertical.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.img_logochico)).BeginInit();
             this.panel_barratitulo.SuspendLayout();
@@ -95,7 +96,7 @@
             this.panelmenuvertical.ForeColor = System.Drawing.SystemColors.ControlText;
             this.panelmenuvertical.Location = new System.Drawing.Point(0, 0);
             this.panelmenuvertical.Name = "panelmenuvertical";
-            this.panelmenuvertical.Size = new System.Drawing.Size(250, 650);
+            this.panelmenuvertical.Size = new System.Drawing.Size(235, 650);
             this.panelmenuvertical.TabIndex = 2;
             // 
             // btn_Pedido
@@ -184,7 +185,7 @@
             // img_logochico
             // 
             this.img_logochico.Image = global::SYSTEM_INVENTARIO_MAGENTA_DIGITAL.Properties.Resources.nuevologo_op2;
-            this.img_logochico.Location = new System.Drawing.Point(12, 25);
+            this.img_logochico.Location = new System.Drawing.Point(19, 25);
             this.img_logochico.Name = "img_logochico";
             this.img_logochico.Size = new System.Drawing.Size(210, 52);
             this.img_logochico.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
@@ -200,9 +201,9 @@
             this.panel_barratitulo.Controls.Add(this.iconocerrar);
             this.panel_barratitulo.Controls.Add(this.btnslide);
             this.panel_barratitulo.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel_barratitulo.Location = new System.Drawing.Point(250, 0);
+            this.panel_barratitulo.Location = new System.Drawing.Point(235, 0);
             this.panel_barratitulo.Name = "panel_barratitulo";
-            this.panel_barratitulo.Size = new System.Drawing.Size(1050, 50);
+            this.panel_barratitulo.Size = new System.Drawing.Size(1065, 50);
             this.panel_barratitulo.TabIndex = 1;
             this.panel_barratitulo.Paint += new System.Windows.Forms.PaintEventHandler(this.panel_barratitulo_Paint);
             this.panel_barratitulo.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel_barratitulo_MouseDown);
@@ -211,7 +212,7 @@
             // 
             this.iconomaximizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.iconomaximizar.Image = global::SYSTEM_INVENTARIO_MAGENTA_DIGITAL.Properties.Resources.maximizar;
-            this.iconomaximizar.Location = new System.Drawing.Point(920, 16);
+            this.iconomaximizar.Location = new System.Drawing.Point(935, 16);
             this.iconomaximizar.Name = "iconomaximizar";
             this.iconomaximizar.Size = new System.Drawing.Size(25, 25);
             this.iconomaximizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
@@ -223,7 +224,7 @@
             // 
             this.iconorestaurar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.iconorestaurar.Image = global::SYSTEM_INVENTARIO_MAGENTA_DIGITAL.Properties.Resources.restaurar;
-            this.iconorestaurar.Location = new System.Drawing.Point(982, 16);
+            this.iconorestaurar.Location = new System.Drawing.Point(997, 16);
             this.iconorestaurar.Name = "iconorestaurar";
             this.iconorestaurar.Size = new System.Drawing.Size(25, 25);
             this.iconorestaurar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
@@ -236,7 +237,7 @@
             // 
             this.iconominimizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.iconominimizar.Image = global::SYSTEM_INVENTARIO_MAGENTA_DIGITAL.Properties.Resources.minimizar;
-            this.iconominimizar.Location = new System.Drawing.Point(951, 16);
+            this.iconominimizar.Location = new System.Drawing.Point(966, 16);
             this.iconominimizar.Name = "iconominimizar";
             this.iconominimizar.Size = new System.Drawing.Size(25, 25);
             this.iconominimizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
@@ -248,7 +249,7 @@
             // 
             this.iconocerrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.iconocerrar.Image = global::SYSTEM_INVENTARIO_MAGENTA_DIGITAL.Properties.Resources.tacha;
-            this.iconocerrar.Location = new System.Drawing.Point(1013, 16);
+            this.iconocerrar.Location = new System.Drawing.Point(1028, 16);
             this.iconocerrar.Name = "iconocerrar";
             this.iconocerrar.Size = new System.Drawing.Size(25, 25);
             this.iconocerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
@@ -269,6 +270,7 @@
             // 
             // panelContenedor
             // 
+            this.panelContenedor.Controls.Add(this.link_cambiarCateg);
             this.panelContenedor.Controls.Add(this.label3);
             this.panelContenedor.Controls.Add(this.label2);
             this.panelContenedor.Controls.Add(this.dataGridView1);
@@ -277,9 +279,9 @@
             this.panelContenedor.Controls.Add(this.lbl_categoriaSelect);
             this.panelContenedor.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelContenedor.ForeColor = System.Drawing.Color.Magenta;
-            this.panelContenedor.Location = new System.Drawing.Point(250, 0);
+            this.panelContenedor.Location = new System.Drawing.Point(235, 0);
             this.panelContenedor.Name = "panelContenedor";
-            this.panelContenedor.Size = new System.Drawing.Size(1050, 650);
+            this.panelContenedor.Size = new System.Drawing.Size(1065, 650);
             this.panelContenedor.TabIndex = 0;
             // 
             // label3
@@ -323,6 +325,17 @@
             this.label1.Size = new System.Drawing.Size(410, 77);
             this.label1.TabIndex = 3;
             this.label1.Text = "BIENVENIDO";
+            // 
+            // link_cambiarCateg
+            // 
+            this.link_cambiarCateg.AutoSize = true;
+            this.link_cambiarCateg.Location = new System.Drawing.Point(137, 243);
+            this.link_cambiarCateg.Name = "link_cambiarCateg";
+            this.link_cambiarCateg.Size = new System.Drawing.Size(45, 13);
+            this.link_cambiarCateg.TabIndex = 7;
+            this.link_cambiarCateg.TabStop = true;
+            this.link_cambiarCateg.Text = "Cambiar";
+            this.link_cambiarCateg.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.link_cambiarCateg_LinkClicked);
             // 
             // INICIO
             // 
@@ -374,5 +387,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button btn_Pedido;
+        private System.Windows.Forms.LinkLabel link_cambiarCateg;
     }
 }

@@ -35,7 +35,7 @@ namespace SYSTEM_INVENTARIO_MAGENTA_DIGITAL
             this.idCateg = idCateg;
 
             mostrarMaterialesCB();
-            //mostrarPedido();
+            mostrarPedido();
         }
 
         private void txt_Cantidad_TextChanged(object sender, EventArgs e)
@@ -139,10 +139,10 @@ namespace SYSTEM_INVENTARIO_MAGENTA_DIGITAL
             foreach (MPedidos datos in Pedidos)
             {
                 index = dataGrid_Pedidos.Rows.Add();
-                dataGrid_Pedidos.Rows[index].Cells[1].Value = datos.IdPedido;
-                dataGrid_Pedidos.Rows[index].Cells[2].Value = datos.NomPedido;
-                dataGrid_Pedidos.Rows[index].Cells[3].Value = datos.DetallePedido;
-                dataGrid_Pedidos.Rows[index].Cells[4].Value = datos.FechaPedido;
+                dataGrid_Pedidos.Rows[index].Cells[0].Value = datos.IdPedido;
+                dataGrid_Pedidos.Rows[index].Cells[1].Value = datos.NomPedido;
+                dataGrid_Pedidos.Rows[index].Cells[2].Value = datos.DetallePedido;
+                dataGrid_Pedidos.Rows[index].Cells[3].Value = datos.FechaPedido;
             }
         }
 
@@ -171,9 +171,47 @@ namespace SYSTEM_INVENTARIO_MAGENTA_DIGITAL
             {
                 if (Material.Nombre == material)
                 {
+                    
                     lbl_cantidadDisp.Text = Material.Cantidad.ToString();
+                    lbl_noSerie.Text = Material.NoSerie;
+                    if (lbl_cantidadDisp.Text == "0")
+                    {
+                        btnAgrPedido.Enabled = false;
+                    }
+                    else
+                    {
+                        btnAgrPedido.Enabled = true;
+                    }
                     break;
                 }
+            }
+        }
+
+        private void link_AgrStock_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            this.Hide();
+            MODIFICAR formModificar = new MODIFICAR(this.idCateg);
+            formModificar.Show();
+
+        }
+
+        private void dataGrid_Pedidos_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int idPed = 0;
+            if (dataGrid_Pedidos.Columns[e.ColumnIndex].Name == "verPedido")
+            {
+                idPed = Convert.ToInt32(dataGrid_Pedidos.CurrentRow.Cells["id_pedido"].Value.ToString());
+                string nomPed = (dataGrid_Pedidos.CurrentRow.Cells["nomPedido"].Value.ToString());
+                
+                DETALLE_PEDIDO formDp = new DETALLE_PEDIDO(idPed, this.idCateg, nomPed);
+                formDp.ShowDialog();
+            }
+            else if (dataGrid_Pedidos.Columns[e.ColumnIndex].Name == "eliminarPed")
+            {
+                RDN_Pedidos reglaPedidos = new RDN_Pedidos();
+                reglaPedidos.ElimarPedido(idPed);
+
+                MessageBox.Show("El pedido se elimino correctamente");
             }
         }
     }

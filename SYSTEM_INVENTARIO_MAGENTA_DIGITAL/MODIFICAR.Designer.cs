@@ -163,7 +163,7 @@
             // stock
             // 
             this.stock.HeaderText = "STOCK";
-            this.stock.Image = global::SYSTEM_INVENTARIO_MAGENTA_DIGITAL.Properties.Resources.icon_5f41a9b90a6fd03b7d17b63704ef6f97__1_;
+            this.stock.Image = global::SYSTEM_INVENTARIO_MAGENTA_DIGITAL.Properties.Resources.icon_e6b85da097f15d781ed24b822e966d12;
             this.stock.Name = "stock";
             // 
             // ELIMINAR

@@ -29,5 +29,19 @@ namespace SYSTEM_INVENTARIO_MAGENTA_DIGITAL.DATOS
 
             conn.CerrarConexion();
         }
+
+        public void EliminarSalidas(int id_DP)
+        {
+            cmd.Connection = conn.AbrirConexion();
+            cmd.CommandText = "SP_ELIMAR_SALIDA";
+            cmd.CommandType = CommandType.StoredProcedure;
+
+            cmd.Parameters.AddWithValue("@id_DP", id_DP);
+
+            cmd.ExecuteNonQuery();
+            cmd.Parameters.Clear();
+
+            conn.CerrarConexion();
+        }
     }
 }

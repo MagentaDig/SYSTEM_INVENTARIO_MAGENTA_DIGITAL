@@ -322,9 +322,9 @@
             this.txt_NoSerie.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(166)))), ((int)(((byte)(166)))));
             this.txt_NoSerie.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txt_NoSerie.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_NoSerie.Location = new System.Drawing.Point(118, 231);
+            this.txt_NoSerie.Location = new System.Drawing.Point(126, 231);
             this.txt_NoSerie.Name = "txt_NoSerie";
-            this.txt_NoSerie.Size = new System.Drawing.Size(82, 15);
+            this.txt_NoSerie.Size = new System.Drawing.Size(74, 15);
             this.txt_NoSerie.TabIndex = 29;
             // 
             // label8
@@ -353,11 +353,11 @@
             this.lbl_serie.AutoSize = true;
             this.lbl_serie.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(166)))), ((int)(((byte)(166)))), ((int)(((byte)(166)))));
             this.lbl_serie.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_serie.Location = new System.Drawing.Point(70, 231);
+            this.lbl_serie.Location = new System.Drawing.Point(71, 231);
             this.lbl_serie.Name = "lbl_serie";
-            this.lbl_serie.Size = new System.Drawing.Size(45, 16);
+            this.lbl_serie.Size = new System.Drawing.Size(49, 16);
             this.lbl_serie.TabIndex = 30;
-            this.lbl_serie.Text = "NSM-";
+            this.lbl_serie.Text = "NSM -";
             // 
             // REGISTRARMATERIAL
             // 

@@ -70,6 +70,12 @@
     <Compile Include="DATOS\DatosSalidas.cs" />
     <Compile Include="DATOS\DatosStock.cs" />
     <Compile Include="DB_CONEXION\Conexion_DB.cs" />
+    <Compile Include="DETALLE_PEDIDO.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DETALLE_PEDIDO.Designer.cs">
+      <DependentUpon>DETALLE_PEDIDO.cs</DependentUpon>
+    </Compile>
     <Compile Include="INGRESO.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -124,6 +130,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="BUSCAR.resx">
       <DependentUpon>BUSCAR.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DETALLE_PEDIDO.resx">
+      <DependentUpon>DETALLE_PEDIDO.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="INGRESO.resx">
       <DependentUpon>INGRESO.cs</DependentUpon>
@@ -268,6 +277,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\icon_5f41a9b90a6fd03b7d17b63704ef6f971.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon_e6b85da097f15d781ed24b822e966d12.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
