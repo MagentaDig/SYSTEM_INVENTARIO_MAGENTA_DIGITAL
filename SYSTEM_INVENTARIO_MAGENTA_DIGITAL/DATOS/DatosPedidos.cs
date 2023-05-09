@@ -58,7 +58,7 @@ namespace SYSTEM_INVENTARIO_MAGENTA_DIGITAL.DATOS
                 MPedidos Pedido = new MPedidos();
                 Pedido.IdPedido = (int)DatosPedidos["IdPedido"];
                 Pedido.NomPedido = (dynamic)DatosPedidos["NomPedido"];
-                Pedido.DetallePedido = (dynamic)DatosPedidos["DetallePedido"];
+                Pedido.DetallePedido = (dynamic)DatosPedidos["Detalle"];
                 Pedido.FechaPedido = (DateTime)DatosPedidos["FechaPedido"];
                 lstpedidos.Add(Pedido);
             }
@@ -85,12 +85,14 @@ namespace SYSTEM_INVENTARIO_MAGENTA_DIGITAL.DATOS
                 MDetallePedido DP = new MDetallePedido();
                 DP.idPedido = (int)datosDp["IdPedido"];
                 DP.NomPedido = (dynamic)datosDp["NomPedido"];
+                DP.Material = (int)datosDp["Id_Materia"];
                 DP.NomMaterial = (dynamic)datosDp["Nombre"];
                 DP.NoSerie = (dynamic)datosDp["NoSerie"];
                 DP.Cantidad = (int)datosDp["Cantidad"];
                 lstDetallePed.Add(DP);
             }
-
+            cmd.Parameters.Clear();
+            conn.CerrarConexion();
             return lstDetallePed;
         }
 

@@ -21,9 +21,10 @@ namespace SYSTEM_INVENTARIO_MAGENTA_DIGITAL.DATOS
             cmd.CommandText = "AGREGAR_STOCK";
             cmd.CommandType = CommandType.StoredProcedure;
 
-            cmd.Parameters.AddWithValue("@Cantidad", Stock.Cantidad);
+            cmd.Parameters.AddWithValue("@Stock", Stock.Cantidad);
             cmd.Parameters.AddWithValue("@FechaEntrada", Stock.FechaEntrada);
             cmd.Parameters.AddWithValue("@Id_Materia", Stock.Material);
+            cmd.Parameters.AddWithValue("@StockDisp", Stock.StockDisp);
 
             cmd.ExecuteNonQuery();
             cmd.Parameters.Clear();
@@ -44,9 +45,10 @@ namespace SYSTEM_INVENTARIO_MAGENTA_DIGITAL.DATOS
             {
                 MStock Stock = new MStock();
                 Stock.idStock = (int)stock["Id_Stock"];
-                Stock.Cantidad = (int)stock["Cantidad"];
+                Stock.Cantidad = (int)stock["Stock"];
                 Stock.FechaEntrada = (DateTime)stock["FechaEntrada"];
                 Stock.Material = (int)stock["Id_Materia"];
+                Stock.StockDisp = (int)stock["StockDisp"];
 
                 lstStock.Add(Stock);
             }
@@ -75,7 +77,7 @@ namespace SYSTEM_INVENTARIO_MAGENTA_DIGITAL.DATOS
                 Stock.Nombre = (string)stock["Nombre"];
                 Stock.Metros = (decimal)stock["Metros"];
                 Stock.Tamaño = (dynamic)stock["Tamaño"];
-                Stock.Cantidad = (int)stock["Cantidad"];
+                Stock.Cantidad = (int)stock["Stock"];
                 Stock.FechaEntrada = (DateTime)stock["FechaEntrada"];
                 lstStock.Add(Stock);
             }

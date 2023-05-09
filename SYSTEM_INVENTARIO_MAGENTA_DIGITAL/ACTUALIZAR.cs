@@ -56,6 +56,7 @@ namespace SYSTEM_INVENTARIO_MAGENTA_DIGITAL
             Stock.Cantidad = int.Parse(txt_NuevoStock.Text);
             Stock.FechaEntrada = DateTime.Now;
             Stock.Material = this.idMaterial;
+            Stock.StockDisp = int.Parse(txt_NuevoStock.Text);
 
             funcionStock.AgregarStock(Stock);
 
@@ -76,7 +77,8 @@ namespace SYSTEM_INVENTARIO_MAGENTA_DIGITAL
                 index = dataGrid_Stock.Rows.Add();
                 dataGrid_Stock.Rows[index].Cells[0].Value = datos.idStock;
                 dataGrid_Stock.Rows[index].Cells[1].Value = datos.Cantidad;
-                dataGrid_Stock.Rows[index].Cells[2].Value = datos.FechaEntrada;
+                dataGrid_Stock.Rows[index].Cells[2].Value = datos.StockDisp;
+                dataGrid_Stock.Rows[index].Cells[3].Value = datos.FechaEntrada;
             }
         }
 

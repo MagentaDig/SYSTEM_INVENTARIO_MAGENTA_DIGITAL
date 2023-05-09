@@ -12,6 +12,7 @@ namespace SYSTEM_INVENTARIO_MAGENTA_DIGITAL.MODELOS
         public int Cantidad { get; set; }
         public DateTime FechaEntrada { get; set; }
         public dynamic Material { get; set; }
+        public int StockDisp { get; set; }
     }
 
     class MConsultaStock

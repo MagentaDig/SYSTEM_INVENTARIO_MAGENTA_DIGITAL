@@ -52,17 +52,44 @@ namespace SYSTEM_INVENTARIO_MAGENTA_DIGITAL.RDN
         public void RestaurarStock(int idPedido, int categ)
         {
             DatosPedidos  funcionPedidos = new DatosPedidos();
-            DatosStock funcionStock = new DatosStock();
+            //DatosStock funcionStock = new DatosStock();
 
             List<MDetallePedido> lstDP = funcionPedidos.ConsultarDetallePedido(categ, idPedido);
-            List<MStock> lstStock = new List<MStock>();
-            foreach (MDetallePedido dp in lstDP)
+            //List<MStock> lstStock = new List<MStock>();
+            //foreach (MDetallePedido dp in lstDP)
+            //{
+            //    MStock objStock = new MStock();
+            //    objStock.Cantidad = dp.Cantidad;
+            //    objStock.Material = dp.Material;
+            //    lstStock.Add(objStock);
+            //}
+            IdentificarMaterial(lstDP);
+            funcionPedidos.EliminarPedido(idPedido);
+        }
+
+        public void IdentificarMaterial (List<MDetallePedido> DetallePedido)
+        {
+            DatosStock funcionStock = new DatosStock();
+            DatosPedidos funcionPedidos = new DatosPedidos();
+
+            foreach (MDetallePedido dp in DetallePedido)
             {
-                MStock objStock = new MStock();
-                objStock.Cantidad = dp.Cantidad;
-                objStock.Material = dp.Material;
-                lstStock.Add(objStock);
+                int stockAct;
+                List<MStock> lstStock = funcionStock.ConsultarStock(dp.Material);
+                foreach (MStock stock in lstStock)
+                { 
+                    if (dp.Material == stock.Material)
+                    {
+                        stockAct = dp.Cantidad + stock.StockDisp;
+                        if(stockAct <= stock.Cantidad)
+                        {
+                            funcionStock.ActulizarStock(stockAct,stock.idStock);
+                            funcionPedidos.EliminarDp(dp.idPedido);
+                        }
+                    }
+                }
             }
+            
         }
     }
 }

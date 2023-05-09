@@ -122,8 +122,8 @@ namespace SYSTEM_INVENTARIO_MAGENTA_DIGITAL
 
             foreach (MMaterialSelect mat in MaterialSelect)
             {
-                int idMatSelect = reglaMatSelec.IdMaterial(mat, IdPedido, mat.Cantidad);
-                reglaSalidas.capSalidas(idMatSelect);
+                reglaMatSelec.IdMaterial(mat, IdPedido, mat.Cantidad);
+                //reglaSalidas.capSalidas(idMatSelect);
             }
 
             recargarPantalla();
@@ -208,8 +208,9 @@ namespace SYSTEM_INVENTARIO_MAGENTA_DIGITAL
             }
             else if (dataGrid_Pedidos.Columns[e.ColumnIndex].Name == "eliminarPed")
             {
-                RDN_Pedidos reglaPedidos = new RDN_Pedidos();
-                reglaPedidos.ElimarPedido(idPed);
+                idPed = Convert.ToInt32(dataGrid_Pedidos.CurrentRow.Cells["id_pedido"].Value.ToString());
+                RDN_Stock reglaStock = new RDN_Stock();
+                reglaStock.RestaurarStock(idPed,this.idCateg);
 
                 MessageBox.Show("El pedido se elimino correctamente");
             }
