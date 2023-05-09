@@ -19,6 +19,7 @@ namespace SYSTEM_INVENTARIO_MAGENTA_DIGITAL.MODELOS
     {
         public int idPedido { get; set; }
         public dynamic NomPedido { get; set; }
+        public int Material { get; set; }
         public dynamic NomMaterial { get; set; }
         public dynamic NoSerie { get; set; }
         public int Cantidad { get; set; }
