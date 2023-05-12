@@ -52,17 +52,8 @@ namespace SYSTEM_INVENTARIO_MAGENTA_DIGITAL.RDN
         public void RestaurarStock(int idPedido, int categ)
         {
             DatosPedidos  funcionPedidos = new DatosPedidos();
-            //DatosStock funcionStock = new DatosStock();
 
             List<MDetallePedido> lstDP = funcionPedidos.ConsultarDetallePedido(categ, idPedido);
-            //List<MStock> lstStock = new List<MStock>();
-            //foreach (MDetallePedido dp in lstDP)
-            //{
-            //    MStock objStock = new MStock();
-            //    objStock.Cantidad = dp.Cantidad;
-            //    objStock.Material = dp.Material;
-            //    lstStock.Add(objStock);
-            //}
             IdentificarMaterial(lstDP);
             funcionPedidos.EliminarPedido(idPedido);
         }

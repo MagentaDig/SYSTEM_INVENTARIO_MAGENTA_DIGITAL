@@ -124,6 +124,7 @@
             this.txt_Cantidad.Size = new System.Drawing.Size(229, 20);
             this.txt_Cantidad.TabIndex = 7;
             this.txt_Cantidad.TextChanged += new System.EventHandler(this.txt_Cantidad_TextChanged);
+            this.txt_Cantidad.Validated += new System.EventHandler(this.txt_Cantidad_Validated);
             // 
             // btnAgrPedido
             // 
@@ -198,6 +199,8 @@
             this.dataGrid_Pedidos.Size = new System.Drawing.Size(1040, 243);
             this.dataGrid_Pedidos.TabIndex = 14;
             this.dataGrid_Pedidos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGrid_Pedidos_CellClick);
+            this.dataGrid_Pedidos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGrid_Pedidos_CellContentClick);
+            this.dataGrid_Pedidos.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGrid_Pedidos_CellEndEdit);
             // 
             // lbl_titleStock
             // 
@@ -309,6 +312,7 @@
             // 
             // entregado
             // 
+            this.entregado.DataPropertyName = "checkEntrefado";
             this.entregado.Frozen = true;
             this.entregado.HeaderText = "ENTREGADO";
             this.entregado.Name = "entregado";

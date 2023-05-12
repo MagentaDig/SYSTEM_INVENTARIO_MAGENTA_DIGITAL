@@ -36,6 +36,7 @@ namespace SYSTEM_INVENTARIO_MAGENTA_DIGITAL
 
             mostrarMaterialesCB();
             mostrarPedido();
+            
         }
 
         private void txt_Cantidad_TextChanged(object sender, EventArgs e)
@@ -70,15 +71,16 @@ namespace SYSTEM_INVENTARIO_MAGENTA_DIGITAL
             int index = cb_Materiales.SelectedIndex, indexDt;
             Material.NomMaterial = cb_Materiales.Items[index].ToString();
             Material.Cantidad = int.Parse(txt_Cantidad.Text.ToString());
+            //bool canValida = validarCantidad();
             lstMateriales.Add(Material);
             copia_lstMateriales.Add(Material);
-
             foreach (MMaterialSelect datoM in lstMateriales)
             {
                 indexDt = dataGrid_MaterialPed.Rows.Add();
                 dataGrid_MaterialPed.Rows[indexDt].Cells[0].Value = datoM.NomMaterial;
                 dataGrid_MaterialPed.Rows[indexDt].Cells[1].Value = datoM.Cantidad;
             }
+
         }
 
         private List<MMaterialSelect> idetificarMaterial()
@@ -105,13 +107,13 @@ namespace SYSTEM_INVENTARIO_MAGENTA_DIGITAL
 
         private void btnAgrPedido_Click(object sender, EventArgs e)
         {
-            List<int> lstIdMatSelect = new List<int>();
+            //List<int> lstIdMatSelect = new List<int>();
             List<MMaterialSelect> MaterialSelect = idetificarMaterial();
             RDN_Pedidos reglaPedido = new RDN_Pedidos();
             RDN_MaterialSelect reglaMatSelec = new RDN_MaterialSelect();
-            RDN_Salidas reglaSalidas = new RDN_Salidas();
+            //RDN_Salidas reglaSalidas = new RDN_Salidas();
             MPedidos Pedido = new MPedidos();
-            DatosSalidas dtosSal = new DatosSalidas();
+            //DatosSalidas dtosSal = new DatosSalidas();
 
             Pedido.DetallePedido = richTextBox_Detalle.Text;
             Pedido.Categoria = this.idCateg;
@@ -195,6 +197,19 @@ namespace SYSTEM_INVENTARIO_MAGENTA_DIGITAL
 
         }
 
+        public void validarCantidad()
+        {
+            //bool cantValida = true;
+            //btn_AgrMat.Enabled = true;
+            //if (int.Parse(txt_Cantidad.Text.ToString()) > int.Parse(lbl_cantidadDisp.Text.ToString()))
+            //{
+            //    btn_AgrMat.Enabled = false;
+            //    cantValida = false;
+            //}
+
+            //return cantValida;
+        }
+
         private void dataGrid_Pedidos_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             int idPed = 0;
@@ -214,6 +229,32 @@ namespace SYSTEM_INVENTARIO_MAGENTA_DIGITAL
 
                 MessageBox.Show("El pedido se elimino correctamente");
             }
+        }
+
+        private void txt_Cantidad_Validated(object sender, EventArgs e)
+        {
+            btnAgrPedido.Enabled = true;
+            btn_AgrMat.Enabled = true;
+            if (int.Parse(txt_Cantidad.Text.ToString()) > int.Parse(lbl_cantidadDisp.Text.ToString()))
+            {
+                btn_AgrMat.Enabled = false;
+                btnAgrPedido.Enabled = false;
+                MessageBox.Show("La cantidad ingresada no es valida. \nEs mayor al Stock disponible.");
+            }
+        }
+
+        private void dataGrid_Pedidos_CellEndEdit(object sender, DataGridViewCellEventArgs e)
+        {
+            if (dataGrid_Pedidos.Columns[e.ColumnIndex].Name == "entregado")
+            {
+                
+            }
+        }
+
+        private void dataGrid_Pedidos_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            //DataGridViewCheckBoxCell celdaCheck = (DataGridViewCheckBoxCell)dataGrid_Pedidos.Rows[e.RowIndex].Cells["entregado"].Value;
+            //DataGridViewImageCell celdaIMg = (DataGridViewImageCell)dataGrid_Pedidos.Rows[e.RowIndex].Cells["eliminarPed"].Value;
         }
     }
 }
