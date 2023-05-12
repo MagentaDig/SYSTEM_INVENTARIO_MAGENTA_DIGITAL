@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
+using SYSTEM_INVENTARIO_MAGENTA_DIGITAL.MODELOS;
+using SYSTEM_INVENTARIO_MAGENTA_DIGITAL.DATOS;
 
 namespace SYSTEM_INVENTARIO_MAGENTA_DIGITAL
 {
@@ -19,6 +21,8 @@ namespace SYSTEM_INVENTARIO_MAGENTA_DIGITAL
         {
             InitializeComponent();
             this.idCateg = id;
+
+            CargarTablaMateriales();
         }
 
         [DllImport("User32.DLL", EntryPoint = "ReleaseCapture")]
@@ -116,6 +120,23 @@ namespace SYSTEM_INVENTARIO_MAGENTA_DIGITAL
             this.Hide();
             INGRESO formIngreso = new INGRESO();
             formIngreso.Show();
+        }
+
+        public void CargarTablaMateriales()
+        {
+            DatosMateriales funcionMateriales = new DatosMateriales();
+
+            List<MMateriales> lstMateriañes = funcionMateriales.MaterialesInicio(this.idCateg);
+
+            int index;
+            foreach (MMateriales mat in lstMateriañes)
+            {
+                index = dataGridView_MaterialesInicio.Rows.Add();
+                dataGridView_MaterialesInicio.Rows[index].Cells[0].Value = mat.Nombre;
+                dataGridView_MaterialesInicio.Rows[index].Cells[1].Value = mat.Tamaño;
+                dataGridView_MaterialesInicio.Rows[index].Cells[2].Value = mat.Metros;
+                dataGridView_MaterialesInicio.Rows[index].Cells[3].Value = mat.Cantidad;
+            }
         }
     }
 }

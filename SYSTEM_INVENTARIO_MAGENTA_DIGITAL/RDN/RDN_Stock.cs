@@ -33,16 +33,16 @@ namespace SYSTEM_INVENTARIO_MAGENTA_DIGITAL.RDN
             List<MStock> lstStock = funcionStock.ConsultarStock(Material);
             foreach (MStock stock in lstStock)
             {
-                if(stock.Cantidad >= stockEnFila)
+                if(stock.StockDisp >= stockEnFila)
                 {
-                    int newStock = stock.Cantidad - stockEnFila;
+                    int newStock = stock.StockDisp - stockEnFila;
                     funcionStock.ActulizarStock(newStock,stock.idStock);
                     break;
                 }
                 else
                 {
-                    int newStock = stockEnFila - stock.Cantidad;
-                    int stockRest = stock.Cantidad - stock.Cantidad;
+                    int newStock = stockEnFila - stock.StockDisp;
+                    int stockRest = stock.StockDisp - stock.StockDisp;
                     funcionStock.ActulizarStock(stockRest, stock.idStock);
                     stockEnFila = newStock;
                 }
@@ -76,11 +76,11 @@ namespace SYSTEM_INVENTARIO_MAGENTA_DIGITAL.RDN
                         {
                             funcionStock.ActulizarStock(stockAct,stock.idStock);
                             funcionPedidos.EliminarDp(dp.idPedido);
+                            break;
                         }
                     }
                 }
             }
-            
         }
     }
 }

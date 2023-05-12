@@ -44,11 +44,15 @@
             this.iconocerrar = new System.Windows.Forms.PictureBox();
             this.btnslide = new System.Windows.Forms.PictureBox();
             this.panelContenedor = new System.Windows.Forms.Panel();
+            this.link_cambiarCateg = new System.Windows.Forms.LinkLabel();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dataGridView_MaterialesInicio = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
-            this.link_cambiarCateg = new System.Windows.Forms.LinkLabel();
+            this.nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tamaño = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.metros = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panelmenuvertical.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.img_logochico)).BeginInit();
             this.panel_barratitulo.SuspendLayout();
@@ -58,7 +62,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.iconocerrar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnslide)).BeginInit();
             this.panelContenedor.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_MaterialesInicio)).BeginInit();
             this.SuspendLayout();
             // 
             // lbl_categoria
@@ -273,7 +277,7 @@
             this.panelContenedor.Controls.Add(this.link_cambiarCateg);
             this.panelContenedor.Controls.Add(this.label3);
             this.panelContenedor.Controls.Add(this.label2);
-            this.panelContenedor.Controls.Add(this.dataGridView1);
+            this.panelContenedor.Controls.Add(this.dataGridView_MaterialesInicio);
             this.panelContenedor.Controls.Add(this.label1);
             this.panelContenedor.Controls.Add(this.lbl_categoria);
             this.panelContenedor.Controls.Add(this.lbl_categoriaSelect);
@@ -283,6 +287,17 @@
             this.panelContenedor.Name = "panelContenedor";
             this.panelContenedor.Size = new System.Drawing.Size(1065, 650);
             this.panelContenedor.TabIndex = 0;
+            // 
+            // link_cambiarCateg
+            // 
+            this.link_cambiarCateg.AutoSize = true;
+            this.link_cambiarCateg.Location = new System.Drawing.Point(137, 243);
+            this.link_cambiarCateg.Name = "link_cambiarCateg";
+            this.link_cambiarCateg.Size = new System.Drawing.Size(45, 13);
+            this.link_cambiarCateg.TabIndex = 7;
+            this.link_cambiarCateg.TabStop = true;
+            this.link_cambiarCateg.Text = "Cambiar";
+            this.link_cambiarCateg.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.link_cambiarCateg_LinkClicked);
             // 
             // label3
             // 
@@ -307,13 +322,18 @@
             this.label2.TabIndex = 5;
             this.label2.Text = "Magenta";
             // 
-            // dataGridView1
+            // dataGridView_MaterialesInicio
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(140, 266);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(760, 372);
-            this.dataGridView1.TabIndex = 4;
+            this.dataGridView_MaterialesInicio.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView_MaterialesInicio.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.nombre,
+            this.tamaño,
+            this.metros,
+            this.cantidad});
+            this.dataGridView_MaterialesInicio.Location = new System.Drawing.Point(140, 266);
+            this.dataGridView_MaterialesInicio.Name = "dataGridView_MaterialesInicio";
+            this.dataGridView_MaterialesInicio.Size = new System.Drawing.Size(760, 372);
+            this.dataGridView_MaterialesInicio.TabIndex = 4;
             // 
             // label1
             // 
@@ -326,16 +346,29 @@
             this.label1.TabIndex = 3;
             this.label1.Text = "BIENVENIDO";
             // 
-            // link_cambiarCateg
+            // nombre
             // 
-            this.link_cambiarCateg.AutoSize = true;
-            this.link_cambiarCateg.Location = new System.Drawing.Point(137, 243);
-            this.link_cambiarCateg.Name = "link_cambiarCateg";
-            this.link_cambiarCateg.Size = new System.Drawing.Size(45, 13);
-            this.link_cambiarCateg.TabIndex = 7;
-            this.link_cambiarCateg.TabStop = true;
-            this.link_cambiarCateg.Text = "Cambiar";
-            this.link_cambiarCateg.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.link_cambiarCateg_LinkClicked);
+            this.nombre.HeaderText = "NOMBRE";
+            this.nombre.Name = "nombre";
+            this.nombre.Width = 210;
+            // 
+            // tamaño
+            // 
+            this.tamaño.HeaderText = "TAMAÑO";
+            this.tamaño.Name = "tamaño";
+            this.tamaño.Width = 170;
+            // 
+            // metros
+            // 
+            this.metros.HeaderText = "METROS";
+            this.metros.Name = "metros";
+            this.metros.Width = 170;
+            // 
+            // cantidad
+            // 
+            this.cantidad.HeaderText = "CANTIDAD";
+            this.cantidad.Name = "cantidad";
+            this.cantidad.Width = 170;
             // 
             // INICIO
             // 
@@ -360,7 +393,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.btnslide)).EndInit();
             this.panelContenedor.ResumeLayout(false);
             this.panelContenedor.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_MaterialesInicio)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -385,8 +418,12 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dataGridView_MaterialesInicio;
         private System.Windows.Forms.Button btn_Pedido;
         private System.Windows.Forms.LinkLabel link_cambiarCateg;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nombre;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tamaño;
+        private System.Windows.Forms.DataGridViewTextBoxColumn metros;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cantidad;
     }
 }

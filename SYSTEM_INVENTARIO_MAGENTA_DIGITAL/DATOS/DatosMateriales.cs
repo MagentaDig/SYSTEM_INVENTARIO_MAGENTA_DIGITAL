@@ -101,7 +101,30 @@ namespace SYSTEM_INVENTARIO_MAGENTA_DIGITAL.DATOS
                 Mat.NoSerie = (dynamic)materiales["NoSerie"];
                 lstMateriales.Add(Mat);
             }
+            conn.CerrarConexion();
+            return lstMateriales;
+        }
 
+        public List<MMateriales> MaterialesInicio (int Categ)
+        {
+            cmd.Connection = conn.AbrirConexion();
+            cmd.CommandText = "SP_MATERIALES_INICIO";
+            cmd.CommandType = CommandType.StoredProcedure;
+
+            cmd.Parameters.AddWithValue("@IdCateg", Categ);
+
+            SqlDataReader datos = cmd.ExecuteReader();
+
+            List<MMateriales> lstMateriales = new List<MMateriales>();
+            while (datos.Read())
+            {
+                MMateriales Materiales = new MMateriales();
+                Materiales.Nombre = (dynamic)datos["Nombre"];
+                Materiales.Tamaño = (dynamic)datos["Tamaño"];
+                Materiales.Metros = (decimal)datos["Metros"];
+                Materiales.Cantidad = (int)datos["Total Material"];
+                lstMateriales.Add(Materiales);            
+            }
             return lstMateriales;
         }
 

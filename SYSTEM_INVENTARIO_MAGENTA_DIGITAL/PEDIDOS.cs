@@ -228,6 +228,7 @@ namespace SYSTEM_INVENTARIO_MAGENTA_DIGITAL
                 reglaStock.RestaurarStock(idPed,this.idCateg);
 
                 MessageBox.Show("El pedido se elimino correctamente");
+                recargarPantalla();
             }
         }
 
