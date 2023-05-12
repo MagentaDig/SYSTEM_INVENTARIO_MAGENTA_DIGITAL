@@ -101,5 +101,18 @@ namespace SYSTEM_INVENTARIO_MAGENTA_DIGITAL.DATOS
             cmd.Parameters.Clear();
             conn.CerrarConexion();
         }
+
+        public void EliminarStock(int idMaterial)
+        {
+            cmd.Connection = conn.AbrirConexion();
+            cmd.CommandText = "SP_ELIMINAR_STOCK";
+            cmd.CommandType = CommandType.StoredProcedure;
+
+            cmd.Parameters.AddWithValue("@IdMaterial", idMaterial);
+
+            cmd.ExecuteNonQuery();
+            cmd.Parameters.Clear();
+            conn.CerrarConexion();
+        }
     }
 }

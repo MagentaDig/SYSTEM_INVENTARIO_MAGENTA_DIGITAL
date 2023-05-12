@@ -16,5 +16,6 @@ namespace SYSTEM_INVENTARIO_MAGENTA_DIGITAL.MODELOS
         public dynamic Descripcion { get; set; }
         public dynamic Categoria { get; set; }
         public int Cantidad { get; set; }
+        public int Estatus { get; set; }
     }
 }

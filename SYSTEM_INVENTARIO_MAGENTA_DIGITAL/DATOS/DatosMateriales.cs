@@ -27,6 +27,7 @@ namespace SYSTEM_INVENTARIO_MAGENTA_DIGITAL.DATOS
             cmd.Parameters.AddWithValue("@Tamaño", Material.Tamaño);
             cmd.Parameters.AddWithValue("@Metros", Material.Metros);
             cmd.Parameters.AddWithValue("@NoSerie", Material.NoSerie);
+            cmd.Parameters.AddWithValue("@Estatus", Material.Estatus);
 
             cmd.ExecuteReader();
             cmd.Parameters.Clear();
@@ -125,7 +126,36 @@ namespace SYSTEM_INVENTARIO_MAGENTA_DIGITAL.DATOS
                 Materiales.Cantidad = (int)datos["Total Material"];
                 lstMateriales.Add(Materiales);            
             }
+            cmd.Parameters.Clear();
+            conn.CerrarConexion();
             return lstMateriales;
+        }
+
+        public void EliminarMaterial(int idMaterial)
+        {
+            cmd.Connection = conn.AbrirConexion();
+            cmd.CommandText = "SP_ELIMINAR_MATERIAL";
+            cmd.CommandType = CommandType.StoredProcedure;
+
+            cmd.Parameters.AddWithValue("@IdMaterial", idMaterial);
+
+            cmd.ExecuteNonQuery();
+            cmd.Parameters.Clear();
+            conn.CerrarConexion();
+        }
+
+        public void EstatusMaterial(int IdMaterial, int Estatus)
+        {
+            cmd.Connection = conn.AbrirConexion();
+            cmd.CommandText = "SP_CAMBIAR_ESTATUS_MATERIAL";
+            cmd.CommandType = CommandType.StoredProcedure;
+
+            cmd.Parameters.AddWithValue("@IdMaterial",IdMaterial);
+            cmd.Parameters.AddWithValue("@Estatus", Estatus);
+
+            cmd.ExecuteNonQuery();
+            cmd.Parameters.Clear();
+            conn.CerrarConexion();
         }
 
     }

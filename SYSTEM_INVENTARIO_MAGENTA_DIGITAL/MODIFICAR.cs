@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using SYSTEM_INVENTARIO_MAGENTA_DIGITAL.DATOS;
 using SYSTEM_INVENTARIO_MAGENTA_DIGITAL.MODELOS;
+using SYSTEM_INVENTARIO_MAGENTA_DIGITAL.AVISOS;
 
 namespace SYSTEM_INVENTARIO_MAGENTA_DIGITAL
 {
@@ -56,6 +57,13 @@ namespace SYSTEM_INVENTARIO_MAGENTA_DIGITAL
                 idMat = Convert.ToInt32(dataGrid_Stock.CurrentRow.Cells["Id_Materia"].Value.ToString());
                 ACTUALIZAR formActu = new ACTUALIZAR(idMat, this.idCateg);
                 formActu.ShowDialog();
+                recargarPantalla();
+            }
+            else if (dataGrid_Stock.Columns[e.ColumnIndex].Name == "ELIMINAR")
+            {
+                idMat = Convert.ToInt32(dataGrid_Stock.CurrentRow.Cells["Id_Materia"].Value.ToString());
+                ELIMINAR_MATERIAL formElimanrMat = new ELIMINAR_MATERIAL(idMat, this.idCateg);
+                formElimanrMat.ShowDialog();
                 recargarPantalla();
             }
         }

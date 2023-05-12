@@ -57,6 +57,12 @@
     <Compile Include="ACTUALIZAR.Designer.cs">
       <DependentUpon>ACTUALIZAR.cs</DependentUpon>
     </Compile>
+    <Compile Include="AVISOS\ELIMINAR_MATERIAL.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AVISOS\ELIMINAR_MATERIAL.Designer.cs">
+      <DependentUpon>ELIMINAR_MATERIAL.cs</DependentUpon>
+    </Compile>
     <Compile Include="BUSCAR.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -114,6 +120,7 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RDN\RDN_MATERIALES.cs" />
     <Compile Include="RDN\RDN_MaterialSelect.cs" />
     <Compile Include="RDN\RDN_Pedidos.cs" />
     <Compile Include="RDN\RDN_Salidas.cs" />
@@ -127,6 +134,9 @@
     </Compile>
     <EmbeddedResource Include="ACTUALIZAR.resx">
       <DependentUpon>ACTUALIZAR.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AVISOS\ELIMINAR_MATERIAL.resx">
+      <DependentUpon>ELIMINAR_MATERIAL.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="BUSCAR.resx">
       <DependentUpon>BUSCAR.cs</DependentUpon>

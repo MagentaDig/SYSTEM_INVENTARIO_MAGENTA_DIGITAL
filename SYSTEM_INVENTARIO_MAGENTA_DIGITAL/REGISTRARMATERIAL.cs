@@ -62,6 +62,7 @@ namespace SYSTEM_INVENTARIO_MAGENTA_DIGITAL
             Material.Metros = decimal.Parse( txt_metros.Text);
             Material.Descripcion = rich_Desc.Text;
             Material.Categoria = this.idCateg;
+            Material.Estatus = 1;
             dynamic NoSerie = "NSM-"+(txt_NoSerie.Text);
 
             DatosMateriales funcionMateriales = new DatosMateriales();
@@ -76,20 +77,7 @@ namespace SYSTEM_INVENTARIO_MAGENTA_DIGITAL
             else
             {
                 MessageBox.Show("El No. de Serie " + NoSerie + " no se encuentra disponible");
-            }
-
-
-            
-
-
-
-            //Stock.Cantidad = int.Parse(txt_cantidad.Text);
-            //Stock.FechaEntrada = DateTime.Now;
-            //Stock.Material = idMateial;
-
-            //funcionStock.AgregarStock(Stock);
-            
-            
+            } 
 
         }
 
