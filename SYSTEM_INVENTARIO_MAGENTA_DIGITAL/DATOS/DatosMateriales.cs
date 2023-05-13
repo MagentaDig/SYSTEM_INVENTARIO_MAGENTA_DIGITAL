@@ -158,5 +158,55 @@ namespace SYSTEM_INVENTARIO_MAGENTA_DIGITAL.DATOS
             conn.CerrarConexion();
         }
 
+        public List<MMateriales> MaterialesInactivos()
+        {
+            cmd.Connection = conn.AbrirConexion();
+            cmd.CommandText = "SP_MATERIALES_INACTIVOS";
+            cmd.CommandType = CommandType.StoredProcedure;
+
+            SqlDataReader datos = cmd.ExecuteReader();
+            List<MMateriales> lstMateriales = new List<MMateriales>();
+
+            while (datos.Read())
+            {
+                MMateriales Materiales = new MMateriales();
+                Materiales.IdMaterial = (int)datos["Id_Materia"];
+                Materiales.Nombre = (dynamic)datos["Nombre"];
+                Materiales.NoSerie = (dynamic)datos["NoSerie"];
+                Materiales.Estatus = (int)datos["Estatus"];
+                lstMateriales.Add(Materiales);
+            }
+
+            return lstMateriales;
+        }
+
+        public List<MMateriales> BusquedaMateriales (int idCateg, dynamic NomMaterial, dynamic NoSerie)
+        {
+            cmd.Connection = conn.AbrirConexion();
+            cmd.CommandText = "SP_BUSQUEDA_MATERIAL";
+            cmd.CommandType = CommandType.StoredProcedure;
+
+            cmd.Parameters.AddWithValue("@IdCateg", idCateg);
+            cmd.Parameters.AddWithValue("@NomMaterial", NomMaterial);
+            cmd.Parameters.AddWithValue("@NoSerie", NoSerie);
+
+            SqlDataReader datos = cmd.ExecuteReader();
+
+            List<MMateriales> lstMateriales = new List<MMateriales>();
+
+            while (datos.Read())
+            {
+                MMateriales Material = new MMateriales();
+
+                Material.IdMaterial = (int)datos["Id_Materia"];
+                Material.Nombre = (dynamic)datos["Nombre"];
+                Material.Metros = (decimal)datos["Metros"];
+                Material.Tamaño = (dynamic)datos["Tamaño"];
+                Material.NoSerie = (dynamic)datos["NoSerie"];
+                lstMateriales.Add(Material);
+            }
+
+            return lstMateriales;
+        }
     }
 }

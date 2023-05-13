@@ -21,6 +21,7 @@ namespace SYSTEM_INVENTARIO_MAGENTA_DIGITAL
             InitializeComponent();
             this.idCateg = Categ;
             MostrarStock();
+            MaterialesCB();
         }
 
         public void MostrarStock()
@@ -29,7 +30,7 @@ namespace SYSTEM_INVENTARIO_MAGENTA_DIGITAL
             List<MMateriales> lstMateriales = funcionMateriales.TablaMateriales(this.idCateg);
 
             int index;
-
+            dataGrid_Stock.Rows.Clear();
             foreach (MMateriales datos in lstMateriales)
             {
                 index = dataGrid_Stock.Rows.Add();
@@ -73,6 +74,78 @@ namespace SYSTEM_INVENTARIO_MAGENTA_DIGITAL
             this.Hide();
             MODIFICAR fomModificar = new MODIFICAR(this.idCateg);
             fomModificar.Show();
+        }
+
+        private void link_MaterialesInac_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            MATERIALES_INACTIVOS formMaterialesInac = new MATERIALES_INACTIVOS(this.idCateg);
+            formMaterialesInac.ShowDialog();
+            recargarPantalla();
+        }
+
+        public void MaterialesCB()
+        {
+            DatosMateriales funcionMateriales = new DatosMateriales();
+
+            List<MMateriales> lstMateriales = funcionMateriales.MostrarMateriales(this.idCateg);
+
+            foreach (MMateriales material in lstMateriales)
+            {
+                cb_materialesBusc.Items.Add(material.Nombre);
+            }
+        }
+
+        private void btn_Buscar_Click(object sender, EventArgs e)
+        {
+            DatosMateriales funcionMateriales = new DatosMateriales();
+            if(cb_materialesBusc.SelectedIndex != -1)
+            {
+                int index = cb_materialesBusc.SelectedIndex;
+                dynamic material = cb_materialesBusc.Items[index].ToString();
+                dynamic noSerie = txt_noSerie.Text;
+
+                List<MMateriales> lstMateriales = funcionMateriales.BusquedaMateriales(this.idCateg, material, noSerie);
+
+                int indexTable;
+                dataGrid_Stock.Rows.Clear();
+                foreach (MMateriales datos in lstMateriales)
+                {
+                    indexTable = dataGrid_Stock.Rows.Add();
+                    dataGrid_Stock.Rows[indexTable].Cells[0].Value = datos.IdMaterial;
+                    dataGrid_Stock.Rows[indexTable].Cells[1].Value = datos.Nombre;
+                    dataGrid_Stock.Rows[indexTable].Cells[2].Value = datos.NoSerie;
+                    dataGrid_Stock.Rows[indexTable].Cells[3].Value = datos.Metros;
+                    dataGrid_Stock.Rows[indexTable].Cells[4].Value = datos.Tamaño;
+
+                }
+            }
+            else
+            {
+                dynamic noSerie = txt_noSerie.Text;
+
+                List<MMateriales> lstMateriales = funcionMateriales.BusquedaMateriales(this.idCateg, "", noSerie);
+
+                int indexTable;
+                dataGrid_Stock.Rows.Clear();
+                foreach (MMateriales datos in lstMateriales)
+                {
+                    indexTable = dataGrid_Stock.Rows.Add();
+                    dataGrid_Stock.Rows[indexTable].Cells[0].Value = datos.IdMaterial;
+                    dataGrid_Stock.Rows[indexTable].Cells[1].Value = datos.Nombre;
+                    dataGrid_Stock.Rows[indexTable].Cells[2].Value = datos.NoSerie;
+                    dataGrid_Stock.Rows[indexTable].Cells[3].Value = datos.Metros;
+                    dataGrid_Stock.Rows[indexTable].Cells[4].Value = datos.Tamaño;
+                }
+            }
+            
+        }
+
+        private void btn_Reset_Click(object sender, EventArgs e)
+        {
+            txt_Cantidad.Clear();
+            txt_noSerie.Clear();
+            MostrarStock();
+
         }
     }
 }

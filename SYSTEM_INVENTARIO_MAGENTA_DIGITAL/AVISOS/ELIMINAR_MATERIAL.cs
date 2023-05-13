@@ -29,6 +29,7 @@ namespace SYSTEM_INVENTARIO_MAGENTA_DIGITAL.AVISOS
             reglaMateriales.ElimnarMaterial(this.IdMaterial,0);
 
             MessageBox.Show("El material se elimino correctamente");
+            this.Hide();
         }
 
         private void btn_No_Click(object sender, EventArgs e)
