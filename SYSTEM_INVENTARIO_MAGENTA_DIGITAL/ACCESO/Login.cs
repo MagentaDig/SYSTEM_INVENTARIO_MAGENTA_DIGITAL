@@ -12,7 +12,7 @@ namespace SYSTEM_INVENTARIO_MAGENTA_DIGITAL.ACCESO
     {
         private dynamic usuario = "usAdmin";
         private dynamic contraseña = "Passw0rd";
-
+        /**/
         public bool validarLogin(dynamic user, dynamic pass)
         {
             bool login = false;
