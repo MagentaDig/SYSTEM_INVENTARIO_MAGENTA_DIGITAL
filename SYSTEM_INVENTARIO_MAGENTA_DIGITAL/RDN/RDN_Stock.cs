@@ -65,18 +65,26 @@ namespace SYSTEM_INVENTARIO_MAGENTA_DIGITAL.RDN
 
             foreach (MDetallePedido dp in DetallePedido)
             {
-                int stockAct;
+                int stockAct = dp.Cantidad;
+                int stockEnFila;
                 List<MStock> lstStock = funcionStock.ConsultarStock(dp.Material);
                 foreach (MStock stock in lstStock)
                 { 
                     if (dp.Material == stock.Material)
                     {
-                        stockAct = dp.Cantidad + stock.StockDisp;
-                        if(stockAct <= stock.Cantidad)
+                        stockEnFila = stockAct + stock.StockDisp;
+                        if(stockEnFila <= stock.Cantidad)
                         {
-                            funcionStock.ActulizarStock(stockAct,stock.idStock);
+                            funcionStock.ActulizarStock(stockEnFila, stock.idStock);
                             funcionPedidos.EliminarDp(dp.idPedido);
                             break;
+                        }
+                        else
+                        {
+                            int stockRestante = stockAct - stock.Cantidad;
+                            stockEnFila = stockAct - stockRestante;
+                            funcionStock.ActulizarStock(stockEnFila, stock.idStock);
+                            stockAct = stockRestante;
                         }
                     }
                 }

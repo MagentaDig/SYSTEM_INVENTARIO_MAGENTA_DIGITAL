@@ -230,6 +230,10 @@ namespace SYSTEM_INVENTARIO_MAGENTA_DIGITAL
                 MessageBox.Show("El pedido se elimino correctamente");
                 recargarPantalla();
             }
+            else if (dataGrid_Pedidos.Columns[e.ColumnIndex].Name == "entregado")
+            {
+
+            }
         }
 
         private void txt_Cantidad_Validated(object sender, EventArgs e)

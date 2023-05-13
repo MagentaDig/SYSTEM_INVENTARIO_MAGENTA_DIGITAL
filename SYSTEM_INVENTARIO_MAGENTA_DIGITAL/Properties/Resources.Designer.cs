@@ -283,6 +283,16 @@ namespace SYSTEM_INVENTARIO_MAGENTA_DIGITAL.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icon_7d72427863558d0f51e5aa0985cf8c82 {
+            get {
+                object obj = ResourceManager.GetObject("icon_7d72427863558d0f51e5aa0985cf8c82", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icon_e6b85da097f15d781ed24b822e966d12 {
             get {
                 object obj = ResourceManager.GetObject("icon_e6b85da097f15d781ed24b822e966d12", resourceCulture);

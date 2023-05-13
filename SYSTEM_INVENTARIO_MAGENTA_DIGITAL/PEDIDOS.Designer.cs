@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.lbl_detalle = new System.Windows.Forms.Label();
             this.lbl_material = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -48,13 +49,14 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.lbl_noSerie = new System.Windows.Forms.Label();
             this.link_AgrStock = new System.Windows.Forms.LinkLabel();
-            this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
-            this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
             this.id_pedido = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nomPedido = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.detalle_Ped = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fec_Pedido = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.entregado = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.dataGridViewImageColumn3 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.entregado = new System.Windows.Forms.DataGridViewImageColumn();
             this.verPedido = new System.Windows.Forms.DataGridViewImageColumn();
             this.eliminarPed = new System.Windows.Forms.DataGridViewImageColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGrid_MaterialPed)).BeginInit();
@@ -185,6 +187,17 @@
             // 
             // dataGrid_Pedidos
             // 
+            this.dataGrid_Pedidos.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dataGrid_Pedidos.CausesValidation = false;
+            this.dataGrid_Pedidos.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.ButtonFace;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGrid_Pedidos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGrid_Pedidos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGrid_Pedidos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.id_pedido,
@@ -268,21 +281,6 @@
             this.link_AgrStock.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.link_AgrStock.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.link_AgrStock_LinkClicked);
             // 
-            // dataGridViewImageColumn1
-            // 
-            this.dataGridViewImageColumn1.Frozen = true;
-            this.dataGridViewImageColumn1.HeaderText = "";
-            this.dataGridViewImageColumn1.Image = global::SYSTEM_INVENTARIO_MAGENTA_DIGITAL.Properties.Resources.mas;
-            this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
-            this.dataGridViewImageColumn1.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewImageColumn1.Width = 50;
-            // 
-            // dataGridViewImageColumn2
-            // 
-            this.dataGridViewImageColumn2.HeaderText = "ELIMINAR";
-            this.dataGridViewImageColumn2.Image = global::SYSTEM_INVENTARIO_MAGENTA_DIGITAL.Properties.Resources.icon_5f41a9b90a6fd03b7d17b63704ef6f97;
-            this.dataGridViewImageColumn2.Name = "dataGridViewImageColumn2";
-            // 
             // id_pedido
             // 
             this.id_pedido.Frozen = true;
@@ -310,12 +308,38 @@
             this.fec_Pedido.Name = "fec_Pedido";
             this.fec_Pedido.Width = 150;
             // 
+            // dataGridViewImageColumn1
+            // 
+            this.dataGridViewImageColumn1.DataPropertyName = "checkEntrefado";
+            this.dataGridViewImageColumn1.Frozen = true;
+            this.dataGridViewImageColumn1.HeaderText = "";
+            this.dataGridViewImageColumn1.Image = global::SYSTEM_INVENTARIO_MAGENTA_DIGITAL.Properties.Resources.mas;
+            this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
+            this.dataGridViewImageColumn1.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewImageColumn1.Width = 50;
+            // 
+            // dataGridViewImageColumn2
+            // 
+            this.dataGridViewImageColumn2.Frozen = true;
+            this.dataGridViewImageColumn2.HeaderText = "ELIMINAR";
+            this.dataGridViewImageColumn2.Image = global::SYSTEM_INVENTARIO_MAGENTA_DIGITAL.Properties.Resources.icon_5f41a9b90a6fd03b7d17b63704ef6f97;
+            this.dataGridViewImageColumn2.Name = "dataGridViewImageColumn2";
+            this.dataGridViewImageColumn2.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            // 
+            // dataGridViewImageColumn3
+            // 
+            this.dataGridViewImageColumn3.HeaderText = "ELIMINAR";
+            this.dataGridViewImageColumn3.Image = global::SYSTEM_INVENTARIO_MAGENTA_DIGITAL.Properties.Resources.icon_5f41a9b90a6fd03b7d17b63704ef6f97;
+            this.dataGridViewImageColumn3.Name = "dataGridViewImageColumn3";
+            // 
             // entregado
             // 
             this.entregado.DataPropertyName = "checkEntrefado";
             this.entregado.Frozen = true;
             this.entregado.HeaderText = "ENTREGADO";
+            this.entregado.Image = global::SYSTEM_INVENTARIO_MAGENTA_DIGITAL.Properties.Resources.icon_7d72427863558d0f51e5aa0985cf8c82;
             this.entregado.Name = "entregado";
+            this.entregado.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             // 
             // verPedido
             // 
@@ -379,8 +403,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn nomPedido;
         private System.Windows.Forms.DataGridViewTextBoxColumn detalle_Ped;
         private System.Windows.Forms.DataGridViewTextBoxColumn fec_Pedido;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn entregado;
+        private System.Windows.Forms.DataGridViewImageColumn entregado;
         private System.Windows.Forms.DataGridViewImageColumn verPedido;
         private System.Windows.Forms.DataGridViewImageColumn eliminarPed;
+        private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn3;
     }
 }
