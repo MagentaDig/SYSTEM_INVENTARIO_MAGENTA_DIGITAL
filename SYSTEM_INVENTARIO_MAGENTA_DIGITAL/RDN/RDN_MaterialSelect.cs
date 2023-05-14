@@ -17,14 +17,6 @@ namespace SYSTEM_INVENTARIO_MAGENTA_DIGITAL.RDN
             DatosMatSelect MatSelect = new DatosMatSelect();
             MatSelect.agreMateSelect(Material, Pedido);
             Stock.ActulizarStock(cantidad, Material.idMaterial);
-
-            //int IdMatSeelct = 0;
-
-            //if (datosMateSelect.Read())
-            //{
-            //    IdMatSeelct = int.Parse(datosMateSelect[0].ToString());
-            //}
-            //return IdMatSeelct;
         }
     }
 }

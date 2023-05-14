@@ -10,7 +10,6 @@ namespace SYSTEM_INVENTARIO_MAGENTA_DIGITAL.RDN
 {
     class RDN_Salidas
     {
-        //DatosSalidas funcionSalidas = new DatosSalidas();
         public void capSalidas(int IdMatSelec)
         {
             DatosSalidas funcionSalidas = new DatosSalidas();

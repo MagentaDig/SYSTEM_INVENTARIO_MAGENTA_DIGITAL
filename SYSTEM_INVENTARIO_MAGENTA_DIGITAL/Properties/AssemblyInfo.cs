@@ -6,9 +6,9 @@ using System.Runtime.InteropServices;
 // conjunto de atributos. Cambie estos valores de atributo para modificar la información
 // asociada con un ensamblado.
 [assembly: AssemblyTitle("SYSTEM_INVENTARIO_MAGENTA_DIGITAL")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyDescription("Invetario de almacen y registro de pedidos")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
+[assembly: AssemblyCompany("Magenta Digital")]
 [assembly: AssemblyProduct("SYSTEM_INVENTARIO_MAGENTA_DIGITAL")]
 [assembly: AssemblyCopyright("Copyright ©  2023")]
 [assembly: AssemblyTrademark("")]

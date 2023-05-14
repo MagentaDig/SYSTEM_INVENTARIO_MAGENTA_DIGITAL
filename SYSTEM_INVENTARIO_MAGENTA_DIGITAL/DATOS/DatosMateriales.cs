@@ -80,7 +80,6 @@ namespace SYSTEM_INVENTARIO_MAGENTA_DIGITAL.DATOS
             return isDisponible;
         }
 
-
         public List<MMateriales> TablaMateriales(int Categ)
         {
             cmd.Connection = conn.AbrirConexion();
@@ -176,7 +175,7 @@ namespace SYSTEM_INVENTARIO_MAGENTA_DIGITAL.DATOS
                 Materiales.Estatus = (int)datos["Estatus"];
                 lstMateriales.Add(Materiales);
             }
-
+            conn.CerrarConexion();
             return lstMateriales;
         }
 
@@ -205,7 +204,7 @@ namespace SYSTEM_INVENTARIO_MAGENTA_DIGITAL.DATOS
                 Material.NoSerie = (dynamic)datos["NoSerie"];
                 lstMateriales.Add(Material);
             }
-
+            conn.CerrarConexion();
             return lstMateriales;
         }
     }
