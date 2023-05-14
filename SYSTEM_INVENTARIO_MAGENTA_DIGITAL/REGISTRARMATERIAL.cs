@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using System.Runtime.InteropServices;
 using SYSTEM_INVENTARIO_MAGENTA_DIGITAL.DATOS;
 using SYSTEM_INVENTARIO_MAGENTA_DIGITAL.MODELOS;
+using SYSTEM_INVENTARIO_MAGENTA_DIGITAL.RDN;
 using System.Data.SqlClient;
 
 namespace SYSTEM_INVENTARIO_MAGENTA_DIGITAL
@@ -51,33 +52,58 @@ namespace SYSTEM_INVENTARIO_MAGENTA_DIGITAL
         private void btn_guardarmat_Click(object sender, EventArgs e)
         {
             MMateriales Material = new MMateriales();
+            MStock Stock = new MStock();
+            RDN_SERIES reglaSerie = new RDN_SERIES();
+            DatosMateriales funcionMateriesles = new DatosMateriales();
+            DatosStock funcionStock = new DatosStock();
+
             Material.Nombre = txt_nombre.Text;
             Material.Tamaño = txt_tamaño.Text;
             Material.Metros = decimal.Parse( txt_metros.Text);
-            Material.Cantidad = int.Parse(txt_cantidad.Text);
             Material.Descripcion = rich_Desc.Text;
             Material.Categoria = this.idCateg;
+            Material.Estatus = 1;
+            dynamic NoSerie = "NSM-"+(txt_NoSerie.Text);
 
-            DatosMateriales funcionAgr = new DatosMateriales();
-            funcionAgr.AgregarMaterial(Material);
+            DatosMateriales funcionMateriales = new DatosMateriales();
+            bool isDisponile = funcionMateriales.ValidarNoSerie(NoSerie);
+            if (isDisponile)
+            {
+                Material.NoSerie = NoSerie;
+                funcionMateriesles.AgregarMaterial(Material);
 
-            MessageBox.Show("El registro se ah agregado correctamente");
+                MessageBox.Show("El registro se ah agregado correctamente");
+            }
+            else
+            {
+                MessageBox.Show("El No. de Serie " + NoSerie + " no se encuentra disponible");
+            } 
 
+        }
+
+        public int getIdMaterial(SqlDataReader Material)
+        {
+            int idMaterial = 0;
+            if (Material.Read())
+            {
+                idMaterial = int.Parse(Material[0].ToString());
+            }
+            return idMaterial;
         }
 
 
         public void MostrarDataGrid()
         {
             DatosMateriales datosMateriales = new DatosMateriales();
-            SqlDataReader Materiales = datosMateriales.MostrarMateriales(this.idCateg);
+            List<MMateriales> Materiales = datosMateriales.MostrarMateriales(this.idCateg);
 
 
             int index;
-            while (Materiales.Read())
+            foreach (MMateriales mat in Materiales)
             {
                 index = dataGrid_AgrMaterial.Rows.Add();
-                dataGrid_AgrMaterial.Rows[index].Cells[0].Value = Materiales["Id_Materia"];
-                dataGrid_AgrMaterial.Rows[index].Cells[0].Value = Materiales["Nombre"];
+                dataGrid_AgrMaterial.Rows[index].Cells[0].Value = mat.IdMaterial;
+                dataGrid_AgrMaterial.Rows[index].Cells[1].Value = mat.Nombre;
             }
         }
 
@@ -85,6 +111,11 @@ namespace SYSTEM_INVENTARIO_MAGENTA_DIGITAL
         {
             ReleaseCapture();
             SendMessage(this.Handle, 0x112, 0xf012, 0);
+        }
+
+        private void REGISTRARMATERIAL_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

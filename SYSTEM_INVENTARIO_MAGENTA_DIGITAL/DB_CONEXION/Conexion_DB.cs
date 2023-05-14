@@ -32,5 +32,13 @@ namespace SYSTEM_INVENTARIO_MAGENTA_DIGITAL.DB_CONEXION
             }
             return AbrirConn;
         }
+
+        public SqlConnection CerrarConexion()
+        {
+            SqlConnection CerrarConn = conn;
+            CerrarConn.Close();
+
+            return CerrarConn;
+        }
     }
 }

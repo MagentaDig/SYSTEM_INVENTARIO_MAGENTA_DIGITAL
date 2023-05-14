@@ -193,9 +193,109 @@ namespace SYSTEM_INVENTARIO_MAGENTA_DIGITAL.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap editar__1_ {
+            get {
+                object obj = ResourceManager.GetObject("editar (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap eliminar {
             get {
                 object obj = ResourceManager.GetObject("eliminar", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap eliminar__1_ {
+            get {
+                object obj = ResourceManager.GetObject("eliminar (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icon_1ccfa23b8f52656dbb6975dab8c21268_1 {
+            get {
+                object obj = ResourceManager.GetObject("icon_1ccfa23b8f52656dbb6975dab8c21268_1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icon_4bd3092cfdf353a4b19434341ccb7d5d {
+            get {
+                object obj = ResourceManager.GetObject("icon_4bd3092cfdf353a4b19434341ccb7d5d", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icon_4bd3092cfdf353a4b19434341ccb7d5d1 {
+            get {
+                object obj = ResourceManager.GetObject("icon_4bd3092cfdf353a4b19434341ccb7d5d1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icon_5f41a9b90a6fd03b7d17b63704ef6f97 {
+            get {
+                object obj = ResourceManager.GetObject("icon_5f41a9b90a6fd03b7d17b63704ef6f97", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icon_5f41a9b90a6fd03b7d17b63704ef6f97__1_ {
+            get {
+                object obj = ResourceManager.GetObject("icon_5f41a9b90a6fd03b7d17b63704ef6f97-_1_", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icon_5f41a9b90a6fd03b7d17b63704ef6f971 {
+            get {
+                object obj = ResourceManager.GetObject("icon_5f41a9b90a6fd03b7d17b63704ef6f971", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icon_7d72427863558d0f51e5aa0985cf8c82 {
+            get {
+                object obj = ResourceManager.GetObject("icon_7d72427863558d0f51e5aa0985cf8c82", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icon_e6b85da097f15d781ed24b822e966d12 {
+            get {
+                object obj = ResourceManager.GetObject("icon_e6b85da097f15d781ed24b822e966d12", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -216,6 +316,16 @@ namespace SYSTEM_INVENTARIO_MAGENTA_DIGITAL.Properties {
         internal static System.Drawing.Bitmap logopequeño {
             get {
                 object obj = ResourceManager.GetObject("logopequeño", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap mas {
+            get {
+                object obj = ResourceManager.GetObject("mas", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
