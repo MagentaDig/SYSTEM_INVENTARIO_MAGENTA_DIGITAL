@@ -28,36 +28,41 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dataGridView_MatInac = new System.Windows.Forms.DataGridView();
-            this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
             this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.noSerie = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
             this.habilitar = new System.Windows.Forms.DataGridViewImageColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_MatInac)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridView_MatInac
             // 
+            this.dataGridView_MatInac.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.dataGridView_MatInac.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView_MatInac.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView_MatInac.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView_MatInac.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.id,
             this.noSerie,
             this.nombre,
             this.habilitar});
-            this.dataGridView_MatInac.Location = new System.Drawing.Point(56, 40);
+            this.dataGridView_MatInac.Location = new System.Drawing.Point(35, 25);
             this.dataGridView_MatInac.Name = "dataGridView_MatInac";
-            this.dataGridView_MatInac.Size = new System.Drawing.Size(486, 241);
+            this.dataGridView_MatInac.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.dataGridView_MatInac.RowHeadersVisible = false;
+            this.dataGridView_MatInac.Size = new System.Drawing.Size(448, 241);
             this.dataGridView_MatInac.TabIndex = 0;
             this.dataGridView_MatInac.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_MatInac_CellClick);
-            // 
-            // dataGridViewImageColumn1
-            // 
-            this.dataGridViewImageColumn1.HeaderText = "HABILITAR";
-            this.dataGridViewImageColumn1.Image = global::SYSTEM_INVENTARIO_MAGENTA_DIGITAL.Properties.Resources.icon_1ccfa23b8f52656dbb6975dab8c21268_1;
-            this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
-            this.dataGridViewImageColumn1.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewImageColumn1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
             // id
             // 
@@ -75,6 +80,14 @@
             this.nombre.Name = "nombre";
             this.nombre.Width = 150;
             // 
+            // dataGridViewImageColumn1
+            // 
+            this.dataGridViewImageColumn1.HeaderText = "HABILITAR";
+            this.dataGridViewImageColumn1.Image = global::SYSTEM_INVENTARIO_MAGENTA_DIGITAL.Properties.Resources.icon_1ccfa23b8f52656dbb6975dab8c21268_1;
+            this.dataGridViewImageColumn1.Name = "dataGridViewImageColumn1";
+            this.dataGridViewImageColumn1.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewImageColumn1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
             // habilitar
             // 
             this.habilitar.HeaderText = "HABILITAR";
@@ -87,7 +100,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(599, 328);
+            this.BackColor = System.Drawing.SystemColors.Window;
+            this.ClientSize = new System.Drawing.Size(520, 297);
             this.Controls.Add(this.dataGridView_MatInac);
             this.Name = "MATERIALES_INACTIVOS";
             this.Text = "MATERIALES_INACTIVOS";
