@@ -84,7 +84,7 @@
             this.btn_ingresar.FlatAppearance.BorderSize = 0;
             this.btn_ingresar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_ingresar.Image = global::SYSTEM_INVENTARIO_MAGENTA_DIGITAL.Properties.Resources.Captura_de_pantalla_2023_04_18_142657;
-            this.btn_ingresar.Location = new System.Drawing.Point(428, 216);
+            this.btn_ingresar.Location = new System.Drawing.Point(424, 222);
             this.btn_ingresar.Name = "btn_ingresar";
             this.btn_ingresar.Size = new System.Drawing.Size(114, 47);
             this.btn_ingresar.TabIndex = 2;

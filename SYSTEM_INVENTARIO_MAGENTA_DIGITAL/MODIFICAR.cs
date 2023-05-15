@@ -142,10 +142,17 @@ namespace SYSTEM_INVENTARIO_MAGENTA_DIGITAL
 
         private void btn_Reset_Click(object sender, EventArgs e)
         {
-            txt_Cantidad.Clear();
+
             txt_noSerie.Clear();
             MostrarStock();
 
+        }
+
+        private void pictureBox_Reg_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            INICIO formInicio = new INICIO(this.idCateg);
+            formInicio.Show();
         }
     }
 }

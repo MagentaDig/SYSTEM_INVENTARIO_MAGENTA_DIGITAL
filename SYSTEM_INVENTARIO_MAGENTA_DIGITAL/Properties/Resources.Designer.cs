@@ -63,6 +63,16 @@ namespace SYSTEM_INVENTARIO_MAGENTA_DIGITAL.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap anterior__1_ {
+            get {
+                object obj = ResourceManager.GetObject("anterior (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap barratitulo {
             get {
                 object obj = ResourceManager.GetObject("barratitulo", resourceCulture);
@@ -76,6 +86,16 @@ namespace SYSTEM_INVENTARIO_MAGENTA_DIGITAL.Properties {
         internal static System.Drawing.Bitmap buscar {
             get {
                 object obj = ResourceManager.GetObject("buscar", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap buscar__1_ {
+            get {
+                object obj = ResourceManager.GetObject("buscar (1)", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -216,6 +236,16 @@ namespace SYSTEM_INVENTARIO_MAGENTA_DIGITAL.Properties {
         internal static System.Drawing.Bitmap eliminar__1_ {
             get {
                 object obj = ResourceManager.GetObject("eliminar (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap eliminar1 {
+            get {
+                object obj = ResourceManager.GetObject("eliminar1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

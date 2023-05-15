@@ -142,11 +142,17 @@
   <data name="MitadInicio" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\MitadInicio.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="mas" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\mas.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="barratitulo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\barratitulo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="icon_4bd3092cfdf353a4b19434341ccb7d5d" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icon_4bd3092cfdf353a4b19434341ccb7d5d.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icon_7d72427863558d0f51e5aa0985cf8c82" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icon_7d72427863558d0f51e5aa0985cf8c82.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="buscar (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\buscar (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Captura de pantalla 2023-04-24 003343" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Captura de pantalla 2023-04-24 003343.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -162,6 +168,9 @@
   </data>
   <data name="logo_magenta" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\logo_magenta.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ingresar" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ingresar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="icon_5f41a9b90a6fd03b7d17b63704ef6f97-_1_" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icon_5f41a9b90a6fd03b7d17b63704ef6f97-_1_.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -196,8 +205,8 @@
   <data name="eliminar (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\eliminar (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="barratitulo" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\barratitulo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="mas" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\mas.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="buscar" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\buscar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -211,9 +220,6 @@
   <data name="Captura de pantalla 2023-04-25 020420" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Captura de pantalla 2023-04-25 020420.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="ingresar" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ingresar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="modificar" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\modificar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -223,13 +229,16 @@
   <data name="Captura de pantalla 2023-04-24 003703" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Captura de pantalla 2023-04-24 003703.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="eliminar1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\eliminar1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="icon_e6b85da097f15d781ed24b822e966d12" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icon_e6b85da097f15d781ed24b822e966d12.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="logopequeño" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\logopequeño.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="icon_7d72427863558d0f51e5aa0985cf8c82" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icon_7d72427863558d0f51e5aa0985cf8c82.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="anterior (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\anterior (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

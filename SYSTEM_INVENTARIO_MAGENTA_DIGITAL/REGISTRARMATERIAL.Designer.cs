@@ -41,6 +41,14 @@
             this.rich_Desc = new System.Windows.Forms.RichTextBox();
             this.txt_nombre = new System.Windows.Forms.TextBox();
             this.panel_barratitulo = new System.Windows.Forms.Panel();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.dataGrid_AgrMaterial = new System.Windows.Forms.DataGridView();
+            this.id_material = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nom_material = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.txt_NoSerie = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.lbl_serie = new System.Windows.Forms.Label();
+            this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.iconoregresarmenu = new System.Windows.Forms.PictureBox();
             this.iconominimizar2 = new System.Windows.Forms.PictureBox();
             this.iconocerrar2 = new System.Windows.Forms.PictureBox();
@@ -49,15 +57,9 @@
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.dataGrid_AgrMaterial = new System.Windows.Forms.DataGridView();
-            this.id_material = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nom_material = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.txt_NoSerie = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.pictureBox6 = new System.Windows.Forms.PictureBox();
-            this.lbl_serie = new System.Windows.Forms.Label();
             this.panel_barratitulo.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGrid_AgrMaterial)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconoregresarmenu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconominimizar2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconocerrar2)).BeginInit();
@@ -65,8 +67,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGrid_AgrMaterial)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -201,95 +201,6 @@
             this.panel_barratitulo.TabIndex = 25;
             this.panel_barratitulo.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel_barratitulo_MouseDown);
             // 
-            // iconoregresarmenu
-            // 
-            this.iconoregresarmenu.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.iconoregresarmenu.Image = global::SYSTEM_INVENTARIO_MAGENTA_DIGITAL.Properties.Resources.Captura_de_pantalla_2023_04_25_030653;
-            this.iconoregresarmenu.Location = new System.Drawing.Point(951, 16);
-            this.iconoregresarmenu.Name = "iconoregresarmenu";
-            this.iconoregresarmenu.Size = new System.Drawing.Size(25, 25);
-            this.iconoregresarmenu.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.iconoregresarmenu.TabIndex = 4;
-            this.iconoregresarmenu.TabStop = false;
-            this.iconoregresarmenu.Click += new System.EventHandler(this.iconoregresarmenu_Click);
-            // 
-            // iconominimizar2
-            // 
-            this.iconominimizar2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.iconominimizar2.Image = global::SYSTEM_INVENTARIO_MAGENTA_DIGITAL.Properties.Resources.minimizar;
-            this.iconominimizar2.Location = new System.Drawing.Point(982, 16);
-            this.iconominimizar2.Name = "iconominimizar2";
-            this.iconominimizar2.Size = new System.Drawing.Size(25, 25);
-            this.iconominimizar2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.iconominimizar2.TabIndex = 4;
-            this.iconominimizar2.TabStop = false;
-            this.iconominimizar2.Click += new System.EventHandler(this.iconominimizar2_Click);
-            // 
-            // iconocerrar2
-            // 
-            this.iconocerrar2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.iconocerrar2.Image = global::SYSTEM_INVENTARIO_MAGENTA_DIGITAL.Properties.Resources.tacha;
-            this.iconocerrar2.Location = new System.Drawing.Point(1013, 16);
-            this.iconocerrar2.Name = "iconocerrar2";
-            this.iconocerrar2.Size = new System.Drawing.Size(25, 25);
-            this.iconocerrar2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.iconocerrar2.TabIndex = 4;
-            this.iconocerrar2.TabStop = false;
-            this.iconocerrar2.Click += new System.EventHandler(this.iconocerrar2_Click);
-            // 
-            // btn_guardarmat
-            // 
-            this.btn_guardarmat.BackgroundImage = global::SYSTEM_INVENTARIO_MAGENTA_DIGITAL.Properties.Resources.Captura_de_pantalla_2023_04_25_021242;
-            this.btn_guardarmat.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btn_guardarmat.FlatAppearance.BorderSize = 0;
-            this.btn_guardarmat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_guardarmat.Location = new System.Drawing.Point(65, 565);
-            this.btn_guardarmat.Name = "btn_guardarmat";
-            this.btn_guardarmat.Size = new System.Drawing.Size(122, 51);
-            this.btn_guardarmat.TabIndex = 21;
-            this.btn_guardarmat.UseVisualStyleBackColor = true;
-            this.btn_guardarmat.Click += new System.EventHandler(this.btn_guardarmat_Click);
-            // 
-            // pictureBox4
-            // 
-            this.pictureBox4.Image = global::SYSTEM_INVENTARIO_MAGENTA_DIGITAL.Properties.Resources.Captura_de_pantalla_2023_04_25_021052;
-            this.pictureBox4.Location = new System.Drawing.Point(59, 393);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(500, 154);
-            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox4.TabIndex = 18;
-            this.pictureBox4.TabStop = false;
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.Image = global::SYSTEM_INVENTARIO_MAGENTA_DIGITAL.Properties.Resources.Captura_de_pantalla_2023_04_25_020420;
-            this.pictureBox3.Location = new System.Drawing.Point(233, 302);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(154, 44);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox3.TabIndex = 14;
-            this.pictureBox3.TabStop = false;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = global::SYSTEM_INVENTARIO_MAGENTA_DIGITAL.Properties.Resources.Captura_de_pantalla_2023_04_25_020420;
-            this.pictureBox2.Location = new System.Drawing.Point(61, 302);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(154, 44);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 11;
-            this.pictureBox2.TabStop = false;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::SYSTEM_INVENTARIO_MAGENTA_DIGITAL.Properties.Resources.Captura_de_pantalla_2023_04_25_020316;
-            this.pictureBox1.Location = new System.Drawing.Point(226, 215);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(333, 44);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 10;
-            this.pictureBox1.TabStop = false;
-            // 
             // contextMenuStrip1
             // 
             this.contextMenuStrip1.Name = "contextMenuStrip1";
@@ -338,16 +249,6 @@
             this.label8.TabIndex = 28;
             this.label8.Text = "No. Serie";
             // 
-            // pictureBox6
-            // 
-            this.pictureBox6.Image = global::SYSTEM_INVENTARIO_MAGENTA_DIGITAL.Properties.Resources.Captura_de_pantalla_2023_04_25_020420;
-            this.pictureBox6.Location = new System.Drawing.Point(61, 217);
-            this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.Size = new System.Drawing.Size(154, 44);
-            this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox6.TabIndex = 27;
-            this.pictureBox6.TabStop = false;
-            // 
             // lbl_serie
             // 
             this.lbl_serie.AutoSize = true;
@@ -359,10 +260,110 @@
             this.lbl_serie.TabIndex = 30;
             this.lbl_serie.Text = "NSM -";
             // 
+            // pictureBox6
+            // 
+            this.pictureBox6.Image = global::SYSTEM_INVENTARIO_MAGENTA_DIGITAL.Properties.Resources.Captura_de_pantalla_2023_04_25_020420;
+            this.pictureBox6.Location = new System.Drawing.Point(61, 217);
+            this.pictureBox6.Name = "pictureBox6";
+            this.pictureBox6.Size = new System.Drawing.Size(154, 44);
+            this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox6.TabIndex = 27;
+            this.pictureBox6.TabStop = false;
+            // 
+            // iconoregresarmenu
+            // 
+            this.iconoregresarmenu.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.iconoregresarmenu.Image = global::SYSTEM_INVENTARIO_MAGENTA_DIGITAL.Properties.Resources.Captura_de_pantalla_2023_04_25_030653;
+            this.iconoregresarmenu.Location = new System.Drawing.Point(951, 16);
+            this.iconoregresarmenu.Name = "iconoregresarmenu";
+            this.iconoregresarmenu.Size = new System.Drawing.Size(25, 25);
+            this.iconoregresarmenu.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.iconoregresarmenu.TabIndex = 4;
+            this.iconoregresarmenu.TabStop = false;
+            this.iconoregresarmenu.Click += new System.EventHandler(this.iconoregresarmenu_Click);
+            // 
+            // iconominimizar2
+            // 
+            this.iconominimizar2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.iconominimizar2.Image = global::SYSTEM_INVENTARIO_MAGENTA_DIGITAL.Properties.Resources.minimizar;
+            this.iconominimizar2.Location = new System.Drawing.Point(982, 16);
+            this.iconominimizar2.Name = "iconominimizar2";
+            this.iconominimizar2.Size = new System.Drawing.Size(25, 25);
+            this.iconominimizar2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.iconominimizar2.TabIndex = 4;
+            this.iconominimizar2.TabStop = false;
+            this.iconominimizar2.Click += new System.EventHandler(this.iconominimizar2_Click);
+            // 
+            // iconocerrar2
+            // 
+            this.iconocerrar2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.iconocerrar2.Image = global::SYSTEM_INVENTARIO_MAGENTA_DIGITAL.Properties.Resources.tacha;
+            this.iconocerrar2.Location = new System.Drawing.Point(1013, 16);
+            this.iconocerrar2.Name = "iconocerrar2";
+            this.iconocerrar2.Size = new System.Drawing.Size(25, 25);
+            this.iconocerrar2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.iconocerrar2.TabIndex = 4;
+            this.iconocerrar2.TabStop = false;
+            this.iconocerrar2.Click += new System.EventHandler(this.iconocerrar2_Click);
+            // 
+            // btn_guardarmat
+            // 
+            this.btn_guardarmat.BackgroundImage = global::SYSTEM_INVENTARIO_MAGENTA_DIGITAL.Properties.Resources.Captura_de_pantalla_2023_04_25_021242;
+            this.btn_guardarmat.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btn_guardarmat.FlatAppearance.BorderSize = 0;
+            this.btn_guardarmat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_guardarmat.Location = new System.Drawing.Point(59, 566);
+            this.btn_guardarmat.Name = "btn_guardarmat";
+            this.btn_guardarmat.Size = new System.Drawing.Size(122, 51);
+            this.btn_guardarmat.TabIndex = 21;
+            this.btn_guardarmat.UseVisualStyleBackColor = true;
+            this.btn_guardarmat.Click += new System.EventHandler(this.btn_guardarmat_Click);
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.Image = global::SYSTEM_INVENTARIO_MAGENTA_DIGITAL.Properties.Resources.Captura_de_pantalla_2023_04_25_021052;
+            this.pictureBox4.Location = new System.Drawing.Point(59, 393);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(500, 154);
+            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox4.TabIndex = 18;
+            this.pictureBox4.TabStop = false;
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Image = global::SYSTEM_INVENTARIO_MAGENTA_DIGITAL.Properties.Resources.Captura_de_pantalla_2023_04_25_020420;
+            this.pictureBox3.Location = new System.Drawing.Point(233, 302);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(154, 44);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox3.TabIndex = 14;
+            this.pictureBox3.TabStop = false;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::SYSTEM_INVENTARIO_MAGENTA_DIGITAL.Properties.Resources.Captura_de_pantalla_2023_04_25_020420;
+            this.pictureBox2.Location = new System.Drawing.Point(61, 302);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(154, 44);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 11;
+            this.pictureBox2.TabStop = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::SYSTEM_INVENTARIO_MAGENTA_DIGITAL.Properties.Resources.Captura_de_pantalla_2023_04_25_020316;
+            this.pictureBox1.Location = new System.Drawing.Point(226, 215);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(333, 44);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 10;
+            this.pictureBox1.TabStop = false;
+            // 
             // REGISTRARMATERIAL
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(1050, 650);
             this.Controls.Add(this.lbl_serie);
             this.Controls.Add(this.txt_NoSerie);
@@ -391,6 +392,8 @@
             this.Text = "REGISTRARMATERIAL";
             this.Load += new System.EventHandler(this.REGISTRARMATERIAL_Load);
             this.panel_barratitulo.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGrid_AgrMaterial)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconoregresarmenu)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconominimizar2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconocerrar2)).EndInit();
@@ -398,8 +401,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGrid_AgrMaterial)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -94,12 +94,6 @@
     <Compile Include="AVISOS\ELIMINAR_MATERIAL.Designer.cs">
       <DependentUpon>ELIMINAR_MATERIAL.cs</DependentUpon>
     </Compile>
-    <Compile Include="BUSCAR.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="BUSCAR.Designer.cs">
-      <DependentUpon>BUSCAR.cs</DependentUpon>
-    </Compile>
     <Compile Include="DATOS\DatosCategoria.cs" />
     <Compile Include="DATOS\DatosMateriales.cs" />
     <Compile Include="DATOS\DatosMatSelect.cs" />
@@ -174,9 +168,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AVISOS\ELIMINAR_MATERIAL.resx">
       <DependentUpon>ELIMINAR_MATERIAL.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="BUSCAR.resx">
-      <DependentUpon>BUSCAR.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DETALLE_PEDIDO.resx">
       <DependentUpon>DETALLE_PEDIDO.cs</DependentUpon>
@@ -340,6 +331,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="icon_ff9169a81533b8a00d85a03b8755f815.ico" />
+    <None Include="Resources\anterior %281%29.png" />
+    <None Include="Resources\eliminar1.png" />
+    <None Include="Resources\buscar %281%29.png" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">

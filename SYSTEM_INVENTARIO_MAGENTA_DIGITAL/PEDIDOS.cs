@@ -34,6 +34,7 @@ namespace SYSTEM_INVENTARIO_MAGENTA_DIGITAL
             InitializeComponent();
             this.idCateg = idCateg;
 
+
             mostrarMaterialesCB();
             mostrarPedido();
             
@@ -68,19 +69,63 @@ namespace SYSTEM_INVENTARIO_MAGENTA_DIGITAL
             MMaterialSelect Material = new MMaterialSelect();
             List<MMaterialSelect> lstMateriales = new List<MMaterialSelect>();
 
-            int index = cb_Materiales.SelectedIndex, indexDt;
-            Material.NomMaterial = cb_Materiales.Items[index].ToString();
-            Material.Cantidad = int.Parse(txt_Cantidad.Text.ToString());
-            //bool canValida = validarCantidad();
-            lstMateriales.Add(Material);
-            copia_lstMateriales.Add(Material);
-            foreach (MMaterialSelect datoM in lstMateriales)
-            {
-                indexDt = dataGrid_MaterialPed.Rows.Add();
-                dataGrid_MaterialPed.Rows[indexDt].Cells[0].Value = datoM.NomMaterial;
-                dataGrid_MaterialPed.Rows[indexDt].Cells[1].Value = datoM.Cantidad;
-            }
 
+            if (cb_Materiales.SelectedIndex == -1)
+            {
+                MessageBox.Show("Seleccione un material");
+            }
+            else
+            {
+                if (string.IsNullOrEmpty(txt_Cantidad.Text))
+                {
+                    MessageBox.Show("Debe ingresar la cantidad del material para proceder a agregarlo");
+                }
+                else
+                {
+                    if(cb_Materiales.SelectedIndex == -1 && string.IsNullOrEmpty(txt_Cantidad.Text))
+                    {
+                        MessageBox.Show("Debe seleccionar un material y ingresar la cantidad");
+                    }
+                    else
+                    {
+                        int index = cb_Materiales.SelectedIndex, indexDt;
+                        Material.NomMaterial = cb_Materiales.Items[index].ToString();
+                        Material.Cantidad = int.Parse(txt_Cantidad.Text.ToString());
+                        if(copia_lstMateriales.Count != 0)
+                        {
+                            foreach (MMaterialSelect Mat in copia_lstMateriales)
+                            {
+                                if (Mat.NomMaterial == Material.NomMaterial)
+                                {
+                                    MessageBox.Show("El material seleccionado ya esta dentro de la lista");
+                                }
+                                else
+                                {
+                                    lstMateriales.Add(Material);
+                                    copia_lstMateriales.Add(Material);
+                                    foreach (MMaterialSelect datoM in lstMateriales)
+                                    {
+                                        indexDt = dataGrid_MaterialPed.Rows.Add();
+                                        dataGrid_MaterialPed.Rows[indexDt].Cells[0].Value = datoM.NomMaterial;
+                                        dataGrid_MaterialPed.Rows[indexDt].Cells[1].Value = datoM.Cantidad;
+                                    }
+                                }
+                            }
+                        }
+                        else
+                        {
+                            lstMateriales.Add(Material);
+                            copia_lstMateriales.Add(Material);
+                            foreach (MMaterialSelect datoM in lstMateriales)
+                            {
+                                indexDt = dataGrid_MaterialPed.Rows.Add();
+                                dataGrid_MaterialPed.Rows[indexDt].Cells[0].Value = datoM.NomMaterial;
+                                dataGrid_MaterialPed.Rows[indexDt].Cells[1].Value = datoM.Cantidad;
+                            }
+                        }
+                    }
+                }
+            }
         }
 
         private List<MMaterialSelect> idetificarMaterial()
@@ -107,28 +152,41 @@ namespace SYSTEM_INVENTARIO_MAGENTA_DIGITAL
 
         private void btnAgrPedido_Click(object sender, EventArgs e)
         {
-            //List<int> lstIdMatSelect = new List<int>();
+
             List<MMaterialSelect> MaterialSelect = idetificarMaterial();
             RDN_Pedidos reglaPedido = new RDN_Pedidos();
             RDN_MaterialSelect reglaMatSelec = new RDN_MaterialSelect();
-            //RDN_Salidas reglaSalidas = new RDN_Salidas();
             MPedidos Pedido = new MPedidos();
-            //DatosSalidas dtosSal = new DatosSalidas();
-
-            Pedido.DetallePedido = richTextBox_Detalle.Text;
-            Pedido.Categoria = this.idCateg;
-            Pedido.NomPedido = txt_NomPedido.Text;
-            Pedido.FechaPedido = DateTime.Now;
-
-            int IdPedido = reglaPedido.IdPedido(Pedido);
-
-            foreach (MMaterialSelect mat in MaterialSelect)
+            if (MaterialSelect.Count != 0)
             {
-                reglaMatSelec.IdMaterial(mat, IdPedido, mat.Cantidad);
-                //reglaSalidas.capSalidas(idMatSelect);
+                if (string.IsNullOrEmpty(txt_NomPedido.Text))
+                {
+                    MessageBox.Show("Debe ingresar un nombre para el pedido");
+                }
+                else
+                {
+                    Pedido.DetallePedido = richTextBox_Detalle.Text;
+                    Pedido.Categoria = this.idCateg;
+                    Pedido.NomPedido = txt_NomPedido.Text;
+                    Pedido.FechaPedido = DateTime.Now;
+
+                    int IdPedido = reglaPedido.IdPedido(Pedido);
+
+                    foreach (MMaterialSelect mat in MaterialSelect)
+                    {
+                        reglaMatSelec.IdMaterial(mat, IdPedido, mat.Cantidad);
+
+                    }
+
+                    recargarPantalla();
+                }
+
+            }
+            else
+            {
+                MessageBox.Show("No se han seleccionado materiales para el peedido");
             }
 
-            recargarPantalla();
         }
 
         public void mostrarPedido()
@@ -260,6 +318,18 @@ namespace SYSTEM_INVENTARIO_MAGENTA_DIGITAL
         {
             //DataGridViewCheckBoxCell celdaCheck = (DataGridViewCheckBoxCell)dataGrid_Pedidos.Rows[e.RowIndex].Cells["entregado"].Value;
             //DataGridViewImageCell celdaIMg = (DataGridViewImageCell)dataGrid_Pedidos.Rows[e.RowIndex].Cells["eliminarPed"].Value;
+        }
+
+        private void panel4_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void pictureBox3_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            INICIO formInicio = new INICIO(this.idCateg);
+            formInicio.Show();
         }
     }
 }
