@@ -28,6 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ACTUALIZAR));
             this.label1 = new System.Windows.Forms.Label();
             this.lbl_Material = new System.Windows.Forms.Label();
             this.lbl_noSerie = new System.Windows.Forms.Label();
@@ -70,12 +72,13 @@
             // 
             this.lbl_noSerie.AutoSize = true;
             this.lbl_noSerie.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_noSerie.Location = new System.Drawing.Point(496, 65);
+            this.lbl_noSerie.Location = new System.Drawing.Point(497, 61);
             this.lbl_noSerie.Name = "lbl_noSerie";
-            this.lbl_noSerie.Size = new System.Drawing.Size(80, 17);
+            this.lbl_noSerie.Size = new System.Drawing.Size(79, 21);
             this.lbl_noSerie.TabIndex = 3;
             this.lbl_noSerie.Text = "(NO. SERIEl)";
             this.lbl_noSerie.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lbl_noSerie.UseCompatibleTextRendering = true;
             // 
             // label3
             // 
@@ -101,6 +104,7 @@
             // txt_NuevoStock
             // 
             this.txt_NuevoStock.AcceptsReturn = true;
+            this.txt_NuevoStock.BackColor = System.Drawing.SystemColors.ButtonShadow;
             this.txt_NuevoStock.Location = new System.Drawing.Point(112, 25);
             this.txt_NuevoStock.Name = "txt_NuevoStock";
             this.txt_NuevoStock.Size = new System.Drawing.Size(194, 20);
@@ -108,16 +112,32 @@
             // 
             // btn_Guardar
             // 
-            this.btn_Guardar.Location = new System.Drawing.Point(325, 26);
+            this.btn_Guardar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(126)))), ((int)(((byte)(182)))));
+            this.btn_Guardar.FlatAppearance.BorderSize = 0;
+            this.btn_Guardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Guardar.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Guardar.ForeColor = System.Drawing.SystemColors.Window;
+            this.btn_Guardar.Location = new System.Drawing.Point(325, 17);
             this.btn_Guardar.Name = "btn_Guardar";
-            this.btn_Guardar.Size = new System.Drawing.Size(209, 19);
+            this.btn_Guardar.Size = new System.Drawing.Size(209, 34);
             this.btn_Guardar.TabIndex = 6;
             this.btn_Guardar.Text = "Guardar";
-            this.btn_Guardar.UseVisualStyleBackColor = true;
+            this.btn_Guardar.UseVisualStyleBackColor = false;
             this.btn_Guardar.Click += new System.EventHandler(this.btn_Act_Click);
             // 
             // dataGrid_Stock
             // 
+            this.dataGrid_Stock.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dataGrid_Stock.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.dataGrid_Stock.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGrid_Stock.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dataGrid_Stock.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGrid_Stock.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idStock,
@@ -126,6 +146,7 @@
             this.fecEntrada});
             this.dataGrid_Stock.Location = new System.Drawing.Point(36, 189);
             this.dataGrid_Stock.Name = "dataGrid_Stock";
+            this.dataGrid_Stock.RowHeadersVisible = false;
             this.dataGrid_Stock.Size = new System.Drawing.Size(540, 150);
             this.dataGrid_Stock.TabIndex = 7;
             // 
@@ -155,6 +176,7 @@
             // 
             this.stockDisp.HeaderText = "STOCK DISPONIBLE";
             this.stockDisp.Name = "stockDisp";
+            this.stockDisp.Width = 150;
             // 
             // fecEntrada
             // 
@@ -166,6 +188,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.Window;
             this.ClientSize = new System.Drawing.Size(620, 374);
             this.Controls.Add(this.dataGrid_Stock);
             this.Controls.Add(this.lbl_noSerie);
@@ -173,6 +196,7 @@
             this.Controls.Add(this.lbl_Material);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.groupBox1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ACTUALIZAR";
             this.Text = "ACTUALIZAR";
             this.Load += new System.EventHandler(this.ACTUALIZAR_Load);

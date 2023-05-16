@@ -102,6 +102,7 @@
             this.Controls.Add(this.btn_ingresar);
             this.Controls.Add(this.lbl_categoria);
             this.Controls.Add(this.cb_categoria);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "INGRESO";
             this.Text = "MAGENTA DIGITAL";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();

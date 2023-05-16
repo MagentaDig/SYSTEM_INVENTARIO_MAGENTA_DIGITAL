@@ -117,5 +117,12 @@ namespace SYSTEM_INVENTARIO_MAGENTA_DIGITAL
         {
 
         }
+
+        private void pictureBox_Reg_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            INICIO formInicio = new INICIO(this.idCateg);
+            formInicio.Show();
+        }
     }
 }

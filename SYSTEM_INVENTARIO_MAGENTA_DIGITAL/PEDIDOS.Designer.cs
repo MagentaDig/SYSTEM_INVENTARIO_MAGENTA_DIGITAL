@@ -28,8 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PEDIDOS));
             this.lbl_detalle = new System.Windows.Forms.Label();
             this.lbl_material = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -39,44 +40,47 @@
             this.txt_Cantidad = new System.Windows.Forms.TextBox();
             this.btnAgrPedido = new System.Windows.Forms.Button();
             this.dataGrid_MaterialPed = new System.Windows.Forms.DataGridView();
+            this.Material = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label2 = new System.Windows.Forms.Label();
             this.txt_NomPedido = new System.Windows.Forms.TextBox();
             this.dataGrid_Pedidos = new System.Windows.Forms.DataGridView();
+            this.id_pedido = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nomPedido = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fec_Pedido = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fecEntrega = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.estatus = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lbl_titleStock = new System.Windows.Forms.Label();
             this.lbl_cantidadDisp = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.lbl_noSerie = new System.Windows.Forms.Label();
             this.link_AgrStock = new System.Windows.Forms.LinkLabel();
-            this.id_pedido = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nomPedido = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.detalle_Ped = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fec_Pedido = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Material = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
+            this.textBox_Idpedido = new System.Windows.Forms.TextBox();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.label4 = new System.Windows.Forms.Label();
             this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
             this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
             this.dataGridViewImageColumn3 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.pictureBox_limpiar = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.entregado = new System.Windows.Forms.DataGridViewImageColumn();
             this.verPedido = new System.Windows.Forms.DataGridViewImageColumn();
             this.eliminarPed = new System.Windows.Forms.DataGridViewImageColumn();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.label4 = new System.Windows.Forms.Label();
+            this.pictureBox_Buscar = new System.Windows.Forms.PictureBox();
+            this.pictureBox_Reset = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGrid_MaterialPed)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGrid_Pedidos)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_limpiar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Buscar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Reset)).BeginInit();
             this.SuspendLayout();
             // 
             // lbl_detalle
@@ -175,14 +179,14 @@
             this.dataGrid_MaterialPed.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGrid_MaterialPed.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.dataGrid_MaterialPed.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGrid_MaterialPed.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGrid_MaterialPed.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGrid_MaterialPed.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGrid_MaterialPed.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Material,
@@ -192,6 +196,18 @@
             this.dataGrid_MaterialPed.RowHeadersVisible = false;
             this.dataGrid_MaterialPed.Size = new System.Drawing.Size(376, 185);
             this.dataGrid_MaterialPed.TabIndex = 9;
+            // 
+            // Material
+            // 
+            this.Material.HeaderText = "Material";
+            this.Material.Name = "Material";
+            this.Material.Width = 200;
+            // 
+            // cantidad
+            // 
+            this.cantidad.HeaderText = "Cantidad";
+            this.cantidad.Name = "cantidad";
+            this.cantidad.Width = 180;
             // 
             // label2
             // 
@@ -217,20 +233,21 @@
             this.dataGrid_Pedidos.CausesValidation = false;
             this.dataGrid_Pedidos.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.dataGrid_Pedidos.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(219)))), ((int)(((byte)(219)))));
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGrid_Pedidos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(219)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGrid_Pedidos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dataGrid_Pedidos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGrid_Pedidos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.id_pedido,
             this.nomPedido,
-            this.detalle_Ped,
             this.fec_Pedido,
+            this.fecEntrega,
+            this.estatus,
             this.entregado,
             this.verPedido,
             this.eliminarPed});
@@ -243,6 +260,39 @@
             this.dataGrid_Pedidos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGrid_Pedidos_CellClick);
             this.dataGrid_Pedidos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGrid_Pedidos_CellContentClick);
             this.dataGrid_Pedidos.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGrid_Pedidos_CellEndEdit);
+            // 
+            // id_pedido
+            // 
+            this.id_pedido.Frozen = true;
+            this.id_pedido.HeaderText = "NO. PEDIDO";
+            this.id_pedido.Name = "id_pedido";
+            // 
+            // nomPedido
+            // 
+            this.nomPedido.Frozen = true;
+            this.nomPedido.HeaderText = "A NOMBRE DE:";
+            this.nomPedido.Name = "nomPedido";
+            this.nomPedido.Width = 200;
+            // 
+            // fec_Pedido
+            // 
+            this.fec_Pedido.Frozen = true;
+            this.fec_Pedido.HeaderText = "FECHA DE PEDIDO";
+            this.fec_Pedido.Name = "fec_Pedido";
+            this.fec_Pedido.Width = 150;
+            // 
+            // fecEntrega
+            // 
+            this.fecEntrega.Frozen = true;
+            this.fecEntrega.HeaderText = "FECHA DE SALIDA";
+            this.fecEntrega.Name = "fecEntrega";
+            this.fecEntrega.Width = 180;
+            // 
+            // estatus
+            // 
+            this.estatus.Frozen = true;
+            this.estatus.HeaderText = "ESTATUS";
+            this.estatus.Name = "estatus";
             // 
             // lbl_titleStock
             // 
@@ -314,82 +364,18 @@
             this.link_AgrStock.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.link_AgrStock.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.link_AgrStock_LinkClicked);
             // 
-            // id_pedido
-            // 
-            this.id_pedido.Frozen = true;
-            this.id_pedido.HeaderText = "NO. PEDIDO";
-            this.id_pedido.Name = "id_pedido";
-            // 
-            // nomPedido
-            // 
-            this.nomPedido.Frozen = true;
-            this.nomPedido.HeaderText = "A NOMBRE DE:";
-            this.nomPedido.Name = "nomPedido";
-            this.nomPedido.Width = 200;
-            // 
-            // detalle_Ped
-            // 
-            this.detalle_Ped.Frozen = true;
-            this.detalle_Ped.HeaderText = "DETALLE";
-            this.detalle_Ped.Name = "detalle_Ped";
-            this.detalle_Ped.Width = 280;
-            // 
-            // fec_Pedido
-            // 
-            this.fec_Pedido.Frozen = true;
-            this.fec_Pedido.HeaderText = "FECHA DE PEDIDO";
-            this.fec_Pedido.Name = "fec_Pedido";
-            this.fec_Pedido.Width = 150;
-            // 
-            // Material
-            // 
-            this.Material.HeaderText = "Material";
-            this.Material.Name = "Material";
-            this.Material.Width = 200;
-            // 
-            // cantidad
-            // 
-            this.cantidad.HeaderText = "Cantidad";
-            this.cantidad.Name = "cantidad";
-            this.cantidad.Width = 180;
-            // 
             // panel1
             // 
             this.panel1.Controls.Add(this.label3);
-            this.panel1.Controls.Add(this.textBox1);
+            this.panel1.Controls.Add(this.textBox_Idpedido);
             this.panel1.Controls.Add(this.panel3);
-            this.panel1.Controls.Add(this.pictureBox1);
+            this.panel1.Controls.Add(this.pictureBox_Buscar);
             this.panel1.Controls.Add(this.panel2);
-            this.panel1.Controls.Add(this.pictureBox2);
+            this.panel1.Controls.Add(this.pictureBox_Reset);
             this.panel1.Location = new System.Drawing.Point(20, 12);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(425, 23);
             this.panel1.TabIndex = 21;
-            // 
-            // panel2
-            // 
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel2.Location = new System.Drawing.Point(384, 0);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(18, 23);
-            this.panel2.TabIndex = 21;
-            // 
-            // panel3
-            // 
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel3.Location = new System.Drawing.Point(343, 0);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(18, 23);
-            this.panel3.TabIndex = 22;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.textBox1.Location = new System.Drawing.Point(148, 0);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(195, 23);
-            this.textBox1.TabIndex = 23;
             // 
             // label3
             // 
@@ -402,6 +388,31 @@
             this.label3.TabIndex = 24;
             this.label3.Text = "No. de Pedido";
             // 
+            // textBox_Idpedido
+            // 
+            this.textBox_Idpedido.Dock = System.Windows.Forms.DockStyle.Right;
+            this.textBox_Idpedido.Location = new System.Drawing.Point(148, 0);
+            this.textBox_Idpedido.Multiline = true;
+            this.textBox_Idpedido.Name = "textBox_Idpedido";
+            this.textBox_Idpedido.Size = new System.Drawing.Size(195, 23);
+            this.textBox_Idpedido.TabIndex = 23;
+            // 
+            // panel3
+            // 
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel3.Location = new System.Drawing.Point(343, 0);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(18, 23);
+            this.panel3.TabIndex = 22;
+            // 
+            // panel2
+            // 
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel2.Location = new System.Drawing.Point(384, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(18, 23);
+            this.panel2.TabIndex = 21;
+            // 
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(226)))));
@@ -411,6 +422,18 @@
             this.panel4.Size = new System.Drawing.Size(1028, 49);
             this.panel4.TabIndex = 22;
             this.panel4.Paint += new System.Windows.Forms.PaintEventHandler(this.panel4_Paint);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Century Gothic", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(134, 17);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(476, 40);
+            this.label4.TabIndex = 24;
+            this.label4.Text = "REGISTRO Y CONSULTA DE PEDIDOS";
+            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.label4.UseCompatibleTextRendering = true;
             // 
             // dataGridViewImageColumn1
             // 
@@ -435,6 +458,17 @@
             this.dataGridViewImageColumn3.HeaderText = "ELIMINAR";
             this.dataGridViewImageColumn3.Image = global::SYSTEM_INVENTARIO_MAGENTA_DIGITAL.Properties.Resources.icon_5f41a9b90a6fd03b7d17b63704ef6f97;
             this.dataGridViewImageColumn3.Name = "dataGridViewImageColumn3";
+            // 
+            // pictureBox_limpiar
+            // 
+            this.pictureBox_limpiar.Image = global::SYSTEM_INVENTARIO_MAGENTA_DIGITAL.Properties.Resources.limpieza_de_datos;
+            this.pictureBox_limpiar.Location = new System.Drawing.Point(1070, 62);
+            this.pictureBox_limpiar.Name = "pictureBox_limpiar";
+            this.pictureBox_limpiar.Size = new System.Drawing.Size(20, 20);
+            this.pictureBox_limpiar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox_limpiar.TabIndex = 25;
+            this.pictureBox_limpiar.TabStop = false;
+            this.pictureBox_limpiar.Click += new System.EventHandler(this.pictureBox_limpiar_Click);
             // 
             // pictureBox3
             // 
@@ -470,46 +504,37 @@
             this.eliminarPed.Image = global::SYSTEM_INVENTARIO_MAGENTA_DIGITAL.Properties.Resources.icon_5f41a9b90a6fd03b7d17b63704ef6f97;
             this.eliminarPed.Name = "eliminarPed";
             // 
-            // pictureBox1
+            // pictureBox_Buscar
             // 
-            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.pictureBox1.Image = global::SYSTEM_INVENTARIO_MAGENTA_DIGITAL.Properties.Resources.buscar__1_;
-            this.pictureBox1.Location = new System.Drawing.Point(361, 0);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(23, 23);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 19;
-            this.pictureBox1.TabStop = false;
+            this.pictureBox_Buscar.Dock = System.Windows.Forms.DockStyle.Right;
+            this.pictureBox_Buscar.Image = global::SYSTEM_INVENTARIO_MAGENTA_DIGITAL.Properties.Resources.buscar__1_;
+            this.pictureBox_Buscar.Location = new System.Drawing.Point(361, 0);
+            this.pictureBox_Buscar.Name = "pictureBox_Buscar";
+            this.pictureBox_Buscar.Size = new System.Drawing.Size(23, 23);
+            this.pictureBox_Buscar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox_Buscar.TabIndex = 19;
+            this.pictureBox_Buscar.TabStop = false;
+            this.pictureBox_Buscar.Click += new System.EventHandler(this.pictureBox_Buscar_Click);
             // 
-            // pictureBox2
+            // pictureBox_Reset
             // 
-            this.pictureBox2.Dock = System.Windows.Forms.DockStyle.Right;
-            this.pictureBox2.Image = global::SYSTEM_INVENTARIO_MAGENTA_DIGITAL.Properties.Resources.eliminar1;
-            this.pictureBox2.Location = new System.Drawing.Point(402, 0);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(23, 23);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 20;
-            this.pictureBox2.TabStop = false;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Century Gothic", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(134, 17);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(476, 40);
-            this.label4.TabIndex = 24;
-            this.label4.Text = "REGISTRO Y CONSULTA DE PEDIDOS";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label4.UseCompatibleTextRendering = true;
+            this.pictureBox_Reset.Dock = System.Windows.Forms.DockStyle.Right;
+            this.pictureBox_Reset.Image = global::SYSTEM_INVENTARIO_MAGENTA_DIGITAL.Properties.Resources.eliminar1;
+            this.pictureBox_Reset.Location = new System.Drawing.Point(402, 0);
+            this.pictureBox_Reset.Name = "pictureBox_Reset";
+            this.pictureBox_Reset.Size = new System.Drawing.Size(23, 23);
+            this.pictureBox_Reset.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox_Reset.TabIndex = 20;
+            this.pictureBox_Reset.TabStop = false;
+            this.pictureBox_Reset.Click += new System.EventHandler(this.pictureBox_Reset_Click);
             // 
             // PEDIDOS
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
-            this.ClientSize = new System.Drawing.Size(1134, 668);
+            this.ClientSize = new System.Drawing.Size(1138, 668);
+            this.Controls.Add(this.pictureBox_limpiar);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.dataGrid_Pedidos);
@@ -517,8 +542,10 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.dataGrid_MaterialPed);
             this.Controls.Add(this.panel4);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "PEDIDOS";
             this.Tag = "PEDIDO";
+            this.Text = "PEDIDOS";
             ((System.ComponentModel.ISupportInitialize)(this.dataGrid_MaterialPed)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGrid_Pedidos)).EndInit();
             this.groupBox1.ResumeLayout(false);
@@ -526,9 +553,10 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel4.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_limpiar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Buscar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Reset)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -558,22 +586,24 @@
         private System.Windows.Forms.DataGridViewImageColumn dataGridViewImageColumn3;
         private System.Windows.Forms.DataGridViewTextBoxColumn Material;
         private System.Windows.Forms.DataGridViewTextBoxColumn cantidad;
-        private System.Windows.Forms.DataGridViewTextBoxColumn id_pedido;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nomPedido;
-        private System.Windows.Forms.DataGridViewTextBoxColumn detalle_Ped;
-        private System.Windows.Forms.DataGridViewTextBoxColumn fec_Pedido;
-        private System.Windows.Forms.DataGridViewImageColumn entregado;
-        private System.Windows.Forms.DataGridViewImageColumn verPedido;
-        private System.Windows.Forms.DataGridViewImageColumn eliminarPed;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.PictureBox pictureBox_Buscar;
+        private System.Windows.Forms.PictureBox pictureBox_Reset;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textBox_Idpedido;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn id_pedido;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nomPedido;
+        private System.Windows.Forms.DataGridViewTextBoxColumn fec_Pedido;
+        private System.Windows.Forms.DataGridViewTextBoxColumn fecEntrega;
+        private System.Windows.Forms.DataGridViewTextBoxColumn estatus;
+        private System.Windows.Forms.DataGridViewImageColumn entregado;
+        private System.Windows.Forms.DataGridViewImageColumn verPedido;
+        private System.Windows.Forms.DataGridViewImageColumn eliminarPed;
+        private System.Windows.Forms.PictureBox pictureBox_limpiar;
     }
 }

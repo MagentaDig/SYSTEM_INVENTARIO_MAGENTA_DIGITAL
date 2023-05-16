@@ -66,6 +66,7 @@ namespace SYSTEM_INVENTARIO_MAGENTA_DIGITAL
             MCategoria categSelect = categoriaSeleccionada();
 
             this.Hide();
+            dynamic nomCateg = categSelect.NomCategoria.ToString();
             INICIO FormInicio = new INICIO(categSelect.IdCategoria);
             FormInicio.lbl_categoriaSelect.Text = categSelect.NomCategoria.ToString();
             FormInicio.Show();

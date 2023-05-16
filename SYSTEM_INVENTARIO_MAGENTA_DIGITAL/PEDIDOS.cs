@@ -11,6 +11,7 @@ using SYSTEM_INVENTARIO_MAGENTA_DIGITAL.DATOS;
 using SYSTEM_INVENTARIO_MAGENTA_DIGITAL.MODELOS;
 using SYSTEM_INVENTARIO_MAGENTA_DIGITAL.RDN;
 using System.Data.SqlClient;
+using System.Globalization;
 
 namespace SYSTEM_INVENTARIO_MAGENTA_DIGITAL
 {
@@ -24,7 +25,7 @@ namespace SYSTEM_INVENTARIO_MAGENTA_DIGITAL
 
         /* Istancias de objetos */
         MSalidas Salidas = new MSalidas();
-       
+
 
         /* Variables globales */
         public int idCateg;
@@ -37,7 +38,7 @@ namespace SYSTEM_INVENTARIO_MAGENTA_DIGITAL
 
             mostrarMaterialesCB();
             mostrarPedido();
-            
+
         }
 
         private void txt_Cantidad_TextChanged(object sender, EventArgs e)
@@ -82,7 +83,7 @@ namespace SYSTEM_INVENTARIO_MAGENTA_DIGITAL
                 }
                 else
                 {
-                    if(cb_Materiales.SelectedIndex == -1 && string.IsNullOrEmpty(txt_Cantidad.Text))
+                    if (cb_Materiales.SelectedIndex == -1 && string.IsNullOrEmpty(txt_Cantidad.Text))
                     {
                         MessageBox.Show("Debe seleccionar un material y ingresar la cantidad");
                     }
@@ -91,39 +92,47 @@ namespace SYSTEM_INVENTARIO_MAGENTA_DIGITAL
                         int index = cb_Materiales.SelectedIndex, indexDt;
                         Material.NomMaterial = cb_Materiales.Items[index].ToString();
                         Material.Cantidad = int.Parse(txt_Cantidad.Text.ToString());
-                        if(copia_lstMateriales.Count != 0)
+                        lstMateriales.Add(Material);
+                        copia_lstMateriales.Add(Material);
+                        foreach (MMaterialSelect datoM in lstMateriales)
                         {
-                            foreach (MMaterialSelect Mat in copia_lstMateriales)
-                            {
-                                if (Mat.NomMaterial == Material.NomMaterial)
-                                {
-                                    MessageBox.Show("El material seleccionado ya esta dentro de la lista");
-                                }
-                                else
-                                {
-                                    lstMateriales.Add(Material);
-                                    copia_lstMateriales.Add(Material);
-                                    foreach (MMaterialSelect datoM in lstMateriales)
-                                    {
-                                        indexDt = dataGrid_MaterialPed.Rows.Add();
-                                        dataGrid_MaterialPed.Rows[indexDt].Cells[0].Value = datoM.NomMaterial;
-                                        dataGrid_MaterialPed.Rows[indexDt].Cells[1].Value = datoM.Cantidad;
-                                    }
-                                }
-                            }
+                            indexDt = dataGrid_MaterialPed.Rows.Add();
+                            dataGrid_MaterialPed.Rows[indexDt].Cells[0].Value = datoM.NomMaterial;
+                            dataGrid_MaterialPed.Rows[indexDt].Cells[1].Value = datoM.Cantidad;
                         }
-                        else
-                        {
-                            lstMateriales.Add(Material);
-                            copia_lstMateriales.Add(Material);
-                            foreach (MMaterialSelect datoM in lstMateriales)
-                            {
-                                indexDt = dataGrid_MaterialPed.Rows.Add();
-                                dataGrid_MaterialPed.Rows[indexDt].Cells[0].Value = datoM.NomMaterial;
-                                dataGrid_MaterialPed.Rows[indexDt].Cells[1].Value = datoM.Cantidad;
-                            }
+                            //if (copia_lstMateriales.Count != 0)
+                            //{
+                            //    foreach (MMaterialSelect Mat in copia_lstMateriales)
+                            //    {
+                            //        if (Mat.NomMaterial == Material.NomMaterial)
+                            //        {
+                            //            MessageBox.Show("El material seleccionado ya esta dentro de la lista");
+                            //        }
+                            //        else
+                            //        {
+                            //            lstMateriales.Add(Material);
+                            //            copia_lstMateriales.Add(Material);
+                            //            foreach (MMaterialSelect datoM in lstMateriales)
+                            //            {
+                            //                indexDt = dataGrid_MaterialPed.Rows.Add();
+                            //                dataGrid_MaterialPed.Rows[indexDt].Cells[0].Value = datoM.NomMaterial;
+                            //                dataGrid_MaterialPed.Rows[indexDt].Cells[1].Value = datoM.Cantidad;
+                            //            }
+                            //        }
+                            //    }
+                            //}
+                            //else
+                            //{
+                            //    lstMateriales.Add(Material);
+                            //    copia_lstMateriales.Add(Material);
+                            //    foreach (MMaterialSelect datoM in lstMateriales)
+                            //    {
+                            //        indexDt = dataGrid_MaterialPed.Rows.Add();
+                            //        dataGrid_MaterialPed.Rows[indexDt].Cells[0].Value = datoM.NomMaterial;
+                            //        dataGrid_MaterialPed.Rows[indexDt].Cells[1].Value = datoM.Cantidad;
+                            //    }
+                            //}
                         }
-                    }
                 }
             }
         }
@@ -133,19 +142,19 @@ namespace SYSTEM_INVENTARIO_MAGENTA_DIGITAL
             DatosMateriales funcoinMateriales = new DatosMateriales();
             List<MMateriales> datosMat = funcoinMateriales.TablaMateriales(this.idCateg);
 
-            
+
             List<MMaterialSelect> MatSelect = new List<MMaterialSelect>();
 
-            foreach (MMaterialSelect mat in copia_lstMateriales) 
+            foreach (MMaterialSelect mat in copia_lstMateriales)
             {
-                foreach(MMateriales dato in datosMat)
+                foreach (MMateriales dato in datosMat)
                 {
-                    if(mat.NomMaterial == dato.Nombre)
+                    if (mat.NomMaterial == dato.Nombre)
                     {
                         mat.idMaterial = dato.IdMaterial;
                         MatSelect.Add(mat);
                     }
-                } 
+                }
             }
             return MatSelect;
         }
@@ -165,10 +174,13 @@ namespace SYSTEM_INVENTARIO_MAGENTA_DIGITAL
                 }
                 else
                 {
+
                     Pedido.DetallePedido = richTextBox_Detalle.Text;
                     Pedido.Categoria = this.idCateg;
                     Pedido.NomPedido = txt_NomPedido.Text;
                     Pedido.FechaPedido = DateTime.Now;
+                    Pedido.FechaEntrega = DateTime.Now; ;
+                    Pedido.IsEntregado = 0;
 
                     int IdPedido = reglaPedido.IdPedido(Pedido);
 
@@ -201,8 +213,20 @@ namespace SYSTEM_INVENTARIO_MAGENTA_DIGITAL
                 index = dataGrid_Pedidos.Rows.Add();
                 dataGrid_Pedidos.Rows[index].Cells[0].Value = datos.IdPedido;
                 dataGrid_Pedidos.Rows[index].Cells[1].Value = datos.NomPedido;
-                dataGrid_Pedidos.Rows[index].Cells[2].Value = datos.DetallePedido;
-                dataGrid_Pedidos.Rows[index].Cells[3].Value = datos.FechaPedido;
+                dataGrid_Pedidos.Rows[index].Cells[2].Value = datos.FechaPedido;
+                dataGrid_Pedidos.Rows[index].Cells[3].Value = datos.FechaEntrega;
+
+                if (datos.IsEntregado == 1)
+                {
+                    dataGrid_Pedidos.Rows[index].Cells[4].Value = "Entregado";
+                }
+                else
+                {
+                    dataGrid_Pedidos.Rows[index].Cells[4].Value = "En proceso";
+                }
+
+
+
             }
         }
 
@@ -231,7 +255,7 @@ namespace SYSTEM_INVENTARIO_MAGENTA_DIGITAL
             {
                 if (Material.Nombre == material)
                 {
-                    
+
                     lbl_cantidadDisp.Text = Material.Cantidad.ToString();
                     lbl_noSerie.Text = Material.NoSerie;
                     if (lbl_cantidadDisp.Text == "0")
@@ -275,21 +299,58 @@ namespace SYSTEM_INVENTARIO_MAGENTA_DIGITAL
             {
                 idPed = Convert.ToInt32(dataGrid_Pedidos.CurrentRow.Cells["id_pedido"].Value.ToString());
                 string nomPed = (dataGrid_Pedidos.CurrentRow.Cells["nomPedido"].Value.ToString());
-                
+
                 DETALLE_PEDIDO formDp = new DETALLE_PEDIDO(idPed, this.idCateg, nomPed);
                 formDp.ShowDialog();
             }
             else if (dataGrid_Pedidos.Columns[e.ColumnIndex].Name == "eliminarPed")
             {
+                DatosPedidos funcionPedidp = new DatosPedidos();
                 idPed = Convert.ToInt32(dataGrid_Pedidos.CurrentRow.Cells["id_pedido"].Value.ToString());
-                RDN_Stock reglaStock = new RDN_Stock();
-                reglaStock.RestaurarStock(idPed,this.idCateg);
 
-                MessageBox.Show("El pedido se elimino correctamente");
-                recargarPantalla();
+                List<MPedidos> Pedidos = funcionPedidp.consultarPedidos(this.idCateg, idPed);
+
+
+                foreach (MPedidos Ped in Pedidos)
+                {
+                    if (Ped.IsEntregado == 0)
+                    {
+                        RDN_Stock reglaStock = new RDN_Stock();
+                        reglaStock.RestaurarStock(idPed, this.idCateg);
+
+                        MessageBox.Show("El pedido se elimino correctamente");
+                        recargarPantalla();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Ya se registro la entrega del pedido, \nno se puede proceder a elimnarlo");
+                    }
+                }
+
+
+
             }
             else if (dataGrid_Pedidos.Columns[e.ColumnIndex].Name == "entregado")
             {
+                DatosPedidos funcionPedidp = new DatosPedidos();
+                idPed = Convert.ToInt32(dataGrid_Pedidos.CurrentRow.Cells["id_pedido"].Value.ToString());
+
+                List<MPedidos> Pedidos = funcionPedidp.consultarPedidos(this.idCateg, idPed);
+
+                foreach (MPedidos Ped in Pedidos)
+                {
+                    if (Ped.IsEntregado == 0)
+                    {
+                        ENTREGA formEntrega = new ENTREGA(idPed);
+                        formEntrega.ShowDialog();
+                        recargarPantalla();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Ya se registro la entrega de este pedido");
+                    }
+                }
+
 
             }
         }
@@ -310,7 +371,7 @@ namespace SYSTEM_INVENTARIO_MAGENTA_DIGITAL
         {
             if (dataGrid_Pedidos.Columns[e.ColumnIndex].Name == "entregado")
             {
-                
+
             }
         }
 
@@ -330,6 +391,48 @@ namespace SYSTEM_INVENTARIO_MAGENTA_DIGITAL
             this.Hide();
             INICIO formInicio = new INICIO(this.idCateg);
             formInicio.Show();
+        }
+
+        private void pictureBox_Buscar_Click(object sender, EventArgs e)
+        {
+            DatosPedidos funcionPedidp = new DatosPedidos();
+            int idPedido = int.Parse(textBox_Idpedido.Text.ToString());
+
+            List<MPedidos> Pedidos = funcionPedidp.consultarPedidos(this.idCateg, idPedido);
+
+            int index;
+            dataGrid_Pedidos.Rows.Clear();
+            foreach (MPedidos datos in Pedidos)
+            {
+                index = dataGrid_Pedidos.Rows.Add();
+                dataGrid_Pedidos.Rows[index].Cells[0].Value = datos.IdPedido;
+                dataGrid_Pedidos.Rows[index].Cells[1].Value = datos.NomPedido;
+                dataGrid_Pedidos.Rows[index].Cells[2].Value = datos.FechaPedido;
+                dataGrid_Pedidos.Rows[index].Cells[3].Value = datos.FechaEntrega;
+
+                if (datos.IsEntregado == 1)
+                {
+                    dataGrid_Pedidos.Rows[index].Cells[4].Value = "Entregado";
+                }
+                else
+                {
+                    dataGrid_Pedidos.Rows[index].Cells[4].Value = "En proceso";
+                }
+
+            }
+        }
+
+        private void pictureBox_Reset_Click(object sender, EventArgs e)
+        {
+            textBox_Idpedido.Clear();
+            dataGrid_Pedidos.Rows.Clear();
+            mostrarPedido();
+        }
+
+        private void pictureBox_limpiar_Click(object sender, EventArgs e)
+        {
+            dataGrid_MaterialPed.Rows.Clear();
+            copia_lstMateriales.Clear();
         }
     }
 }

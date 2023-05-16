@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.Button btn_cerrar;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(INGRESOUSUARIO));
             this.lbl_categoria = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -38,22 +37,10 @@
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            btn_cerrar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
-            // 
-            // btn_cerrar
-            // 
-            btn_cerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            btn_cerrar.Image = global::SYSTEM_INVENTARIO_MAGENTA_DIGITAL.Properties.Resources.Captura_de_pantalla_2023_04_18_143816;
-            btn_cerrar.Location = new System.Drawing.Point(654, 12);
-            btn_cerrar.Name = "btn_cerrar";
-            btn_cerrar.Size = new System.Drawing.Size(48, 38);
-            btn_cerrar.TabIndex = 11;
-            btn_cerrar.UseVisualStyleBackColor = true;
-            btn_cerrar.Click += new System.EventHandler(this.btn_cerrar_Click);
             // 
             // lbl_categoria
             // 
@@ -151,15 +138,15 @@
             this.ClientSize = new System.Drawing.Size(714, 343);
             this.Controls.Add(this.txt_contraseña);
             this.Controls.Add(this.txt_usuario);
-            this.Controls.Add(btn_cerrar);
             this.Controls.Add(this.btn_ingresa);
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lbl_categoria);
             this.Controls.Add(this.pictureBox2);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "INGRESOUSUARIO";
-            this.Text = "INGRESOUSUARIO";
+            this.Text = "LOGIN";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();

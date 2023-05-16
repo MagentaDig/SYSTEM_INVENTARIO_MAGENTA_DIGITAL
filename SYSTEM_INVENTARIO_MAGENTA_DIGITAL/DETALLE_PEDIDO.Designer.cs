@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DETALLE_PEDIDO));
             this.label1 = new System.Windows.Forms.Label();
             this.lbl_noPedido = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -117,6 +118,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.lbl_noPedido);
             this.Controls.Add(this.label1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "DETALLE_PEDIDO";
             this.Text = "DETALLE_PEDIDO";
             ((System.ComponentModel.ISupportInitialize)(this.dataGrid_detllePedido)).EndInit();

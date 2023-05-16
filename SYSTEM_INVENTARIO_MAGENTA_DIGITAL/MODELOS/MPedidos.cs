@@ -13,6 +13,9 @@ namespace SYSTEM_INVENTARIO_MAGENTA_DIGITAL.MODELOS
         public dynamic Categoria { get; set; }
         public dynamic NomPedido { get; set; }
         public DateTime FechaPedido { get; set; }
+        public DateTime FechaEntrega { get; set; }
+        public int IsEntregado { get; set; }
+
     }
 
     class MDetallePedido

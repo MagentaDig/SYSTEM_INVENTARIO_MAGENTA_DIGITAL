@@ -16,11 +16,12 @@ namespace SYSTEM_INVENTARIO_MAGENTA_DIGITAL
     public partial class INICIO : Form
     {
         private int idCateg;
-
+        private dynamic Categoria;
         public INICIO(int id)
         {
             InitializeComponent();
             this.idCateg = id;
+
 
             CargarTablaMateriales();
         }
@@ -47,16 +48,16 @@ namespace SYSTEM_INVENTARIO_MAGENTA_DIGITAL
 
         private void iconomaximizar_Click(object sender, EventArgs e)
         {
-            this.WindowState = FormWindowState.Maximized;
-            iconorestaurar.Visible = true;
-            iconomaximizar.Visible = false;
+            //this.WindowState = FormWindowState.Maximized;
+            //iconorestaurar.Visible = true;
+            //iconomaximizar.Visible = false;
         }
 
         private void iconorestaurar_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Normal;
-            iconorestaurar.Visible = false;
-            iconominimizar.Visible = true;
+            //iconorestaurar.Visible = false;
+            //iconominimizar.Visible = true;
         }
 
         private void iconominimizar_Click(object sender, EventArgs e)

@@ -28,26 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MODIFICAR));
             this.txt_noSerie = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.cb_materialesBusc = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.dataGrid_Stock = new System.Windows.Forms.DataGridView();
-            this.link_MaterialesInac = new System.Windows.Forms.LinkLabel();
-            this.btn_Reset = new System.Windows.Forms.Button();
-            this.btn_Buscar = new System.Windows.Forms.Button();
-            this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
-            this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.panel6 = new System.Windows.Forms.Panel();
-            this.panel7 = new System.Windows.Forms.Panel();
-            this.panel8 = new System.Windows.Forms.Panel();
-            this.panel9 = new System.Windows.Forms.Panel();
             this.Id_Materia = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nomMaterial = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.noSerie = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -55,16 +42,30 @@
             this.tamMaterial = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.stock = new System.Windows.Forms.DataGridViewImageColumn();
             this.ELIMINAR = new System.Windows.Forms.DataGridViewImageColumn();
+            this.link_MaterialesInac = new System.Windows.Forms.LinkLabel();
+            this.btn_Reset = new System.Windows.Forms.Button();
+            this.btn_Buscar = new System.Windows.Forms.Button();
+            this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.dataGridViewImageColumn2 = new System.Windows.Forms.DataGridViewImageColumn();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.panel9 = new System.Windows.Forms.Panel();
+            this.panel8 = new System.Windows.Forms.Panel();
+            this.panel7 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
             this.pictureBox_Reg = new System.Windows.Forms.PictureBox();
             this.label3 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGrid_Stock)).BeginInit();
             this.panel1.SuspendLayout();
-            this.panel2.SuspendLayout();
-            this.panel3.SuspendLayout();
-            this.panel4.SuspendLayout();
             this.panel6.SuspendLayout();
-            this.panel7.SuspendLayout();
             this.panel9.SuspendLayout();
+            this.panel7.SuspendLayout();
+            this.panel2.SuspendLayout();
+            this.panel4.SuspendLayout();
+            this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Reg)).BeginInit();
             this.SuspendLayout();
             // 
@@ -95,10 +96,12 @@
             // 
             this.cb_materialesBusc.BackColor = System.Drawing.SystemColors.ControlDark;
             this.cb_materialesBusc.Dock = System.Windows.Forms.DockStyle.Top;
+            this.cb_materialesBusc.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cb_materialesBusc.ForeColor = System.Drawing.SystemColors.Window;
             this.cb_materialesBusc.FormattingEnabled = true;
             this.cb_materialesBusc.Location = new System.Drawing.Point(0, 25);
             this.cb_materialesBusc.Name = "cb_materialesBusc";
-            this.cb_materialesBusc.Size = new System.Drawing.Size(200, 21);
+            this.cb_materialesBusc.Size = new System.Drawing.Size(200, 23);
             this.cb_materialesBusc.TabIndex = 7;
             // 
             // label1
@@ -119,14 +122,14 @@
             this.dataGrid_Stock.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGrid_Stock.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.dataGrid_Stock.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.InfoText;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGrid_Stock.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.InfoText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGrid_Stock.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGrid_Stock.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGrid_Stock.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Id_Materia,
@@ -144,6 +147,46 @@
             this.dataGrid_Stock.Size = new System.Drawing.Size(712, 327);
             this.dataGrid_Stock.TabIndex = 5;
             this.dataGrid_Stock.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGrid_Stock_CellClick);
+            // 
+            // Id_Materia
+            // 
+            this.Id_Materia.HeaderText = "ID";
+            this.Id_Materia.Name = "Id_Materia";
+            this.Id_Materia.Width = 50;
+            // 
+            // nomMaterial
+            // 
+            this.nomMaterial.HeaderText = "MATERIAL";
+            this.nomMaterial.Name = "nomMaterial";
+            this.nomMaterial.Width = 120;
+            // 
+            // noSerie
+            // 
+            this.noSerie.HeaderText = "NO. DE SERIE";
+            this.noSerie.Name = "noSerie";
+            this.noSerie.Width = 150;
+            // 
+            // metMaterial
+            // 
+            this.metMaterial.HeaderText = "METROS";
+            this.metMaterial.Name = "metMaterial";
+            // 
+            // tamMaterial
+            // 
+            this.tamMaterial.HeaderText = "TAMAÑO";
+            this.tamMaterial.Name = "tamMaterial";
+            // 
+            // stock
+            // 
+            this.stock.HeaderText = "STOCK";
+            this.stock.Image = global::SYSTEM_INVENTARIO_MAGENTA_DIGITAL.Properties.Resources.icon_e6b85da097f15d781ed24b822e966d12;
+            this.stock.Name = "stock";
+            // 
+            // ELIMINAR
+            // 
+            this.ELIMINAR.HeaderText = "ELIMINAR";
+            this.ELIMINAR.Image = global::SYSTEM_INVENTARIO_MAGENTA_DIGITAL.Properties.Resources.icon_5f41a9b90a6fd03b7d17b63704ef6f971;
+            this.ELIMINAR.Name = "ELIMINAR";
             // 
             // link_MaterialesInac
             // 
@@ -211,6 +254,43 @@
             this.panel1.Size = new System.Drawing.Size(612, 84);
             this.panel1.TabIndex = 15;
             // 
+            // panel6
+            // 
+            this.panel6.Controls.Add(this.panel9);
+            this.panel6.Controls.Add(this.panel8);
+            this.panel6.Controls.Add(this.panel7);
+            this.panel6.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel6.Location = new System.Drawing.Point(0, 54);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(374, 30);
+            this.panel6.TabIndex = 15;
+            // 
+            // panel9
+            // 
+            this.panel9.Controls.Add(this.btn_Reset);
+            this.panel9.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel9.Location = new System.Drawing.Point(182, 0);
+            this.panel9.Name = "panel9";
+            this.panel9.Size = new System.Drawing.Size(190, 30);
+            this.panel9.TabIndex = 2;
+            // 
+            // panel8
+            // 
+            this.panel8.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel8.Location = new System.Drawing.Point(172, 0);
+            this.panel8.Name = "panel8";
+            this.panel8.Size = new System.Drawing.Size(10, 30);
+            this.panel8.TabIndex = 1;
+            // 
+            // panel7
+            // 
+            this.panel7.Controls.Add(this.btn_Buscar);
+            this.panel7.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel7.Location = new System.Drawing.Point(0, 0);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(172, 30);
+            this.panel7.TabIndex = 0;
+            // 
             // panel2
             // 
             this.panel2.Controls.Add(this.panel4);
@@ -221,16 +301,6 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(612, 54);
             this.panel2.TabIndex = 0;
-            // 
-            // panel3
-            // 
-            this.panel3.Controls.Add(this.cb_materialesBusc);
-            this.panel3.Controls.Add(this.label1);
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel3.Location = new System.Drawing.Point(0, 0);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(200, 54);
-            this.panel3.TabIndex = 0;
             // 
             // panel4
             // 
@@ -250,82 +320,15 @@
             this.panel5.Size = new System.Drawing.Size(12, 54);
             this.panel5.TabIndex = 1;
             // 
-            // panel6
+            // panel3
             // 
-            this.panel6.Controls.Add(this.panel9);
-            this.panel6.Controls.Add(this.panel8);
-            this.panel6.Controls.Add(this.panel7);
-            this.panel6.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel6.Location = new System.Drawing.Point(0, 54);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(374, 30);
-            this.panel6.TabIndex = 15;
-            // 
-            // panel7
-            // 
-            this.panel7.Controls.Add(this.btn_Buscar);
-            this.panel7.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel7.Location = new System.Drawing.Point(0, 0);
-            this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(172, 30);
-            this.panel7.TabIndex = 0;
-            // 
-            // panel8
-            // 
-            this.panel8.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel8.Location = new System.Drawing.Point(172, 0);
-            this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(10, 30);
-            this.panel8.TabIndex = 1;
-            // 
-            // panel9
-            // 
-            this.panel9.Controls.Add(this.btn_Reset);
-            this.panel9.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel9.Location = new System.Drawing.Point(182, 0);
-            this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(190, 30);
-            this.panel9.TabIndex = 2;
-            // 
-            // Id_Materia
-            // 
-            this.Id_Materia.HeaderText = "ID";
-            this.Id_Materia.Name = "Id_Materia";
-            this.Id_Materia.Width = 50;
-            // 
-            // nomMaterial
-            // 
-            this.nomMaterial.HeaderText = "MATERIAL";
-            this.nomMaterial.Name = "nomMaterial";
-            this.nomMaterial.Width = 120;
-            // 
-            // noSerie
-            // 
-            this.noSerie.HeaderText = "NO. DE SERIE";
-            this.noSerie.Name = "noSerie";
-            this.noSerie.Width = 150;
-            // 
-            // metMaterial
-            // 
-            this.metMaterial.HeaderText = "METROS";
-            this.metMaterial.Name = "metMaterial";
-            // 
-            // tamMaterial
-            // 
-            this.tamMaterial.HeaderText = "TAMAÑO";
-            this.tamMaterial.Name = "tamMaterial";
-            // 
-            // stock
-            // 
-            this.stock.HeaderText = "STOCK";
-            this.stock.Image = global::SYSTEM_INVENTARIO_MAGENTA_DIGITAL.Properties.Resources.icon_e6b85da097f15d781ed24b822e966d12;
-            this.stock.Name = "stock";
-            // 
-            // ELIMINAR
-            // 
-            this.ELIMINAR.HeaderText = "ELIMINAR";
-            this.ELIMINAR.Image = global::SYSTEM_INVENTARIO_MAGENTA_DIGITAL.Properties.Resources.icon_5f41a9b90a6fd03b7d17b63704ef6f971;
-            this.ELIMINAR.Name = "ELIMINAR";
+            this.panel3.Controls.Add(this.cb_materialesBusc);
+            this.panel3.Controls.Add(this.label1);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel3.Location = new System.Drawing.Point(0, 0);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(200, 54);
+            this.panel3.TabIndex = 0;
             // 
             // pictureBox_Reg
             // 
@@ -361,18 +364,19 @@
             this.Controls.Add(this.pictureBox_Reg);
             this.Controls.Add(this.link_MaterialesInac);
             this.Controls.Add(this.dataGrid_Stock);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MODIFICAR";
-            this.Text = "MODIFICAR";
+            this.Text = "INVENTARIO";
             ((System.ComponentModel.ISupportInitialize)(this.dataGrid_Stock)).EndInit();
             this.panel1.ResumeLayout(false);
+            this.panel6.ResumeLayout(false);
+            this.panel9.ResumeLayout(false);
+            this.panel7.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
-            this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
-            this.panel6.ResumeLayout(false);
-            this.panel7.ResumeLayout(false);
-            this.panel9.ResumeLayout(false);
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Reg)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

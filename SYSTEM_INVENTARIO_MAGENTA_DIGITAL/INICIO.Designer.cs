@@ -28,7 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(INICIO));
             this.lbl_categoria = new System.Windows.Forms.Label();
             this.lbl_categoriaSelect = new System.Windows.Forms.Label();
             this.panelmenuvertical = new System.Windows.Forms.Panel();
@@ -42,26 +43,20 @@
             this.panel5 = new System.Windows.Forms.Panel();
             this.button1 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.panel_barratitulo = new System.Windows.Forms.Panel();
             this.panelContenedor = new System.Windows.Forms.Panel();
             this.link_cambiarCateg = new System.Windows.Forms.LinkLabel();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.dataGridView_MaterialesInicio = new System.Windows.Forms.DataGridView();
-            this.label1 = new System.Windows.Forms.Label();
-            this.iconomaximizar = new System.Windows.Forms.PictureBox();
-            this.iconorestaurar = new System.Windows.Forms.PictureBox();
-            this.iconominimizar = new System.Windows.Forms.PictureBox();
-            this.iconocerrar = new System.Windows.Forms.PictureBox();
-            this.btnslide = new System.Windows.Forms.PictureBox();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.img_logochico = new System.Windows.Forms.PictureBox();
             this.nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tamaño = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.metros = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label1 = new System.Windows.Forms.Label();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.img_logochico = new System.Windows.Forms.PictureBox();
             this.panelmenuvertical.SuspendLayout();
             this.panel8.SuspendLayout();
             this.panel9.SuspendLayout();
@@ -69,14 +64,8 @@
             this.panel7.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel5.SuspendLayout();
-            this.panel_barratitulo.SuspendLayout();
             this.panelContenedor.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_MaterialesInicio)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.iconomaximizar)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.iconorestaurar)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.iconominimizar)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.iconocerrar)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnslide)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -239,22 +228,6 @@
             this.panel1.Size = new System.Drawing.Size(235, 256);
             this.panel1.TabIndex = 9;
             // 
-            // panel_barratitulo
-            // 
-            this.panel_barratitulo.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.panel_barratitulo.Controls.Add(this.iconomaximizar);
-            this.panel_barratitulo.Controls.Add(this.iconorestaurar);
-            this.panel_barratitulo.Controls.Add(this.iconominimizar);
-            this.panel_barratitulo.Controls.Add(this.iconocerrar);
-            this.panel_barratitulo.Controls.Add(this.btnslide);
-            this.panel_barratitulo.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel_barratitulo.Location = new System.Drawing.Point(235, 0);
-            this.panel_barratitulo.Name = "panel_barratitulo";
-            this.panel_barratitulo.Size = new System.Drawing.Size(1065, 50);
-            this.panel_barratitulo.TabIndex = 1;
-            this.panel_barratitulo.Paint += new System.Windows.Forms.PaintEventHandler(this.panel_barratitulo_Paint);
-            this.panel_barratitulo.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel_barratitulo_MouseDown);
-            // 
             // panelContenedor
             // 
             this.panelContenedor.Controls.Add(this.link_cambiarCateg);
@@ -264,7 +237,7 @@
             this.panelContenedor.Controls.Add(this.label1);
             this.panelContenedor.Controls.Add(this.lbl_categoria);
             this.panelContenedor.Controls.Add(this.lbl_categoriaSelect);
-            this.panelContenedor.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelContenedor.Dock = System.Windows.Forms.DockStyle.Right;
             this.panelContenedor.ForeColor = System.Drawing.Color.Magenta;
             this.panelContenedor.Location = new System.Drawing.Point(235, 0);
             this.panelContenedor.Name = "panelContenedor";
@@ -310,14 +283,14 @@
             this.dataGridView_MaterialesInicio.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridView_MaterialesInicio.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.dataGridView_MaterialesInicio.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView_MaterialesInicio.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView_MaterialesInicio.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView_MaterialesInicio.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView_MaterialesInicio.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.nombre,
@@ -331,6 +304,30 @@
             this.dataGridView_MaterialesInicio.Size = new System.Drawing.Size(760, 372);
             this.dataGridView_MaterialesInicio.TabIndex = 4;
             // 
+            // nombre
+            // 
+            this.nombre.HeaderText = "NOMBRE";
+            this.nombre.Name = "nombre";
+            this.nombre.Width = 250;
+            // 
+            // tamaño
+            // 
+            this.tamaño.HeaderText = "TAMAÑO";
+            this.tamaño.Name = "tamaño";
+            this.tamaño.Width = 170;
+            // 
+            // metros
+            // 
+            this.metros.HeaderText = "METROS";
+            this.metros.Name = "metros";
+            this.metros.Width = 170;
+            // 
+            // cantidad
+            // 
+            this.cantidad.HeaderText = "CANTIDAD";
+            this.cantidad.Name = "cantidad";
+            this.cantidad.Width = 170;
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -342,72 +339,14 @@
             this.label1.TabIndex = 3;
             this.label1.Text = "BIENVENIDO";
             // 
-            // iconomaximizar
-            // 
-            this.iconomaximizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.iconomaximizar.Image = global::SYSTEM_INVENTARIO_MAGENTA_DIGITAL.Properties.Resources.maximizar;
-            this.iconomaximizar.Location = new System.Drawing.Point(935, 16);
-            this.iconomaximizar.Name = "iconomaximizar";
-            this.iconomaximizar.Size = new System.Drawing.Size(25, 25);
-            this.iconomaximizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.iconomaximizar.TabIndex = 4;
-            this.iconomaximizar.TabStop = false;
-            this.iconomaximizar.Click += new System.EventHandler(this.iconomaximizar_Click);
-            // 
-            // iconorestaurar
-            // 
-            this.iconorestaurar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.iconorestaurar.Image = global::SYSTEM_INVENTARIO_MAGENTA_DIGITAL.Properties.Resources.restaurar;
-            this.iconorestaurar.Location = new System.Drawing.Point(997, 16);
-            this.iconorestaurar.Name = "iconorestaurar";
-            this.iconorestaurar.Size = new System.Drawing.Size(25, 25);
-            this.iconorestaurar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.iconorestaurar.TabIndex = 4;
-            this.iconorestaurar.TabStop = false;
-            this.iconorestaurar.Visible = false;
-            this.iconorestaurar.Click += new System.EventHandler(this.iconorestaurar_Click);
-            // 
-            // iconominimizar
-            // 
-            this.iconominimizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.iconominimizar.Image = global::SYSTEM_INVENTARIO_MAGENTA_DIGITAL.Properties.Resources.minimizar;
-            this.iconominimizar.Location = new System.Drawing.Point(966, 16);
-            this.iconominimizar.Name = "iconominimizar";
-            this.iconominimizar.Size = new System.Drawing.Size(25, 25);
-            this.iconominimizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.iconominimizar.TabIndex = 4;
-            this.iconominimizar.TabStop = false;
-            this.iconominimizar.Click += new System.EventHandler(this.iconominimizar_Click);
-            // 
-            // iconocerrar
-            // 
-            this.iconocerrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.iconocerrar.Image = global::SYSTEM_INVENTARIO_MAGENTA_DIGITAL.Properties.Resources.tacha;
-            this.iconocerrar.Location = new System.Drawing.Point(1028, 16);
-            this.iconocerrar.Name = "iconocerrar";
-            this.iconocerrar.Size = new System.Drawing.Size(25, 25);
-            this.iconocerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.iconocerrar.TabIndex = 4;
-            this.iconocerrar.TabStop = false;
-            this.iconocerrar.Click += new System.EventHandler(this.iconocerrar_Click);
-            // 
-            // btnslide
-            // 
-            this.btnslide.Image = global::SYSTEM_INVENTARIO_MAGENTA_DIGITAL.Properties.Resources.barratitulo;
-            this.btnslide.Location = new System.Drawing.Point(7, 6);
-            this.btnslide.Name = "btnslide";
-            this.btnslide.Size = new System.Drawing.Size(35, 35);
-            this.btnslide.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.btnslide.TabIndex = 0;
-            this.btnslide.TabStop = false;
-            this.btnslide.Click += new System.EventHandler(this.btnslide_Click);
-            // 
             // pictureBox4
             // 
             this.pictureBox4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pictureBox4.Image = global::SYSTEM_INVENTARIO_MAGENTA_DIGITAL.Properties.Resources.Sin_título2;
             this.pictureBox4.Location = new System.Drawing.Point(0, 0);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(62, 62);
+            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox4.TabIndex = 1;
             this.pictureBox4.TabStop = false;
             // 
@@ -443,41 +382,16 @@
             this.img_logochico.TabIndex = 0;
             this.img_logochico.TabStop = false;
             // 
-            // nombre
-            // 
-            this.nombre.HeaderText = "NOMBRE";
-            this.nombre.Name = "nombre";
-            this.nombre.Width = 250;
-            // 
-            // tamaño
-            // 
-            this.tamaño.HeaderText = "TAMAÑO";
-            this.tamaño.Name = "tamaño";
-            this.tamaño.Width = 170;
-            // 
-            // metros
-            // 
-            this.metros.HeaderText = "METROS";
-            this.metros.Name = "metros";
-            this.metros.Width = 170;
-            // 
-            // cantidad
-            // 
-            this.cantidad.HeaderText = "CANTIDAD";
-            this.cantidad.Name = "cantidad";
-            this.cantidad.Width = 170;
-            // 
             // INICIO
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.ClientSize = new System.Drawing.Size(1300, 650);
-            this.Controls.Add(this.panel_barratitulo);
             this.Controls.Add(this.panelContenedor);
             this.Controls.Add(this.panelmenuvertical);
             this.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "INICIO";
             this.Text = "INICIO";
             this.panelmenuvertical.ResumeLayout(false);
@@ -487,15 +401,9 @@
             this.panel7.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
-            this.panel_barratitulo.ResumeLayout(false);
             this.panelContenedor.ResumeLayout(false);
             this.panelContenedor.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_MaterialesInicio)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.iconomaximizar)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.iconorestaurar)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.iconominimizar)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.iconocerrar)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnslide)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
@@ -509,15 +417,9 @@
         private System.Windows.Forms.Label lbl_categoria;
         public System.Windows.Forms.Label lbl_categoriaSelect;
         private System.Windows.Forms.Panel panelmenuvertical;
-        private System.Windows.Forms.Panel panel_barratitulo;
         private System.Windows.Forms.Panel panelContenedor;
         private System.Windows.Forms.PictureBox img_logochico;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.PictureBox btnslide;
-        private System.Windows.Forms.PictureBox iconocerrar;
-        private System.Windows.Forms.PictureBox iconominimizar;
-        private System.Windows.Forms.PictureBox iconorestaurar;
-        private System.Windows.Forms.PictureBox iconomaximizar;
         private System.Windows.Forms.Button btm_Modificar;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label3;

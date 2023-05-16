@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(REGISTRARMATERIAL));
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -40,7 +41,6 @@
             this.label6 = new System.Windows.Forms.Label();
             this.rich_Desc = new System.Windows.Forms.RichTextBox();
             this.txt_nombre = new System.Windows.Forms.TextBox();
-            this.panel_barratitulo = new System.Windows.Forms.Panel();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.dataGrid_AgrMaterial = new System.Windows.Forms.DataGridView();
             this.id_material = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -49,24 +49,19 @@
             this.label8 = new System.Windows.Forms.Label();
             this.lbl_serie = new System.Windows.Forms.Label();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
-            this.iconoregresarmenu = new System.Windows.Forms.PictureBox();
-            this.iconominimizar2 = new System.Windows.Forms.PictureBox();
-            this.iconocerrar2 = new System.Windows.Forms.PictureBox();
             this.btn_guardarmat = new System.Windows.Forms.Button();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.panel_barratitulo.SuspendLayout();
+            this.pictureBox_Reg = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGrid_AgrMaterial)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.iconoregresarmenu)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.iconominimizar2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.iconocerrar2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Reg)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -188,19 +183,6 @@
             this.txt_nombre.Size = new System.Drawing.Size(210, 15);
             this.txt_nombre.TabIndex = 24;
             // 
-            // panel_barratitulo
-            // 
-            this.panel_barratitulo.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.panel_barratitulo.Controls.Add(this.iconoregresarmenu);
-            this.panel_barratitulo.Controls.Add(this.iconominimizar2);
-            this.panel_barratitulo.Controls.Add(this.iconocerrar2);
-            this.panel_barratitulo.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel_barratitulo.Location = new System.Drawing.Point(0, 0);
-            this.panel_barratitulo.Name = "panel_barratitulo";
-            this.panel_barratitulo.Size = new System.Drawing.Size(1050, 50);
-            this.panel_barratitulo.TabIndex = 25;
-            this.panel_barratitulo.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel_barratitulo_MouseDown);
-            // 
             // contextMenuStrip1
             // 
             this.contextMenuStrip1.Name = "contextMenuStrip1";
@@ -270,42 +252,6 @@
             this.pictureBox6.TabIndex = 27;
             this.pictureBox6.TabStop = false;
             // 
-            // iconoregresarmenu
-            // 
-            this.iconoregresarmenu.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.iconoregresarmenu.Image = global::SYSTEM_INVENTARIO_MAGENTA_DIGITAL.Properties.Resources.Captura_de_pantalla_2023_04_25_030653;
-            this.iconoregresarmenu.Location = new System.Drawing.Point(951, 16);
-            this.iconoregresarmenu.Name = "iconoregresarmenu";
-            this.iconoregresarmenu.Size = new System.Drawing.Size(25, 25);
-            this.iconoregresarmenu.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.iconoregresarmenu.TabIndex = 4;
-            this.iconoregresarmenu.TabStop = false;
-            this.iconoregresarmenu.Click += new System.EventHandler(this.iconoregresarmenu_Click);
-            // 
-            // iconominimizar2
-            // 
-            this.iconominimizar2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.iconominimizar2.Image = global::SYSTEM_INVENTARIO_MAGENTA_DIGITAL.Properties.Resources.minimizar;
-            this.iconominimizar2.Location = new System.Drawing.Point(982, 16);
-            this.iconominimizar2.Name = "iconominimizar2";
-            this.iconominimizar2.Size = new System.Drawing.Size(25, 25);
-            this.iconominimizar2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.iconominimizar2.TabIndex = 4;
-            this.iconominimizar2.TabStop = false;
-            this.iconominimizar2.Click += new System.EventHandler(this.iconominimizar2_Click);
-            // 
-            // iconocerrar2
-            // 
-            this.iconocerrar2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.iconocerrar2.Image = global::SYSTEM_INVENTARIO_MAGENTA_DIGITAL.Properties.Resources.tacha;
-            this.iconocerrar2.Location = new System.Drawing.Point(1013, 16);
-            this.iconocerrar2.Name = "iconocerrar2";
-            this.iconocerrar2.Size = new System.Drawing.Size(25, 25);
-            this.iconocerrar2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.iconocerrar2.TabIndex = 4;
-            this.iconocerrar2.TabStop = false;
-            this.iconocerrar2.Click += new System.EventHandler(this.iconocerrar2_Click);
-            // 
             // btn_guardarmat
             // 
             this.btn_guardarmat.BackgroundImage = global::SYSTEM_INVENTARIO_MAGENTA_DIGITAL.Properties.Resources.Captura_de_pantalla_2023_04_25_021242;
@@ -359,18 +305,29 @@
             this.pictureBox1.TabIndex = 10;
             this.pictureBox1.TabStop = false;
             // 
+            // pictureBox_Reg
+            // 
+            this.pictureBox_Reg.Image = global::SYSTEM_INVENTARIO_MAGENTA_DIGITAL.Properties.Resources.anterior__1_;
+            this.pictureBox_Reg.Location = new System.Drawing.Point(65, 26);
+            this.pictureBox_Reg.Name = "pictureBox_Reg";
+            this.pictureBox_Reg.Size = new System.Drawing.Size(40, 40);
+            this.pictureBox_Reg.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox_Reg.TabIndex = 31;
+            this.pictureBox_Reg.TabStop = false;
+            this.pictureBox_Reg.Click += new System.EventHandler(this.pictureBox_Reg_Click);
+            // 
             // REGISTRARMATERIAL
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(1050, 650);
+            this.Controls.Add(this.pictureBox_Reg);
             this.Controls.Add(this.lbl_serie);
             this.Controls.Add(this.txt_NoSerie);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.pictureBox6);
             this.Controls.Add(this.dataGrid_AgrMaterial);
-            this.Controls.Add(this.panel_barratitulo);
             this.Controls.Add(this.txt_nombre);
             this.Controls.Add(this.rich_Desc);
             this.Controls.Add(this.btn_guardarmat);
@@ -387,20 +344,17 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "REGISTRARMATERIAL";
-            this.Text = "REGISTRARMATERIAL";
+            this.Text = "REGISTRO";
             this.Load += new System.EventHandler(this.REGISTRARMATERIAL_Load);
-            this.panel_barratitulo.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGrid_AgrMaterial)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.iconoregresarmenu)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.iconominimizar2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.iconocerrar2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Reg)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -424,10 +378,6 @@
         private System.Windows.Forms.Button btn_guardarmat;
         private System.Windows.Forms.RichTextBox rich_Desc;
         private System.Windows.Forms.TextBox txt_nombre;
-        private System.Windows.Forms.Panel panel_barratitulo;
-        private System.Windows.Forms.PictureBox iconoregresarmenu;
-        private System.Windows.Forms.PictureBox iconominimizar2;
-        private System.Windows.Forms.PictureBox iconocerrar2;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.DataGridView dataGrid_AgrMaterial;
         private System.Windows.Forms.DataGridViewTextBoxColumn id_material;
@@ -436,5 +386,6 @@
         public System.Windows.Forms.Label label8;
         private System.Windows.Forms.PictureBox pictureBox6;
         private System.Windows.Forms.Label lbl_serie;
+        private System.Windows.Forms.PictureBox pictureBox_Reg;
     }
 }
