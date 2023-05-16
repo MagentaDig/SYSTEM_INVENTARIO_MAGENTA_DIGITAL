@@ -17,10 +17,11 @@ namespace SYSTEM_INVENTARIO_MAGENTA_DIGITAL
     {
         private int idCateg;
         private dynamic Categoria;
-        public INICIO(int id)
+        public INICIO(int id, dynamic NomCategoria)
         {
             InitializeComponent();
             this.idCateg = id;
+            this.Categoria = NomCategoria;
 
 
             CargarTablaMateriales();
@@ -93,7 +94,7 @@ namespace SYSTEM_INVENTARIO_MAGENTA_DIGITAL
         private void button1_Click(object sender, EventArgs e)
         {
             this.Hide();
-            REGISTRARMATERIAL regMaterial = new REGISTRARMATERIAL(this.idCateg);
+            REGISTRARMATERIAL regMaterial = new REGISTRARMATERIAL(this.idCateg, this.Categoria);
             regMaterial.Show();
         }
 
@@ -105,14 +106,14 @@ namespace SYSTEM_INVENTARIO_MAGENTA_DIGITAL
         private void btn_Pedido_Click(object sender, EventArgs e)
         {
             this.Hide();
-            PEDIDOS formPedidos = new PEDIDOS(this.idCateg);
+            PEDIDOS formPedidos = new PEDIDOS(this.idCateg, this.Categoria);
             formPedidos.Show();
         }
 
         private void btm_Modificar_Click(object sender, EventArgs e)
         {
             this.Hide();
-            MODIFICAR formModificar = new MODIFICAR(this.idCateg);
+            MODIFICAR formModificar = new MODIFICAR(this.idCateg, this.Categoria);
             formModificar.Show();
         }
 

@@ -16,10 +16,12 @@ namespace SYSTEM_INVENTARIO_MAGENTA_DIGITAL
     public partial class MODIFICAR : Form
     {
         public int idCateg;
-        public MODIFICAR(int Categ)
+        public dynamic Categoria;
+        public MODIFICAR(int Categ, dynamic nomCateg)
         {
             InitializeComponent();
             this.idCateg = Categ;
+            this.Categoria = nomCateg;
             MostrarStock();
             MaterialesCB();
         }
@@ -46,7 +48,8 @@ namespace SYSTEM_INVENTARIO_MAGENTA_DIGITAL
         private void btnReg_Click(object sender, EventArgs e)
         {
             this.Hide();
-            INICIO formInicio = new INICIO(this.idCateg);
+            INICIO formInicio = new INICIO(this.idCateg, this.Categoria);
+            formInicio.lbl_categoriaSelect.Text = this.Categoria;
             formInicio.Show();
         }
 
@@ -63,7 +66,7 @@ namespace SYSTEM_INVENTARIO_MAGENTA_DIGITAL
             else if (dataGrid_Stock.Columns[e.ColumnIndex].Name == "ELIMINAR")
             {
                 idMat = Convert.ToInt32(dataGrid_Stock.CurrentRow.Cells["Id_Materia"].Value.ToString());
-                ELIMINAR_MATERIAL formElimanrMat = new ELIMINAR_MATERIAL(idMat, this.idCateg);
+                ELIMINAR_MATERIAL formElimanrMat = new ELIMINAR_MATERIAL(idMat, this.idCateg, this.Categoria);
                 formElimanrMat.ShowDialog();
                 recargarPantalla();
             }
@@ -72,13 +75,13 @@ namespace SYSTEM_INVENTARIO_MAGENTA_DIGITAL
         public void recargarPantalla()
         {
             this.Hide();
-            MODIFICAR fomModificar = new MODIFICAR(this.idCateg);
+            MODIFICAR fomModificar = new MODIFICAR(this.idCateg, this.Categoria);
             fomModificar.Show();
         }
 
         private void link_MaterialesInac_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            MATERIALES_INACTIVOS formMaterialesInac = new MATERIALES_INACTIVOS(this.idCateg);
+            MATERIALES_INACTIVOS formMaterialesInac = new MATERIALES_INACTIVOS(this.idCateg, this.Categoria);
             formMaterialesInac.ShowDialog();
             recargarPantalla();
         }
@@ -151,7 +154,8 @@ namespace SYSTEM_INVENTARIO_MAGENTA_DIGITAL
         private void pictureBox_Reg_Click(object sender, EventArgs e)
         {
             this.Hide();
-            INICIO formInicio = new INICIO(this.idCateg);
+            INICIO formInicio = new INICIO(this.idCateg, this.Categoria);
+            formInicio.lbl_categoriaSelect.Text = this.Categoria;
             formInicio.Show();
         }
     }

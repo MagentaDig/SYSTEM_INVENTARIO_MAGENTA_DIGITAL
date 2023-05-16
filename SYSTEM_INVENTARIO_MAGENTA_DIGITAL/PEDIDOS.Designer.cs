@@ -50,6 +50,9 @@
             this.fec_Pedido = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fecEntrega = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.estatus = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.entregado = new System.Windows.Forms.DataGridViewImageColumn();
+            this.verPedido = new System.Windows.Forms.DataGridViewImageColumn();
+            this.eliminarPed = new System.Windows.Forms.DataGridViewImageColumn();
             this.lbl_titleStock = new System.Windows.Forms.Label();
             this.lbl_cantidadDisp = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -59,7 +62,9 @@
             this.label3 = new System.Windows.Forms.Label();
             this.textBox_Idpedido = new System.Windows.Forms.TextBox();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.pictureBox_Buscar = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.pictureBox_Reset = new System.Windows.Forms.PictureBox();
             this.panel4 = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
             this.dataGridViewImageColumn1 = new System.Windows.Forms.DataGridViewImageColumn();
@@ -67,20 +72,15 @@
             this.dataGridViewImageColumn3 = new System.Windows.Forms.DataGridViewImageColumn();
             this.pictureBox_limpiar = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.entregado = new System.Windows.Forms.DataGridViewImageColumn();
-            this.verPedido = new System.Windows.Forms.DataGridViewImageColumn();
-            this.eliminarPed = new System.Windows.Forms.DataGridViewImageColumn();
-            this.pictureBox_Buscar = new System.Windows.Forms.PictureBox();
-            this.pictureBox_Reset = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGrid_MaterialPed)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGrid_Pedidos)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Buscar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Reset)).BeginInit();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_limpiar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Buscar)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Reset)).BeginInit();
             this.SuspendLayout();
             // 
             // lbl_detalle
@@ -294,6 +294,29 @@
             this.estatus.HeaderText = "ESTATUS";
             this.estatus.Name = "estatus";
             // 
+            // entregado
+            // 
+            this.entregado.DataPropertyName = "checkEntrefado";
+            this.entregado.Frozen = true;
+            this.entregado.HeaderText = "ENTREGADO";
+            this.entregado.Image = global::SYSTEM_INVENTARIO_MAGENTA_DIGITAL.Properties.Resources.icon_7d72427863558d0f51e5aa0985cf8c82;
+            this.entregado.Name = "entregado";
+            this.entregado.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            // 
+            // verPedido
+            // 
+            this.verPedido.Frozen = true;
+            this.verPedido.HeaderText = "VER DETALLE";
+            this.verPedido.Image = global::SYSTEM_INVENTARIO_MAGENTA_DIGITAL.Properties.Resources.icon_4bd3092cfdf353a4b19434341ccb7d5d1;
+            this.verPedido.Name = "verPedido";
+            this.verPedido.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            // 
+            // eliminarPed
+            // 
+            this.eliminarPed.HeaderText = "ELIMINAR";
+            this.eliminarPed.Image = global::SYSTEM_INVENTARIO_MAGENTA_DIGITAL.Properties.Resources.icon_5f41a9b90a6fd03b7d17b63704ef6f97;
+            this.eliminarPed.Name = "eliminarPed";
+            // 
             // lbl_titleStock
             // 
             this.lbl_titleStock.AutoSize = true;
@@ -310,10 +333,11 @@
             this.lbl_cantidadDisp.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_cantidadDisp.Location = new System.Drawing.Point(534, 32);
             this.lbl_cantidadDisp.Name = "lbl_cantidadDisp";
-            this.lbl_cantidadDisp.Size = new System.Drawing.Size(64, 15);
+            this.lbl_cantidadDisp.Size = new System.Drawing.Size(64, 18);
             this.lbl_cantidadDisp.TabIndex = 16;
             this.lbl_cantidadDisp.Text = "(Cantidad)";
             this.lbl_cantidadDisp.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lbl_cantidadDisp.UseCompatibleTextRendering = true;
             // 
             // groupBox1
             // 
@@ -405,6 +429,18 @@
             this.panel3.Size = new System.Drawing.Size(18, 23);
             this.panel3.TabIndex = 22;
             // 
+            // pictureBox_Buscar
+            // 
+            this.pictureBox_Buscar.Dock = System.Windows.Forms.DockStyle.Right;
+            this.pictureBox_Buscar.Image = global::SYSTEM_INVENTARIO_MAGENTA_DIGITAL.Properties.Resources.buscar__1_;
+            this.pictureBox_Buscar.Location = new System.Drawing.Point(361, 0);
+            this.pictureBox_Buscar.Name = "pictureBox_Buscar";
+            this.pictureBox_Buscar.Size = new System.Drawing.Size(23, 23);
+            this.pictureBox_Buscar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox_Buscar.TabIndex = 19;
+            this.pictureBox_Buscar.TabStop = false;
+            this.pictureBox_Buscar.Click += new System.EventHandler(this.pictureBox_Buscar_Click);
+            // 
             // panel2
             // 
             this.panel2.Dock = System.Windows.Forms.DockStyle.Right;
@@ -412,6 +448,18 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(18, 23);
             this.panel2.TabIndex = 21;
+            // 
+            // pictureBox_Reset
+            // 
+            this.pictureBox_Reset.Dock = System.Windows.Forms.DockStyle.Right;
+            this.pictureBox_Reset.Image = global::SYSTEM_INVENTARIO_MAGENTA_DIGITAL.Properties.Resources.eliminar1;
+            this.pictureBox_Reset.Location = new System.Drawing.Point(402, 0);
+            this.pictureBox_Reset.Name = "pictureBox_Reset";
+            this.pictureBox_Reset.Size = new System.Drawing.Size(23, 23);
+            this.pictureBox_Reset.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox_Reset.TabIndex = 20;
+            this.pictureBox_Reset.TabStop = false;
+            this.pictureBox_Reset.Click += new System.EventHandler(this.pictureBox_Reset_Click);
             // 
             // panel4
             // 
@@ -481,53 +529,6 @@
             this.pictureBox3.TabStop = false;
             this.pictureBox3.Click += new System.EventHandler(this.pictureBox3_Click);
             // 
-            // entregado
-            // 
-            this.entregado.DataPropertyName = "checkEntrefado";
-            this.entregado.Frozen = true;
-            this.entregado.HeaderText = "ENTREGADO";
-            this.entregado.Image = global::SYSTEM_INVENTARIO_MAGENTA_DIGITAL.Properties.Resources.icon_7d72427863558d0f51e5aa0985cf8c82;
-            this.entregado.Name = "entregado";
-            this.entregado.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            // 
-            // verPedido
-            // 
-            this.verPedido.Frozen = true;
-            this.verPedido.HeaderText = "VER DETALLE";
-            this.verPedido.Image = global::SYSTEM_INVENTARIO_MAGENTA_DIGITAL.Properties.Resources.icon_4bd3092cfdf353a4b19434341ccb7d5d1;
-            this.verPedido.Name = "verPedido";
-            this.verPedido.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            // 
-            // eliminarPed
-            // 
-            this.eliminarPed.HeaderText = "ELIMINAR";
-            this.eliminarPed.Image = global::SYSTEM_INVENTARIO_MAGENTA_DIGITAL.Properties.Resources.icon_5f41a9b90a6fd03b7d17b63704ef6f97;
-            this.eliminarPed.Name = "eliminarPed";
-            // 
-            // pictureBox_Buscar
-            // 
-            this.pictureBox_Buscar.Dock = System.Windows.Forms.DockStyle.Right;
-            this.pictureBox_Buscar.Image = global::SYSTEM_INVENTARIO_MAGENTA_DIGITAL.Properties.Resources.buscar__1_;
-            this.pictureBox_Buscar.Location = new System.Drawing.Point(361, 0);
-            this.pictureBox_Buscar.Name = "pictureBox_Buscar";
-            this.pictureBox_Buscar.Size = new System.Drawing.Size(23, 23);
-            this.pictureBox_Buscar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox_Buscar.TabIndex = 19;
-            this.pictureBox_Buscar.TabStop = false;
-            this.pictureBox_Buscar.Click += new System.EventHandler(this.pictureBox_Buscar_Click);
-            // 
-            // pictureBox_Reset
-            // 
-            this.pictureBox_Reset.Dock = System.Windows.Forms.DockStyle.Right;
-            this.pictureBox_Reset.Image = global::SYSTEM_INVENTARIO_MAGENTA_DIGITAL.Properties.Resources.eliminar1;
-            this.pictureBox_Reset.Location = new System.Drawing.Point(402, 0);
-            this.pictureBox_Reset.Name = "pictureBox_Reset";
-            this.pictureBox_Reset.Size = new System.Drawing.Size(23, 23);
-            this.pictureBox_Reset.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox_Reset.TabIndex = 20;
-            this.pictureBox_Reset.TabStop = false;
-            this.pictureBox_Reset.Click += new System.EventHandler(this.pictureBox_Reset_Click);
-            // 
             // PEDIDOS
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -552,11 +553,11 @@
             this.groupBox1.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Buscar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Reset)).EndInit();
             this.panel4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_limpiar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Buscar)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Reset)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

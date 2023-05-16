@@ -30,10 +30,12 @@ namespace SYSTEM_INVENTARIO_MAGENTA_DIGITAL
         /* Variables globales */
         public int idCateg;
         public int IdPedido;
-        public PEDIDOS(int idCateg)
+        public dynamic Categoria;
+        public PEDIDOS(int idCateg, dynamic nomCateg)
         {
             InitializeComponent();
             this.idCateg = idCateg;
+            this.Categoria = nomCateg;
 
 
             mostrarMaterialesCB();
@@ -61,7 +63,8 @@ namespace SYSTEM_INVENTARIO_MAGENTA_DIGITAL
         private void btnReegresar_Click(object sender, EventArgs e)
         {
             this.Hide();
-            INICIO formInicio = new INICIO(this.idCateg);
+            INICIO formInicio = new INICIO(this.idCateg, this.Categoria);
+            formInicio.lbl_categoriaSelect.Text = this.Categoria;
             formInicio.Show();
         }
 
@@ -233,7 +236,7 @@ namespace SYSTEM_INVENTARIO_MAGENTA_DIGITAL
         public void recargarPantalla()
         {
             this.Hide();
-            PEDIDOS formPedido = new PEDIDOS(this.idCateg);
+            PEDIDOS formPedido = new PEDIDOS(this.idCateg, this.Categoria);
             formPedido.Show();
         }
 
@@ -244,6 +247,7 @@ namespace SYSTEM_INVENTARIO_MAGENTA_DIGITAL
 
         private void cb_Materiales_SelectedIndexChanged(object sender, EventArgs e)
         {
+        
             DatosMateriales funcionMateriales = new DatosMateriales();
 
             List<MMateriales> lstMateriales = funcionMateriales.MostrarMateriales(this.idCateg);
@@ -274,7 +278,7 @@ namespace SYSTEM_INVENTARIO_MAGENTA_DIGITAL
         private void link_AgrStock_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             this.Hide();
-            MODIFICAR formModificar = new MODIFICAR(this.idCateg);
+            MODIFICAR formModificar = new MODIFICAR(this.idCateg, this.Categoria);
             formModificar.Show();
 
         }
@@ -389,7 +393,8 @@ namespace SYSTEM_INVENTARIO_MAGENTA_DIGITAL
         private void pictureBox3_Click(object sender, EventArgs e)
         {
             this.Hide();
-            INICIO formInicio = new INICIO(this.idCateg);
+            INICIO formInicio = new INICIO(this.idCateg, this.Categoria);
+            formInicio.lbl_categoriaSelect.Text = this.Categoria;
             formInicio.Show();
         }
 
