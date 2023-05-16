@@ -23,6 +23,7 @@ namespace SYSTEM_INVENTARIO_MAGENTA_DIGITAL
             this.idCateg = Categ;
             this.NomberPed = NomPedido;
             MostrarDatos();
+            mostrarDetalle();
 
             lbl_noPedido.Text = this.IdPedido.ToString();
             lbl_NomPedido.Text = this.NomberPed;
@@ -55,6 +56,22 @@ namespace SYSTEM_INVENTARIO_MAGENTA_DIGITAL
                 dataGrid_detllePedido.Rows[indesDP].Cells[1].Value = datos.NomMaterial;
                 dataGrid_detllePedido.Rows[indesDP].Cells[2].Value = datos.Cantidad;
 
+            }
+        }
+
+        public void mostrarDetalle()
+        {
+            DatosPedidos funcionPedido = new DatosPedidos();
+
+            List<MPedidos> Pedidos = funcionPedido.MostrarPedido(this.idCateg);
+
+            foreach (MPedidos pd in Pedidos)
+            {
+                if(pd.IdPedido == this.IdPedido)
+                {
+                    richTextBox_detalle.Text = pd.DetallePedido.ToString();
+                    break;
+                }
             }
         }
     }

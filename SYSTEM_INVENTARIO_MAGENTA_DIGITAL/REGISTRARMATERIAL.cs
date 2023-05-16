@@ -18,10 +18,12 @@ namespace SYSTEM_INVENTARIO_MAGENTA_DIGITAL
     public partial class REGISTRARMATERIAL : Form
     {
         public int idCateg;
-        public REGISTRARMATERIAL(int idCateg)
+        public dynamic Categoria;
+        public REGISTRARMATERIAL(int idCateg, dynamic nomCateg)
         {
             InitializeComponent();
             this.idCateg = idCateg;
+            this.Categoria = nomCateg;
 
             MostrarDataGrid();
         }
@@ -35,7 +37,8 @@ namespace SYSTEM_INVENTARIO_MAGENTA_DIGITAL
         private void iconoregresarmenu_Click(object sender, EventArgs e)
         {
             this.Hide();
-            INICIO inic = new INICIO(this.idCateg);
+            INICIO inic = new INICIO(this.idCateg, this.Categoria);
+            inic.lbl_categoriaSelect.Text = this.Categoria;
             inic.Show();
         }
 
@@ -121,7 +124,8 @@ namespace SYSTEM_INVENTARIO_MAGENTA_DIGITAL
         private void pictureBox_Reg_Click(object sender, EventArgs e)
         {
             this.Hide();
-            INICIO formInicio = new INICIO(this.idCateg);
+            INICIO formInicio = new INICIO(this.idCateg, this.Categoria);
+            formInicio.lbl_categoriaSelect.Text = this.Categoria;
             formInicio.Show();
         }
     }

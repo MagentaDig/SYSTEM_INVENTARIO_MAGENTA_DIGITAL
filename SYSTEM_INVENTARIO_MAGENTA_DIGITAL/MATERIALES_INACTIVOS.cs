@@ -15,10 +15,12 @@ namespace SYSTEM_INVENTARIO_MAGENTA_DIGITAL
     public partial class MATERIALES_INACTIVOS : Form
     {
         public int IdCateg;
-        public MATERIALES_INACTIVOS(int Categ)
+        public dynamic Categoria;
+        public MATERIALES_INACTIVOS(int Categ, dynamic nomCateg)
         {
             InitializeComponent();
             this.IdCateg = Categ;
+            this.Categoria = nomCateg;
             CargarTabla();
         }
 
@@ -56,7 +58,7 @@ namespace SYSTEM_INVENTARIO_MAGENTA_DIGITAL
         public void recargarPantalla()
         {
             this.Hide();
-            MODIFICAR formModificar = new MODIFICAR(this.IdCateg);
+            MODIFICAR formModificar = new MODIFICAR(this.IdCateg, this.Categoria);
             formModificar.Show();
         }
     }

@@ -16,11 +16,13 @@ namespace SYSTEM_INVENTARIO_MAGENTA_DIGITAL.AVISOS
     {
         int IdMaterial;
         int idCateg;
-        public ELIMINAR_MATERIAL(int id_Material, int Id_Categ)
+        dynamic Categoria;
+        public ELIMINAR_MATERIAL(int id_Material, int Id_Categ, dynamic nomCateg)
         {
             InitializeComponent();
             this.IdMaterial = id_Material;
             this.idCateg = Id_Categ;
+            this.Categoria= nomCateg;
         }
 
         private void btn_Si_Click(object sender, EventArgs e)
@@ -40,7 +42,7 @@ namespace SYSTEM_INVENTARIO_MAGENTA_DIGITAL.AVISOS
         public void recargarPantalla()
         {
             this.Hide();
-            MODIFICAR formModificar = new MODIFICAR(this.idCateg);
+            MODIFICAR formModificar = new MODIFICAR(this.idCateg, this.Categoria);
             formModificar.Show();
         }
     }
